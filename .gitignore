@@ -1,8 +1,46 @@
+# ── macOS ─────────────────────────────────────────────────────────────────────
 .DS_Store
+._*
+
+# ── Google Drive stub files ───────────────────────────────────────────────────
+*.gdoc
+*.gsheet
+*.gslides
+*.gdraw
+*.gform
+
+# ── Python ────────────────────────────────────────────────────────────────────
 __pycache__/
-*.pyc
-.ipynb_checkpoints/
+*.py[codz]
+*$py.class
+.ipynb_checkpoints
+*.egg-info/
+.env
+.envrc
+.venv
+env/
+venv/
+
+# ── Secrets / encrypted files ─────────────────────────────────────────────────
+*.gpg
+books/*/Accts/pw.json.gpg
 books/*/Accts/.profile_backups/
 books/*/.bookNS_backups/
-books/*/Accts/pw.json.gpg
-*.gpg
+
+# ── IRS pipeline temp outputs ─────────────────────────────────────────────────
+*_fillDict.json
+*_namespace.json
+*_namespace.pdf
+
+# ── Large / sensitive working files ──────────────────────────────────────────
+books/*/BankStmts/*.csv
+books/*/Working/
+books/*/Receipts/
+
+# ── Claude Code project settings (may contain local secrets) ─────────────────
+.claude/settings.local.json
+
+# ── Editor / IDE ──────────────────────────────────────────────────────────────
+.ruff_cache/
+.mypy_cache/
+.pytest_cache/
