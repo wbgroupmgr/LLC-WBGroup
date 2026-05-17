@@ -22,20 +22,15 @@ env/
 venv/
 
 # ── Secrets / encrypted files ─────────────────────────────────────────────────
-*.gpg
-books/*/Accts/pw.json.gpg
 books/*/Accts/.profile_backups/
 books/*/.bookNS_backups/
 
 # ── IRS pipeline temp outputs ─────────────────────────────────────────────────
 *_fillDict.json
 *_namespace.json
-*_namespace.pdf
 
 # ── Large / sensitive working files ──────────────────────────────────────────
-books/*/BankStmts/*.csv
 books/*/Working/
-books/*/Receipts/
 
 # ── Claude Code project settings (may contain local secrets) ─────────────────
 .claude/settings.local.json
