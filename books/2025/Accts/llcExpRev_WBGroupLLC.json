@@ -4,7 +4,7 @@
         "_unknown": "",
         "aType": "Debit",
         "acct": "Acct.Cash.Bank",
-        "acctSub": "Closing-805 High Mesa",
+        "acctSub": "Investment, Member FRojas",
         "amt": 219000,
         "desc": "Owner investment",
         "dt": "2025.08.20",
@@ -40,9 +40,10 @@
     },
     {
         "Ledger": "Acct.Fixed.Tangible.InService",
+        "_unknown": "",
         "aType": "Credit",
         "acct": "Acct.Cash.Bank",
-        "acctSub": null,
+        "acctSub": "Closing",
         "amt": 213936.95,
         "desc": "Property Purchase",
         "dt": "2025.08.26",
@@ -59,9 +60,9 @@
         "acctType": "Asset"
     },
     {
-        "Ledger": "Acct.Cash.Bank",
-        "aType": "Debit",
-        "acct": "Acct.Exp.Util",
+        "Ledger": "Acct.Exp.Util",
+        "aType": "Credit",
+        "acct": "Acct.Cash.Bank",
         "acctSub": "Elec",
         "amt": 250,
         "desc": "Auto: Pay Monthly Util",
@@ -77,10 +78,10 @@
         "acctType": "Asset"
     },
     {
-        "Ledger": "Acct.Cash.Bank",
-        "aType": "Debit",
-        "acct": "Acct.Exp.Other",
-        "acctSub": null,
+        "Ledger": "Acct.Exp.Other",
+        "aType": "Credit",
+        "acct": "Acct.Cash.Bank",
+        "acctSub": "Exp Other",
         "amt": 75.76,
         "desc": "NoRcp: Approved Purchase: AMAZON MKTPL*6Y5UJ Amzn.com/bill WA",
         "dt": "2025.08.28",
@@ -95,9 +96,9 @@
         "acctType": "Asset"
     },
     {
-        "Ledger": "Acct.Cash.Bank",
-        "aType": "Debit",
-        "acct": "Acct.Exp.Util",
+        "Ledger": "Acct.Exp.Util",
+        "aType": "Credit",
+        "acct": "Acct.Cash.Bank",
         "acctSub": "Water",
         "amt": 150,
         "desc": "Auto: Pay Monthly Util",
@@ -113,10 +114,10 @@
         "acctType": "Asset"
     },
     {
-        "Ledger": "Acct.Cash.Bank",
-        "aType": "Debit",
-        "acct": "Acct.Exp.Other",
-        "acctSub": "",
+        "Ledger": "Acct.Exp.Other",
+        "aType": "Credit",
+        "acct": "Acct.Cash.Bank",
+        "acctSub": "Exp Other",
         "amt": 25.94,
         "desc": "Receipt+ Approved Purchase: Kings Feed And Hardware, plants",
         "dt": "2025.09.10",
@@ -131,10 +132,10 @@
         "acctType": "Asset"
     },
     {
-        "Ledger": "Acct.Cash.Bank",
-        "aType": "Debit",
-        "acct": "Acct.Exp.Other",
-        "acctSub": null,
+        "Ledger": "Acct.Exp.Other",
+        "aType": "Credit",
+        "acct": "Acct.Cash.Bank",
+        "acctSub": "Exp Other",
         "amt": 38.94,
         "desc": "NoRecpt Approved Purchase: AMAZON MKTPL*B108S Amzn.com/bill WA",
         "dt": "2025.09.22",
@@ -152,7 +153,7 @@
         "Ledger": "Acct.Equity.Owner.Capital.Funds",
         "aType": "Debit",
         "acct": "Acct.Cash.Bank",
-        "acctSub": null,
+        "acctSub": "Equity Other",
         "amt": 30,
         "desc": "Owner Investment",
         "dt": "2025.09.29",
@@ -167,10 +168,10 @@
         "acctType": "Equity"
     },
     {
-        "Ledger": "Acct.Cash.Bank",
-        "aType": "Debit",
-        "acct": "Acct.Exp.Other",
-        "acctSub": null,
+        "Ledger": "Acct.Exp.Other",
+        "aType": "Credit",
+        "acct": "Acct.Cash.Bank",
+        "acctSub": "Exp Other",
         "amt": 17.31,
         "desc": "NoRcpt Approved Purchase: WIMBERLEY ACE WIMBERLEY TX",
         "dt": "2025.10.03",
@@ -185,10 +186,10 @@
         "acctType": "Asset"
     },
     {
-        "Ledger": "Acct.Cash.Bank",
-        "aType": "Debit",
-        "acct": "Acct.Exp.Other",
-        "acctSub": null,
+        "Ledger": "Acct.Exp.Other",
+        "aType": "Credit",
+        "acct": "Acct.Cash.Bank",
+        "acctSub": "Exp Other",
         "amt": 8.29,
         "desc": "NoRcpt Approved Purchase: AMAZON MKTPL*NJ7XX Amzn.com/bill WA",
         "dt": "2025.10.03",
@@ -203,9 +204,9 @@
         "acctType": "Asset"
     },
     {
-        "Ledger": "Acct.Cash.Bank",
-        "aType": "Debit",
-        "acct": "Acct.Exp.Repair",
+        "Ledger": "Acct.Exp.Repair",
+        "aType": "Credit",
+        "acct": "Acct.Cash.Bank",
         "acctSub": "Repair",
         "amt": 14.06,
         "desc": "Recpt Approved Purchase - ACE Garbage Disposal key - receipt",
@@ -257,10 +258,10 @@
         "acctType": "Asset"
     },
     {
-        "Ledger": "Acct.Cash.Bank",
-        "aType": "Debit",
-        "acct": "Acct.Exp.Other",
-        "acctSub": null,
+        "Ledger": "Acct.Exp.Other",
+        "aType": "Credit",
+        "acct": "Acct.Cash.Bank",
+        "acctSub": "Exp Other",
         "amt": 31.86,
         "desc": "NoRcpt Approved Purchase: LOWES #00907* 866-483-7521 NC",
         "dt": "2025.10.07",
@@ -275,9 +276,9 @@
         "acctType": "Asset"
     },
     {
-        "Ledger": "Acct.Cash.Bank",
-        "aType": "Debit",
-        "acct": "Acct.Exp.Repair",
+        "Ledger": "Acct.Exp.Repair",
+        "aType": "Credit",
+        "acct": "Acct.Cash.Bank",
         "acctSub": "Repair",
         "amt": 50,
         "desc": "EPay Pay Electrician Repair Outlet",
@@ -293,10 +294,10 @@
         "acctType": "Asset"
     },
     {
-        "Ledger": "Acct.Cash.Bank",
-        "aType": "Debit",
-        "acct": "Acct.Exp.Other",
-        "acctSub": null,
+        "Ledger": "Acct.Exp.Other",
+        "aType": "Credit",
+        "acct": "Acct.Cash.Bank",
+        "acctSub": "Exp Other",
         "amt": 34.63,
         "desc": "NoRcpt Approved Purchase: WIMBERLEY ACE WIMBERLEY TX",
         "dt": "2025.10.08",
@@ -311,9 +312,9 @@
         "acctType": "Asset"
     },
     {
-        "Ledger": "Acct.Cash.Bank",
-        "aType": "Debit",
-        "acct": "Acct.Exp.Other",
+        "Ledger": "Acct.Exp.Other",
+        "aType": "Credit",
+        "acct": "Acct.Cash.Bank",
         "acctSub": "Celebration",
         "amt": 65.36,
         "desc": "NoRcpt Approved Purchase: H-E-B - celebration",
@@ -383,10 +384,10 @@
         "acctType": "Asset"
     },
     {
-        "Ledger": "Acct.Cash.Bank",
+        "Ledger": "Acct.Exp.Other",
         "_unknown": "",
-        "aType": "Debit",
-        "acct": "Acct.Exp.Other",
+        "aType": "Credit",
+        "acct": "Acct.Cash.Bank",
         "acctSub": "Const",
         "amt": 37.87,
         "desc": "NoRcpt Approved Purchase: WIMBERLEY ACE WIMBERLEY TX",
@@ -402,9 +403,9 @@
         "acctType": "Asset"
     },
     {
-        "Ledger": "Acct.Cash.Bank",
-        "aType": "Debit",
-        "acct": "Acct.Exp.Util",
+        "Ledger": "Acct.Exp.Util",
+        "aType": "Credit",
+        "acct": "Acct.Cash.Bank",
         "acctSub": "Elec",
         "amt": 72.5,
         "desc": "Pay Monthly Util",
@@ -420,10 +421,10 @@
         "acctType": "Asset"
     },
     {
-        "Ledger": "Acct.Cash.Bank",
-        "aType": "Debit",
-        "acct": "Acct.Exp.Other",
-        "acctSub": null,
+        "Ledger": "Acct.Exp.Other",
+        "aType": "Credit",
+        "acct": "Acct.Cash.Bank",
+        "acctSub": "Exp Other",
         "amt": 108.32,
         "desc": "NoRcpt Approved Purchase: H-E-B #708 WIMBERLEY TX",
         "dt": "2025.10.14",
@@ -438,10 +439,10 @@
         "acctType": "Asset"
     },
     {
-        "Ledger": "Acct.Cash.Bank",
+        "Ledger": "Acct.Exp.Repair",
         "_unknown": "",
-        "aType": "Debit",
-        "acct": "Acct.Exp.Repair",
+        "aType": "Credit",
+        "acct": "Acct.Cash.Bank",
         "acctSub": "Const",
         "amt": 19.47,
         "desc": "NoRcpt Approved Purchase: AMAZON MKTPL*NM32N Amzn.com/bill WA",
@@ -457,9 +458,9 @@
         "acctType": "Asset"
     },
     {
-        "Ledger": "Acct.Cash.Bank",
-        "aType": "Debit",
-        "acct": "Acct.Exp.Repair",
+        "Ledger": "Acct.Exp.Repair",
+        "aType": "Credit",
+        "acct": "Acct.Cash.Bank",
         "acctSub": "Const",
         "amt": 30.71,
         "desc": "NoRcpt Approved Purchase: WIMBERLEY ACE WIMBERLEY TX",
@@ -511,9 +512,9 @@
         "acctType": "Asset"
     },
     {
-        "Ledger": "Acct.Cash.Bank",
-        "aType": "Debit",
-        "acct": "Acct.Exp.Repair",
+        "Ledger": "Acct.Exp.Repair",
+        "aType": "Credit",
+        "acct": "Acct.Cash.Bank",
         "acctSub": "Const",
         "amt": 60.58,
         "desc": "NoRcpt Approved Purchase: Harbor Freight Tools U",
@@ -529,10 +530,10 @@
         "acctType": "Asset"
     },
     {
-        "Ledger": "Acct.Cash.Bank",
+        "Ledger": "Acct.Exp.Repair",
         "_unknown": "",
-        "aType": "Debit",
-        "acct": "Acct.Exp.Repair",
+        "aType": "Credit",
+        "acct": "Acct.Cash.Bank",
         "acctSub": "Const",
         "amt": 57.31,
         "desc": "Approved Purchase: SQ *RODCO STEEL DI",
@@ -548,9 +549,9 @@
         "acctType": "Asset"
     },
     {
-        "Ledger": "Acct.Cash.Bank",
-        "aType": "Debit",
-        "acct": "Acct.Exp.Util",
+        "Ledger": "Acct.Exp.Util",
+        "aType": "Credit",
+        "acct": "Acct.Cash.Bank",
         "acctSub": "Water",
         "amt": 50,
         "desc": "Pay Monthly Util",
@@ -566,9 +567,9 @@
         "acctType": "Asset"
     },
     {
-        "Ledger": "Acct.Cash.Bank",
-        "aType": "Debit",
-        "acct": "Acct.Exp.Repair",
+        "Ledger": "Acct.Exp.Repair",
+        "aType": "Credit",
+        "acct": "Acct.Cash.Bank",
         "acctSub": "Maintenance",
         "amt": 135,
         "desc": "Repair Utility Outlet,Electrician",
@@ -599,7 +600,7 @@
         "refDoc": "PURCHASE AUTHORIZED ON 10/22 WIMBERLEY ACE WIMBERLEY TX P000000386475661 CARD 7209",
         "tDB": "llcBank",
         "tID": "2025.10.22_36.09",
-        "acctType": "Bad_Acct.Exp.Repair"
+        "acctType": "Expense"
     },
     {
         "Ledger": "Acct.Rev.Rent",
@@ -692,9 +693,9 @@
         "acctType": "Income"
     },
     {
-        "Ledger": "Acct.Cash.Bank",
-        "aType": "Debit",
-        "acct": "Acct.Exp.Repair",
+        "Ledger": "Acct.Exp.Repair",
+        "aType": "Credit",
+        "acct": "Acct.Cash.Bank",
         "acctSub": "Const",
         "amt": 487.13,
         "desc": "Receipt+ Approved Purchase: LAIRD PLASTICS SAN 469-299-7029",
@@ -710,9 +711,9 @@
         "acctType": "Asset"
     },
     {
-        "Ledger": "Acct.Cash.Bank",
-        "aType": "Debit",
-        "acct": "Acct.Exp.Repair",
+        "Ledger": "Acct.Exp.Repair",
+        "aType": "Credit",
+        "acct": "Acct.Cash.Bank",
         "acctSub": "Const",
         "amt": 73.56,
         "desc": "NoRcpt Approved Purchase: AMAZON MKTPL*NK5PS Amzn.com/bill WA",
@@ -728,9 +729,9 @@
         "acctType": "Asset"
     },
     {
-        "Ledger": "Acct.Cash.Bank",
-        "aType": "Debit",
-        "acct": "Acct.Exp.Other",
+        "Ledger": "Acct.Exp.Other",
+        "aType": "Credit",
+        "acct": "Acct.Cash.Bank",
         "acctSub": "Plants",
         "amt": 42.15,
         "desc": "EPay Approved Purchase: SP GROWERS SOLUTIO GROWERSSOLUTI",
@@ -746,9 +747,9 @@
         "acctType": "Asset"
     },
     {
-        "Ledger": "Acct.Cash.Bank",
-        "aType": "Debit",
-        "acct": "Acct.Exp.Util",
+        "Ledger": "Acct.Exp.Util",
+        "aType": "Credit",
+        "acct": "Acct.Cash.Bank",
         "acctSub": "Elec",
         "amt": 119.49,
         "desc": "Pay Monthly Util",
@@ -782,9 +783,9 @@
         "acctType": "Income"
     },
     {
-        "Ledger": "Acct.Cash.Bank",
-        "aType": "Debit",
-        "acct": "Acct.Exp.Repair",
+        "Ledger": "Acct.Exp.Repair",
+        "aType": "Credit",
+        "acct": "Acct.Cash.Bank",
         "acctSub": "Const",
         "amt": 19.47,
         "desc": "NoRcpt Approved Purchase: AMAZON MKTPL*B80W8 Amzn.com/bill WA",
@@ -800,10 +801,10 @@
         "acctType": "Asset"
     },
     {
-        "Ledger": "Acct.Cash.Bank",
-        "aType": "Debit",
-        "acct": "Acct.Exp.Other",
-        "acctSub": null,
+        "Ledger": "Acct.Exp.Other",
+        "aType": "Credit",
+        "acct": "Acct.Cash.Bank",
+        "acctSub": "Exp Other",
         "amt": 2,
         "desc": "NoRcpt Approved Purchase: HAYS CO TX WIMBER",
         "dt": "2025.11.17",
@@ -818,10 +819,10 @@
         "acctType": "Asset"
     },
     {
-        "Ledger": "Acct.Cash.Bank",
-        "aType": "Debit",
-        "acct": "Acct.Exp.Other",
-        "acctSub": null,
+        "Ledger": "Acct.Exp.Other",
+        "aType": "Credit",
+        "acct": "Acct.Cash.Bank",
+        "acctSub": "Exp Other",
         "amt": 30,
         "desc": "NoRcpt Approved Purchase: HAYS CO TX WIMBER",
         "dt": "2025.11.17",
@@ -836,9 +837,9 @@
         "acctType": "Asset"
     },
     {
-        "Ledger": "Acct.Cash.Bank",
-        "aType": "Debit",
-        "acct": "Acct.Exp.Other",
+        "Ledger": "Acct.Exp.Other",
+        "aType": "Credit",
+        "acct": "Acct.Cash.Bank",
         "acctSub": "Plants",
         "amt": 32.42,
         "desc": "EPay Approved Purchase: SP GROWERS SOLUTIO GROWERSSOLUTI",
@@ -854,9 +855,9 @@
         "acctType": "Asset"
     },
     {
-        "Ledger": "Acct.Cash.Bank",
-        "aType": "Debit",
-        "acct": "Acct.Exp.Util",
+        "Ledger": "Acct.Exp.Util",
+        "aType": "Credit",
+        "acct": "Acct.Cash.Bank",
         "acctSub": "Water",
         "amt": 50,
         "desc": "Pay Monthly Util",
@@ -890,9 +891,9 @@
         "acctType": "Income"
     },
     {
-        "Ledger": "Acct.Cash.Bank",
-        "aType": "Debit",
-        "acct": "Acct.Exp.Util",
+        "Ledger": "Acct.Exp.Util",
+        "aType": "Credit",
+        "acct": "Acct.Cash.Bank",
         "acctSub": "Elec",
         "amt": 129.16,
         "desc": "Pay Monthly Util",
@@ -908,9 +909,9 @@
         "acctType": "Asset"
     },
     {
-        "Ledger": "Acct.Cash.Bank",
-        "aType": "Debit",
-        "acct": "Acct.Exp.Util",
+        "Ledger": "Acct.Exp.Util",
+        "aType": "Credit",
+        "acct": "Acct.Cash.Bank",
         "acctSub": "Water",
         "amt": 50,
         "desc": "Pay Monthly Util",
@@ -926,9 +927,9 @@
         "acctType": "Asset"
     },
     {
-        "Ledger": "Acct.Cash.Bank",
-        "aType": "Debit",
-        "acct": "Acct.Exp.Util",
+        "Ledger": "Acct.Exp.Util",
+        "aType": "Credit",
+        "acct": "Acct.Cash.Bank",
         "acctSub": "Ins_Home",
         "amt": 135.8,
         "desc": "Pay Monthly Util",

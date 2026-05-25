@@ -1,7 +1,7 @@
 {
   "MultiTaskWS_Config": {
-    "LLC_SECRET_KEY": "8d2b7c7d587b5ca7f5543211b9c848a4c1a6bb1d247173e999584af3b185fb2f",
+    "LLC_SECRET_KEY": "30fb7759be4c24a8b982abaabc125172e0bfa8b1a2ad0111c1306493f04f5ccb",
     "LLC_GPG_PASSPHRASE": "mylord,myredeemer,myrock",
-    "WebServer": "local_Franks-MacBook-Pro.local"
+    "WebServer": "Host_wbgroup"
   }
 }
