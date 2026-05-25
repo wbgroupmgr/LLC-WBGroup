@@ -161,6 +161,14 @@
             "acctID": "5099",
             "acctDesc": "Misc - fallback if unknown)"
         },
+        "Acct.Recurring.Exp": {
+            "acctID": "9010",
+            "acctDesc": "Recurring/Scheduled Expense — staging account; acctSub encodes target posting accounts (e.g. YE:Acct.Exp.Depreciation-Acct.Fixed.Depreciation.Accum)"
+        },
+        "Acct.Recurring.Rev": {
+            "acctID": "9020",
+            "acctDesc": "Recurring/Scheduled Revenue — staging account; acctSub encodes target posting accounts"
+        },
         "Acct.Unrealized.Appreciation": {
             "acctID": "6010",
             "acctDesc": "Unrealized Gains - appreciation"
