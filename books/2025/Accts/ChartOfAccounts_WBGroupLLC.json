@@ -45,10 +45,6 @@
             "acctID": "2100",
             "acctDesc": "Accounts Payable (Unpaid bills to vendors)"
         },
-        "Acct.Liab.AccruedTax": {
-            "acctID": "2150",
-            "acctDesc": "Accrued Property Taxes (Seller proration credit at closing — taxes owed for remainder of year)"
-        },
         "Acct.Liab.Customer.Security": {
             "acctID": "2200",
             "acctDesc": "Tenant Security Deposits Held (This offsets the cash in your trust account)"
