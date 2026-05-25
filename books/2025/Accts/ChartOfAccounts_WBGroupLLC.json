@@ -9,6 +9,10 @@
             "acctID": "1020",
             "acctDesc": "Security Deposit Trust Account (Funds held for tenants; must be kept separate)"
         },
+        "Acct.Cash.Escrow": {
+            "acctID": "1025",
+            "acctDesc": "Escrow / Earnest Money Holding (Funds paid to title company before closing; cleared at settlement)"
+        },
         "Acct.AR.Loan": {
             "acctID": "1100",
             "acctDesc": "Account Receivables, loans)"
@@ -40,6 +44,10 @@
         "Acct.Liab.AP": {
             "acctID": "2100",
             "acctDesc": "Accounts Payable (Unpaid bills to vendors)"
+        },
+        "Acct.Liab.AccruedTax": {
+            "acctID": "2150",
+            "acctDesc": "Accrued Property Taxes (Seller proration credit at closing — taxes owed for remainder of year)"
         },
         "Acct.Liab.Customer.Security": {
             "acctID": "2200",
