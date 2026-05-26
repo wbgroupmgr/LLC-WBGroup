@@ -39,7 +39,7 @@
         "acctType": "Equity"
     },
     {
-        "Ledger": "Acct.Fixed.Tangible.InService",
+        "Ledger": "Acct.Cash.Escrow",
         "_unknown": "",
         "aType": "Credit",
         "acct": "Acct.Cash.Bank",
