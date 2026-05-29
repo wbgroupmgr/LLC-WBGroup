@@ -40,7 +40,7 @@
         "tDB": "llcAssets",
         "tID": "r20250825_220000_depr_ytd",
         "tax_bucket": "Expense",
-        "acctType": "Bad_Acct.Recurring.Exp"
+        "acctType": "Staging"
     },
     {
         "Ledger": "Acct.Cash.Escrow",
@@ -154,28 +154,6 @@
     },
     {
         "Ledger": "Acct.Cash.Escrow",
-        "_row_idx": 6,
-        "aType": "Credit",
-        "acct": "Acct.Cash.Bank",
-        "acctSub": "Closing",
-        "amt": 213836.95,
-        "assetState": "InService",
-        "assetType": "Residential",
-        "desc": "Purchase Property: Cash to Close",
-        "dt": "2025.08.20",
-        "propAddr": "805 High Mesa Dr, Wimberley, Tx 78676",
-        "propID": "r20250825_220000_06",
-        "propNm": "H_805HighMesa",
-        "propOwners": "{\"020250801_1\": 100}",
-        "refDB": "Assets/805HighMesa/Docs/",
-        "refDoc": "H_805HighMesa, Closing Docs, Capitalize, Final Closing Package (Buyer or Borrower)_2.pdf",
-        "tDB": "llcAssets",
-        "tID": "r20250825_220000_06",
-        "tax_bucket": "Capitalize",
-        "acctType": "Asset"
-    },
-    {
-        "Ledger": "Acct.Cash.Escrow",
         "_row_idx": 7,
         "aType": "Debit",
         "acct": "Acct.Fixed.Land",
@@ -239,6 +217,27 @@
         "assetType": "Residential",
         "propOwners": "{\"020250801_1\": 100}",
         "tax_bucket": "Expense",
-        "acctType": "Bad_Acct.Recurring.Exp"
+        "acctType": "Staging"
+    },
+    {
+        "Ledger": "Acct.Cash.Escrow",
+        "_unknown": "",
+        "aType": "Debit",
+        "acct": "Acct.Equity.Owner.Capital.Funds",
+        "acctSub": "Closing",
+        "amt": "100.00",
+        "desc": "Closing, extra funds just in case. ",
+        "dt": "2025.08.20",
+        "propAddr": "805 High Mesa Dr, Wimberley, 78676",
+        "propID": "r20250825_220000",
+        "propNm": "H_805HighMesa",
+        "propOwners": {
+            "o20250801_1": 100
+        },
+        "refDB": "Assets/805HighMesa/Docs/",
+        "refDoc": "H_805HighMesa, Closing, Owner Equity Withdrawal, Final Closing Package (Buyer or Borrower)_2.pdf",
+        "tDB": "llcAssets",
+        "tID": "2025.08.20_100.00",
+        "acctType": "Asset"
     }
 ]
