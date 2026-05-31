@@ -193,5 +193,76 @@
         "tDB": "llcAssets",
         "tID": "2025.08.20_100.00",
         "acctType": "Asset"
+    },
+    {
+        "Ledger": "Acct.Fixed.Depreciation.Accum",
+        "_is_depr": true,
+        "aType": "Debit",
+        "acct": "Acct.Exp.Depreciation",
+        "acctSub": "YE:Acct.Exp.Depreciation",
+        "amt": 1903.13,
+        "assetType": "Residential",
+        "desc": "YE Depreciation - H_805HighMesa",
+        "dt": "2025.12.31",
+        "propAddr": "805 High Mesa Dr, Wimberley, Tx 78676",
+        "propNm": "H_805HighMesa",
+        "propOwners": "{\"020250801_1\": 100}",
+        "tDB": "llcAssets",
+        "tID": "2025.12.31_depr_H_805HighMesa",
+        "acctType": "Asset"
+    },
+    {
+        "Ledger": "Acct.Equity.Owner.Capital.Funds",
+        "aType": "Credit",
+        "acct": "Acct.Equity.Earnings.PnL",
+        "acctSub": "YE Net Income",
+        "amt": 377.76,
+        "desc": "YE Net Income - H_805HighMesa - Francis X Rojas (96%)",
+        "dt": "2025.12.31",
+        "propAddr": "805 High Mesa Dr, Wimberley, Tx 78676",
+        "propNm": "H_805HighMesa",
+        "propOwners": {
+            "o20250801_1": 96
+        },
+        "refDB": "General Ledger - 2025.12.31",
+        "tDB": "llcAsset",
+        "tID": "2025.12.31_re_o20250801_1_H_805HighMesa",
+        "acctType": "Equity"
+    },
+    {
+        "Ledger": "Acct.Equity.Owner.Capital.Funds",
+        "aType": "Credit",
+        "acct": "Acct.Equity.Earnings.PnL",
+        "acctSub": "YE Net Income",
+        "amt": 7.87,
+        "desc": "YE Net Income - H_805HighMesa - Alexandra Rojas (2%)",
+        "dt": "2025.12.31",
+        "propAddr": "805 High Mesa Dr, Wimberley, Tx 78676",
+        "propNm": "H_805HighMesa",
+        "propOwners": {
+            "o20250801_2": 2
+        },
+        "refDB": "General Ledger - 2025.12.31",
+        "tDB": "llcAsset",
+        "tID": "2025.12.31_re_o20250801_2_H_805HighMesa",
+        "acctType": "Equity"
+    },
+    {
+        "Ledger": "Acct.Equity.Owner.Capital.Funds",
+        "aType": "Credit",
+        "acct": "Acct.Equity.Earnings.PnL",
+        "acctSub": "YE Net Income",
+        "amt": 7.87,
+        "desc": "YE Net Income - H_805HighMesa - Nicola Rojas (2%)",
+        "dt": "2025.12.31",
+        "propAddr": "805 High Mesa Dr, Wimberley, Tx 78676",
+        "propNm": "H_805HighMesa",
+        "propOwners": {
+            "o20250801_3": 2
+        },
+        "refDB": "General Ledger - 2025.12.31",
+        "tDB": "llcAsset",
+        "tID": "2025.12.31_re_o20250801_3_H_805HighMesa",
+        "acctType": "Equity"
     }
 ]
