@@ -1,7 +1,0 @@
-{
-  "MultiTaskWS_Config": {
-    "LLC_SECRET_KEY": "30fb7759be4c24a8b982abaabc125172e0bfa8b1a2ad0111c1306493f04f5ccb",
-    "LLC_GPG_PASSPHRASE": "mylord,myredeemer,myrock",
-    "WebServer": "Host_wbgroup"
-  }
-}
