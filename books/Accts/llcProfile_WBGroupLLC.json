@@ -81,8 +81,8 @@
     ]
   },
   "MultiTaskWS_Config": {
-    "LLC_SECRET_KEY": "78aa13f6560ce48ecce7bb421fd65729047369861c2487b998c042956e48b1b1",
-    "LLC_GPG_PASSPHRASE": "mylord,myredeemer, myrock",
-    "WebServer": "local_MacBookPro.lan"
+    "LLC_SECRET_KEY": "04a6cf34652b3f2b33f0694cdfb492fc78c83b1ad7ba0cf3eb5fc69d24c2c9ec",
+    "LLC_GPG_PASSPHRASE": "mylord,myredeemer,myrock",
+    "WebServer": "Host_wbgroup"
   }
 }
