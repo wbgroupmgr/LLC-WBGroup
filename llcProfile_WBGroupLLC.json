@@ -1,7 +1,4 @@
-{"YEAR" : 2025,
-    "TOP" : "~/GDrive/Family/Assets/LLC-WBGroup",
-    "dirAccounting": "books",
-    "entity" : { "ein" : "39-3842347",
+{   "entity" : { "ein" : "39-3842347",
                  "taxnum" : "32101694431",
                  "entity_name" : "W&B Group, LLC",
                  "date_business_began": "08/29/2025",
