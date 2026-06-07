@@ -1,7 +1,4 @@
 {
-  "YEAR": 2025,
-  "TOP": "~/GDrive/Family/Assets/LLC-WBGroup",
-  "dirAccounting": "books",
   "entity": {
     "ein": "39-3842347",
     "taxnum": "32101694431",
@@ -79,10 +76,5 @@
       209,
       212
     ]
-  },
-  "MultiTaskWS_Config": {
-    "LLC_SECRET_KEY": "04a6cf34652b3f2b33f0694cdfb492fc78c83b1ad7ba0cf3eb5fc69d24c2c9ec",
-    "LLC_GPG_PASSPHRASE": "mylord,myredeemer,myrock",
-    "WebServer": "Host_wbgroup"
   }
 }
