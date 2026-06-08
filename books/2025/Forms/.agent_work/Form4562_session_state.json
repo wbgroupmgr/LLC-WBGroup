@@ -1,9 +1,11 @@
 {
   "tax_year": 2025,
-  "last_run": "2026-06-05T17:27:47Z",
+  "last_run": "2026-06-08T16:58:15Z",
   "overall_state": "GO",
   "sections": {
     "AgentF4562_Sec179": {
+      "section_id": "AgentF4562_Sec179",
+      "diag_sec_id": "PartI",
       "label": "Section 179 (Part I)",
       "state": "GO",
       "summary": "Part I (\u00a7179): $0 deduction \u2014 correct per IRC \u00a7179(d)(1). Statutory limit $1,220,000 shown on Line 1 (informational).",
@@ -35,6 +37,8 @@
       }
     },
     "AgentF4562_SpecialDepr": {
+      "section_id": "AgentF4562_SpecialDepr",
+      "diag_sec_id": "",
       "label": "Special Depreciation (Part II)",
       "state": "GO",
       "summary": "Part II Special Depreciation = $0. IRC \u00a7168(k): 27.5-yr residential rental is NOT qualified property (recovery period exceeds 20-year limit). No 5-yr/15-yr assets tracked.",
@@ -63,9 +67,11 @@
       }
     },
     "AgentF4562_MACRS": {
-      "label": "MACRS Depreciation (Part III Line 19h)",
+      "section_id": "AgentF4562_MACRS",
+      "diag_sec_id": "PartIII-19i",
+      "label": "MACRS Depreciation (Part III Line 19i \u2014 Residential Rental)",
       "state": "GO",
-      "summary": "MACRS Line 19h: H_805HighMesa placed 2025.08.20, net basis $139,563.20, 27.5yr S/L MM, Col (g) = $1,903.13 (= IS.depreciation, Books-First).",
+      "summary": "MACRS Line 19i (2025 form): H_805HighMesa placed 2025.08.20, net basis $139,563.20, 27.5yr S/L MM (pre-printed), f80 col (g) = $1,903.13 (= IS.depreciation, Books-First).",
       "halt_count": 0,
       "resolve_count": 1,
       "review_count": 0,
@@ -93,9 +99,11 @@
       }
     },
     "AgentF4562_Summary": {
+      "section_id": "AgentF4562_Summary",
+      "diag_sec_id": "PartIV",
       "label": "Summary Line 22 (Part IV)",
       "state": "GO",
-      "summary": "Part IV Line 22 = $1,903.13 (= IS.depreciation, Books-First). Cross-form audit anchor: LLCTaxAgent XF-R01 will verify F4562 L22 == F8825 L14 == IS.depreciation.",
+      "summary": "Part IV Line 22 (f129) = $1,903.13 (= IS.depreciation, Books-First). Cross-form audit anchor: LLCTaxAgent XF-R01 will verify F4562 L22 == F8825 L14 == IS.depreciation.",
       "halt_count": 0,
       "resolve_count": 0,
       "review_count": 1,
@@ -103,7 +111,7 @@
         {
           "rule_id": "F45L-R03",
           "severity": "INFO",
-          "message": "Form 4562 Part IV Line 22 = $1,903.13 = IS.depreciation confirmed. Cross-form audit anchor (XF-R01) is set. LLCTaxAgent will verify: F4562 L22 == F8825 L14 == IS.depreciation = $1,903.13.",
+          "message": "Form 4562 Part IV Line 22 (f129) = $1,903.13 = IS.depreciation confirmed. Cross-form audit anchor (XF-R01) is set. LLCTaxAgent will verify: F4562 L22 == F8825 L14 == IS.depreciation = $1,903.13.",
           "irs_cite": "Form 4562 Part IV; LLCTaxAgent XF-R01; IRC \u00a7446",
           "action": "No action required. XF-R01 runs in LLCTaxAgent.phase2_xf_audit().",
           "auto_fix": false,
@@ -121,6 +129,8 @@
       }
     },
     "AgentF4562_ListedProp": {
+      "section_id": "AgentF4562_ListedProp",
+      "diag_sec_id": "",
       "label": "Listed Property (Part V)",
       "state": "GO",
       "summary": "Part V (Listed Property) = $0. No vehicles or \u00a7280F property used in the rental business. Computers not listed property post-TCJA 2017.",
@@ -149,6 +159,8 @@
       }
     },
     "AgentF4562_Amortization": {
+      "section_id": "AgentF4562_Amortization",
+      "diag_sec_id": "",
       "label": "Amortization (Part VI)",
       "state": "GO",
       "summary": "Part VI (Amortization) = $0 per current books. First-year LLC: CPA should verify closing statement for \u00a7709/\u00a7195 costs and loan origination points (\u00a7461(g)(2)).",
