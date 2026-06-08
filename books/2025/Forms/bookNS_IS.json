@@ -129,58 +129,44 @@
       "Acct.Exp.Depreciation"
     ]
   ],
+  "_Form8825_doc": {
+    "runtime": "Form8825 is NOT resolved via this static bookNS. stmtIS_Tax.loadFillDict('Form8825') calls _build_f8825_filldict() which builds the fill dict dynamically from GL records grouped by propNm. This section is DOCUMENTATION ONLY.",
+    "cip_rule": "CIP properties (Acct.Fixed.Tangible.InConstruction, no placed-in-service date) are excluded from Form 8825 entirely. IRC §168(a): MACRS starts at placed-in-service. Pre-service expenses must be capitalized (IRC §263(a)), not reported on Form 8825.",
+    "RV_RV1_2025": {
+      "status": "InConstruction — Bill of Sale 2025-12-29. Not placed in service.",
+      "form_8825_column": "NONE — excluded. No income, no expenses, no depreciation on Form 8825.",
+      "pre_service_expenses": "Acct.Exp.Repair + Acct.Exp.Other entries for RV_RV1 (~$1,075) MUST be reclassified to Acct.Fixed.Tangible.InConstruction. IRC §263(a): capitalize all pre-placed-in-service costs.",
+      "irc_authority": "IRC §168(a) (no depr until in service); IRC §263(a) (capitalize construction costs); Reg. §1.263(a)-2(a)"
+    },
+    "line_21_source": "F113 = IS.net_rental for ACTIVE (placed-in-service) properties only. REQUIRES books correction: CIP expenses removed from Acct.Exp.* before IS.net_rental is correct.",
+    "correct_values_after_books_fix": {
+      "F023": "IS.rent_income = 4000.00 (H_805HighMesa gross rents)",
+      "F027": "Acct.Rev.Fees.Other = 400.00 (other income)",
+      "F031": "income subtotal col A = 4400.00",
+      "F067": "Acct.Exp.Repair (H_805HighMesa only) = 199.06",
+      "F071": "Acct.Exp.Util (H_805HighMesa only) = 1188.75",
+      "F079": "IS.depreciation = 1903.13 (Books-First; IRC §446)",
+      "F091": "other expenses (H_805HighMesa only) = 427.45",
+      "F095": "expense subtotal col A = 3718.39 (H_805HighMesa only)",
+      "F099": "net income col A = 681.61 (after books fix)",
+      "F103": "IS.subtotal_rental_income = 4400.00",
+      "F104": "active-property total expenses = 3718.39 (AFTER books fix; currently 4793.50 due to RV_RV1)",
+      "F113": "IS.net_rental (active only) = 681.61 (AFTER books fix; currently -393.50 due to RV_RV1)"
+    }
+  },
   "Form8825": [
-    [
-      "F023",
-      "IS.rent_income"
-    ],
-    [
-      "F027",
-      "Acct.Rev.Fees.Other"
-    ],
-    [
-      "F031",
-      "IS.income_subtotal"
-    ],
-    [
-      "F067",
-      "Acct.Exp.Repair"
-    ],
-    [
-      "F071",
-      "Acct.Exp.Util"
-    ],
-    [
-      "F079",
-      "IS.depreciation"
-    ],
-    [
-      "F091",
-      "IS.other_expenses"
-    ],
-    [
-      "F095",
-      "IS.exp_subtotal"
-    ],
-    [
-      "F099",
-      "IS.net_income"
-    ],
-    [
-      "F103",
-      "IS.subtotal_rental_income"
-    ],
-    [
-      "F104",
-      "IS.subtotal_rental_expense"
-    ],
-    [
-      "F106",
-      "IS.net_ordinary"
-    ],
-    [
-      "F113",
-      "IS.net_income"
-    ]
+    ["F023", "IS.rent_income"],
+    ["F027", "Acct.Rev.Fees.Other"],
+    ["F031", "IS.income_subtotal"],
+    ["F067", "Acct.Exp.Repair"],
+    ["F071", "Acct.Exp.Util"],
+    ["F079", "IS.depreciation"],
+    ["F091", "IS.other_expenses"],
+    ["F095", "IS.exp_subtotal"],
+    ["F099", "IS.net_income"],
+    ["F103", "IS.subtotal_rental_income"],
+    ["F104", "IS.subtotal_rental_expense"],
+    ["F106", "IS.net_ordinary"],
+    ["F113", "IS.net_rental"]
   ]
 }
