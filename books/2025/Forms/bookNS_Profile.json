@@ -409,16 +409,16 @@
   ],
   "Form4562": [
     [
-      "f2",
+      "f1",
       "Profile.entity.entity_name"
+    ],
+    [
+      "f2",
+      "Profile.F1065.A_bus_act"
     ],
     [
       "f3",
       "Profile.entity.ein"
-    ],
-    [
-      "f4",
-      "Profile.F1065.A_bus_act"
     ]
   ],
   "Form8825": [

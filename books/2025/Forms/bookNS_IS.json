@@ -109,23 +109,23 @@
   "_Sch_K1_note": "Runtime values are provided by stmtIS_TaxMember._build_k1_filldict() which multiplies by partner.pct and keys by namespace fid directly. Entries above are documentation-only; they are NOT resolved by stmtIS_Tax.loadFillDict() at runtime.",
   "Form4562": [
     [
-      "f5",
+      "f4",
       "Val.1,220,000"
+    ],
+    [
+      "f20",
+      "Val.0"
     ],
     [
       "f21",
       "Val.0"
     ],
     [
-      "f26",
-      "Val.0"
-    ],
-    [
-      "f74",
+      "f80",
       "Acct.Exp.Depreciation"
     ],
     [
-      "f153",
+      "f130",
       "Acct.Exp.Depreciation"
     ]
   ],

@@ -116,24 +116,12 @@
   ],
   "Form4562": [
     [
-      "f69",
+      "f75",
       "BS.placed_in_service_date"
     ],
     [
-      "f70",
+      "f76",
       "Acct.Fixed.Tangible.InService"
-    ],
-    [
-      "f71",
-      "Val.27.5"
-    ],
-    [
-      "f72",
-      "Val.MM"
-    ],
-    [
-      "f73",
-      "Val.S/L"
     ]
   ],
   "Form8825": []
