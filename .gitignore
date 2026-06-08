@@ -28,6 +28,9 @@ books/*/.bookNS_backups/
 # ── IRS pipeline temp outputs ─────────────────────────────────────────────────
 *_fillDict.json
 *_namespace.json
+books/*/Forms/*_FILL.pdf
+books/*/Forms/*_namespace.pdf
+books/*/Forms/.agent_work/
 
 # ── Large / sensitive working files ──────────────────────────────────────────
 books/*/Working/
