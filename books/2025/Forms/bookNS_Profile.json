@@ -432,19 +432,49 @@
     ],
     [
       "F003",
-      "Profile.entity.address"
+      "Profile.BookVal.F8825.PropAddr"
     ],
     [
       "F004",
-      "Cplx.F004_type_1_8"
+      "Profile.BookVal.F8825.PropCode_H_805HighMesa"
+    ],
+    [
+      "F005",
+      "Profile.BookVal.F8825.OtherCode_H_805HighMesa"
     ],
     [
       "F006",
-      "Cplx.F006_fair_rental_days"
+      "Profile.BookVal.F8825.FairDays_H_805HighMesa"
     ],
     [
       "F007",
-      "Cplx.F007_personal_use_days"
+      "Profile.BookVal.F8835.DaysPer_H_805HighMesa"
+    ]
+  ],
+  "BookVal": [
+    [
+      "F8825.FairDays_H_805HighMesa",
+      "122"
+    ],
+    [
+      "F8825.OtherCode_H_805HighMesa",
+      "A"
+    ],
+    [
+      "F8825.PropAddr",
+      "805 High Mesa Dr, Wimberley Tx 78676 (H_805HighMesa, Active)"
+    ],
+    [
+      "F8825.PropCode_H_805HighMesa",
+      "1"
+    ],
+    [
+      "F8835.DaysPer_H_805HighMesa",
+      "0"
+    ],
+    [
+      "Prop.H_805HighMesa.PropCode",
+      "1"
     ]
   ]
 }
