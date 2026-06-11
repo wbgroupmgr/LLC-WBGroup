@@ -367,44 +367,8 @@
   ],
   "Sch_K1": [
     [
-      "F_K1_PartName",
-      "Profile.entity.entity_name"
-    ],
-    [
-      "F_K1_PartEIN",
+      "F008",
       "Profile.entity.ein"
-    ],
-    [
-      "F_K1_PartAddr",
-      "Profile.entity.address"
-    ],
-    [
-      "F_K1_PartCity",
-      "Profile.entity.city"
-    ],
-    [
-      "F_K1_PartState",
-      "Profile.entity.state"
-    ],
-    [
-      "F_K1_PartZip",
-      "Profile.entity.zip"
-    ],
-    [
-      "F_K1_TaxYearFrom",
-      "Profile.F1065.date_from"
-    ],
-    [
-      "F_K1_TaxYearTo",
-      "Profile.F1065.date_to"
-    ],
-    [
-      "F_K1_TaxYear",
-      "Profile.F1065.tax_year"
-    ],
-    [
-      "F_K1_IRSCenter",
-      "Profile.F1065.irs_center"
     ]
   ],
   "Form4562": [

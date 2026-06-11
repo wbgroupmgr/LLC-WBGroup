@@ -1,20 +1,43 @@
-[{"oID": "o20250801_1", "nm": ["Francis X Rojas"], 
-    "addr": "177 Kingsway Dr, Wimberley, 78676", 
-    "status": "Manager", 
-    "memType" : "active",
-    "pct": 0.96, 
-    "kw": ["WT FED#02M03 NATIONAL FINANCIAL"]}, 
-    {"oID": "o20250801_2", 
-        "nm": ["Alexandra Rojas"], 
-        "addr": "TBD", 
-        "status": "non_active member", 
-        "memType" : "passive",
-        "pct": 0.02, 
-        "kw": []}, 
-    {"oID": "o20250801_3", 
-        "nm": ["Nicola Rojas"], 
-        "addr": "805 High Mesa Dr, Wimberley, 78676", 
-        "status": "non-active member", 
-        "memType" : "passive",
-        "pct": 0.02, 
-        "kw": []}]
+[
+    {
+        "SSN": "267-29-7375",
+        "addr": "177 Kingsway Dr, Wimberley, 78676",
+        "kw": [
+            "WT FED#02M03 NATIONAL FINANCIAL"
+        ],
+        "memType": "active",
+        "nm": [
+            "Francis X Rojas"
+        ],
+        "oID": "o20250801_1",
+        "pct": 0.96,
+        "status": "Manager",
+        "tID": null
+    },
+    {
+        "SSN": "638-44-0982",
+        "addr": "408 Basket Brass Rd, San Marcos, Texas 78666",
+        "kw": [],
+        "memType": "passive",
+        "nm": [
+            "Alexandra Rojas"
+        ],
+        "oID": "o20250801_2",
+        "pct": 0.02,
+        "status": "non_active member",
+        "tID": null
+    },
+    {
+        "SSN": "638-44-0983",
+        "addr": "805 High Mesa Dr, Wimberley, 78676",
+        "kw": [],
+        "memType": "passive",
+        "nm": [
+            "Nicola Rojas"
+        ],
+        "oID": "o20250801_3",
+        "pct": 0.02,
+        "status": "non-active member",
+        "tID": null
+    }
+]
