@@ -99,18 +99,18 @@
   "Sch_K1": [
     ["F034", "BS.mortgage"],
     ["F039", "Val.0"],
-    ["F040", "Acct.Equity.Owner.Capital.Funds"],
+    ["F040", "Val.PerPartner"],
     ["F041", "IS.net_rental"],
     ["F043", "Acct.Equity.Owner.Capital.Dist"],
-    ["F044", "BS.total_equity"]
+    ["F044", "Val.PerPartner"]
   ],
   "_Sch_K1_field_notes": {
-    "F034": "Box K1 QNR end — partner's share of qualified nonrecourse financing (mortgage × pct). IRC §465(b)(6): rental real estate mortgages are QNR.",
-    "F039": "Box L L1 — Beginning capital. $0 for first year of operation.",
-    "F040": "Box L L2 — Capital contributed during year = partner's cash contributions.",
-    "F041": "Box L L3 — Current year net income/loss allocated to partner = IS.net_rental × pct.",
-    "F043": "Box L L4 — Withdrawals and distributions during year.",
-    "F044": "Box L L5 — Ending capital account = L1 + L2 + L3 − L4 (tax basis method, Rev. Proc. 2020-13)."
+    "F034": "Box K1 f34 QNR end = BS.mortgage × partner.pct. IRC §465(b)(6): commercial RE mortgage is QNR. Affects at-risk basis for each partner.",
+    "F039": "Box L f39 L1 Beginning capital = $0 (first year, LLC formed 2025). Rev. Proc. 2020-13 tax basis method mandatory.",
+    "F040": "Box L f40 L2 Capital contributed = per-partner actual cash contribution. NOT derivable from BS equity total. Add 'contributions' key per partner in llcOwners JSON.",
+    "F041": "Box L f41 L3 Current year net income/loss = IS.net_rental x partner.pct (Books-First IRC §446/703). Actual fill uses IS data; this BS context resolver shows blank.",
+    "F043": "Box L f43 L4 Distributions = actual cash paid to partner. Source: Acct.Equity.Owner.Capital.Dist. NOT equal to net income — income allocation and cash distribution are separate events.",
+    "F044": "Box L f44 L5 Ending capital = L1+L2+L3-L4 (IRC §705 formula). Per-partner computed at runtime. Each partner differs by pct and contribution amount — not a static BS total."
   },
   "Form4562": [
     [
