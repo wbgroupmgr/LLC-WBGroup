@@ -97,23 +97,21 @@
     ]
   ],
   "Sch_K1": [
-    [
-      "F_K1_L1",
-      "BS.total_equity"
-    ],
-    [
-      "F_K1_L2",
-      "Acct.Equity.Owner.Capital.Funds"
-    ],
-    [
-      "F_K1_L4a",
-      "Acct.Equity.Owner.Capital.Dist"
-    ],
-    [
-      "F_K1_L5",
-      "BS.total_equity"
-    ]
+    ["F034", "BS.mortgage"],
+    ["F039", "Val.0"],
+    ["F040", "Acct.Equity.Owner.Capital.Funds"],
+    ["F041", "IS.net_rental"],
+    ["F043", "Acct.Equity.Owner.Capital.Dist"],
+    ["F044", "BS.total_equity"]
   ],
+  "_Sch_K1_field_notes": {
+    "F034": "Box K1 QNR end — partner's share of qualified nonrecourse financing (mortgage × pct). IRC §465(b)(6): rental real estate mortgages are QNR.",
+    "F039": "Box L L1 — Beginning capital. $0 for first year of operation.",
+    "F040": "Box L L2 — Capital contributed during year = partner's cash contributions.",
+    "F041": "Box L L3 — Current year net income/loss allocated to partner = IS.net_rental × pct.",
+    "F043": "Box L L4 — Withdrawals and distributions during year.",
+    "F044": "Box L L5 — Ending capital account = L1 + L2 + L3 − L4 (tax basis method, Rev. Proc. 2020-13)."
+  },
   "Form4562": [
     [
       "f75",

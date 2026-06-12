@@ -366,10 +366,11 @@
     ]
   ],
   "Sch_K1": [
-    [
-      "F008",
-      "Profile.entity.ein"
-    ]
+    ["F008", "Profile.entity.ein"],
+    ["F009", "Profile.entity.entity_name"],
+    ["F010", "Profile.entity.address"],
+    ["F012", "Profile.F1065.C_city"],
+    ["F013", "Profile.F1065.irs_center"]
   ],
   "Form4562": [
     [

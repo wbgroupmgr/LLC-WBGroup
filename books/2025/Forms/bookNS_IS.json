@@ -47,20 +47,20 @@
     "F429": "Schedule M-2 — Partners' capital accounts. Source: IS.net_income (allocated income per IRC §705). Only if Schedule M-2 required."
   },
   "Sch_K1": [
-    ["F035", "Val.0"],
-    ["F036", "IS.net_rental"],
-    ["F041", "IS.interest_income"],
-    ["F028", "IS.distributions_cash"],
-    ["F029", "Val.0"]
+    ["F049", "Val.0"],
+    ["F050", "IS.net_rental"],
+    ["F055", "IS.interest_income"],
+    ["F077", "Val.0"],
+    ["F098", "IS.distributions_cash"]
   ],
   "_Sch_K1_field_notes": {
-    "F035": "K-1 Box 1 — Ordinary business income/loss. MUST be $0 for rental LLC (IRC §469(c)(2)). FIXED 2026-06-09: was IS.net_ordinary (WRONG — puts rental income in ordinary box). Now Val.0.",
-    "F036": "K-1 Box 2 — Net rental real estate income/loss. Source: IS.net_rental. Runtime multiplies by partner.pct via _build_k1_filldict(). This is the ONLY income box for a rental LLC.",
-    "F041": "K-1 Box 5 — Interest income. Source: IS.interest_income × partner.pct at runtime.",
-    "F028": "K-1 Box 19 — Cash distributions. Source: IS.distributions_cash (actual per llcOwners).",
-    "F029": "K-1 Box 23 or similar. FIXED 2026-06-09: was IS.net_income (unclear mapping). Set to Val.0 pending namespace verification."
+    "F049": "K-1 Box 1 — Ordinary business income/loss. MUST be $0 for rental LLC (IRC §469(c)(2)). Always Val.0.",
+    "F050": "K-1 Box 2 — Net rental real estate income/loss. Source: IS.net_rental × partner.pct at runtime. ONLY income box for a rental LLC.",
+    "F055": "K-1 Box 5 — Interest income. Source: IS.interest_income × partner.pct at runtime.",
+    "F077": "K-1 Box 14a — SE earnings. MUST be $0 for rental LLC (IRC §1402(a)(1)). Always Val.0.",
+    "F098": "K-1 Box 19a — Cash distributions. Source: IS.distributions_cash (actual per-partner amount, NOT multiplied by pct)."
   },
-  "_Sch_K1_note": "Runtime values are provided by stmtIS_TaxMember._build_k1_filldict() which multiplies by partner.pct and keys by namespace fid directly. Entries above are documentation-only; they are NOT resolved by stmtIS_Tax.loadFillDict() at runtime.",
+  "_Sch_K1_note": "Runtime values are provided by _buildFillDict() in Sch_K1.py which multiplies by partner.pct and keys by namespace fid directly. Entries above are documentation-only; they are NOT resolved by stmtIS_Tax.loadFillDict() at runtime.",
   "Form4562": [
     ["f4",   "Val.1,220,000"],
     ["f20",  "Val.0"],
