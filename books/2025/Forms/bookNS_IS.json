@@ -1,81 +1,130 @@
 {
   "_doc": {
-    "purpose": "Book NSpace mapping table — IRS form fid → Income-Statement Acct UAS path.",
+    "purpose": "Book NSpace mapping table \u2014 IRS form fid \u2192 Income-Statement Acct UAS path.",
     "format": "[ 'F###', '<Acct UAS>' ]   3-digit zero-padded fid; UAS is either a single COA acct (e.g. 'Acct.Rev.Rent') or a stmtIncomeStmt taxAggregate name prefixed 'IS.' (e.g. 'IS.net_income').",
-    "scope": "Only fields that are sourced from the Income Statement appear here.  Profile-sourced and Balance-Sheet-sourced fields live in bookNS_Profile.json / bookNS_BS.json.  A single Acct may appear under multiple fids (e.g. Acct.Rev.Rent → F030,F032,F034,F230).",
-    "resolver": "irsForm.savePDF() resolves each entry as follows:  acct startswith 'Acct.' → stmtIncomeStmt row Balance for that COA acct;  acct startswith 'IS.'   → stmtIncomeStmt.taxAggregates()[name];  acct startswith 'Profile.' → stmtProfile cell;  acct startswith 'BS.'   → stmtBalanceSheet.taxAggregates()[name].",
+    "scope": "Only fields that are sourced from the Income Statement appear here.  Profile-sourced and Balance-Sheet-sourced fields live in bookNS_Profile.json / bookNS_BS.json.  A single Acct may appear under multiple fids (e.g. Acct.Rev.Rent \u2192 F030,F032,F034,F230).",
+    "resolver": "irsForm.savePDF() resolves each entry as follows:  acct startswith 'Acct.' \u2192 stmtIncomeStmt row Balance for that COA acct;  acct startswith 'IS.'   \u2192 stmtIncomeStmt.taxAggregates()[name];  acct startswith 'Profile.' \u2192 stmtProfile cell;  acct startswith 'BS.'   \u2192 stmtBalanceSheet.taxAggregates()[name].",
     "perPartner": "Sch_K1 entries are partnership-level totals.  irsForm.savePDF() multiplies them by partner.pct from llcOwners when emitting per-partner FILL pdfs."
   },
   "_Form1065_IRS_RULE": {
-    "authority": "IRC §469(c)(2) + IRC §446 + IRC §703",
-    "rule": "For a PURE RENTAL LLC, Form 1065 Page 1 Lines 1–23 MUST ALL BE $0. Rental income/expenses are PASSIVE — they NEVER appear on Page 1 Lines 1a–8 (income) or Lines 9–22 (deductions). Any mapping to F038–F056 is an IRS violation and has been intentionally removed.",
-    "correct_flow": "Books → Form 8825 (per-property via _build_f8825_filldict) → Form 8825 Line 23 → Schedule K Line 2 → K-1 Box 2 (per partner × %). Form 1065 Page 1 Lines 1–23 remain blank ($0). Books → Schedule K Line 2 independently (IS.net_rental, Books-First per IRC §446+703).",
-    "cross_form_audit": "LLCTaxAgent XF-R05 verifies Page 1 Lines 1–23 are all $0. XF-R02 verifies Form 8825 Line 23 == Schedule K Line 2 == IS.net_rental (both independently sourced from books).",
+    "authority": "IRC \u00a7469(c)(2) + IRC \u00a7446 + IRC \u00a7703",
+    "rule": "For a PURE RENTAL LLC, Form 1065 Page 1 Lines 1\u201323 MUST ALL BE $0. Rental income/expenses are PASSIVE \u2014 they NEVER appear on Page 1 Lines 1a\u20138 (income) or Lines 9\u201322 (deductions). Any mapping to F038\u2013F056 is an IRS violation and has been intentionally removed.",
+    "correct_flow": "Books \u2192 Form 8825 (per-property via _build_f8825_filldict) \u2192 Form 8825 Line 23 \u2192 Schedule K Line 2 \u2192 K-1 Box 2 (per partner \u00d7 %). Form 1065 Page 1 Lines 1\u201323 remain blank ($0). Books \u2192 Schedule K Line 2 independently (IS.net_rental, Books-First per IRC \u00a7446+703).",
+    "cross_form_audit": "LLCTaxAgent XF-R05 verifies Page 1 Lines 1\u201323 are all $0. XF-R02 verifies Form 8825 Line 23 == Schedule K Line 2 == IS.net_rental (both independently sourced from books).",
     "removed_violations": [
-      "F038 (Page 1 Line 7 other income)   — REMOVED: rental income is passive (§469). Must be $0.",
-      "F039 (Page 1 Line 8 total income)   — REMOVED: must be $0 for rental LLC.",
-      "F042 (Page 1 Line 11 repairs)       — REMOVED: rental repairs belong on Form 8825.",
-      "F045 (Page 1 Line 13 taxes)         — REMOVED: rental taxes belong on Form 8825.",
-      "F046 (Page 1 Line 15 interest)      — REMOVED: mortgage interest belongs on Form 8825 Line 13.",
-      "F047 (Page 1 Line 16a depreciation) — REMOVED: Form 1065 Instructions Line 16a explicitly states 'Do not include rental real estate activities — report that depreciation on Form 8825 Line 14.'",
-      "F049 (Page 1 Line 16c depreciation) — REMOVED: same rule as Line 16a.",
-      "F054 (Page 1 Line 20 other deduct.) — REMOVED: rental other expenses belong on Form 8825.",
-      "F055 (Page 1 Line 21 total expense) — REMOVED: must be $0 for rental LLC.",
-      "F056 (Page 1 Line 23 ordinary inc.) — REMOVED: must be $0. Rental income/loss flows to Schedule K Line 2 only."
+      "F038 (Page 1 Line 7 other income)   \u2014 REMOVED: rental income is passive (\u00a7469). Must be $0.",
+      "F039 (Page 1 Line 8 total income)   \u2014 REMOVED: must be $0 for rental LLC.",
+      "F042 (Page 1 Line 11 repairs)       \u2014 REMOVED: rental repairs belong on Form 8825.",
+      "F045 (Page 1 Line 13 taxes)         \u2014 REMOVED: rental taxes belong on Form 8825.",
+      "F046 (Page 1 Line 15 interest)      \u2014 REMOVED: mortgage interest belongs on Form 8825 Line 13.",
+      "F047 (Page 1 Line 16a depreciation) \u2014 REMOVED: Form 1065 Instructions Line 16a explicitly states 'Do not include rental real estate activities \u2014 report that depreciation on Form 8825 Line 14.'",
+      "F049 (Page 1 Line 16c depreciation) \u2014 REMOVED: same rule as Line 16a.",
+      "F054 (Page 1 Line 20 other deduct.) \u2014 REMOVED: rental other expenses belong on Form 8825.",
+      "F055 (Page 1 Line 21 total expense) \u2014 REMOVED: must be $0 for rental LLC.",
+      "F056 (Page 1 Line 23 ordinary inc.) \u2014 REMOVED: must be $0. Rental income/loss flows to Schedule K Line 2 only."
     ]
   },
   "Form1065": [
-    ["F228", "IS.net_income"],
-    ["F230", "IS.net_rental"],
-    ["F247", "IS.other_income"],
-    ["F248", "IS.depreciation"],
-    ["F276", "IS.interest_income"],
-    ["F279", "IS.distributions_cash"],
-    ["F281", "IS.interest_income"],
-    ["F410", "IS.net_income"],
-    ["F429", "IS.net_income"]
+    [
+      "F228",
+      "IS.net_income"
+    ],
+    [
+      "F230",
+      "IS.net_rental"
+    ],
+    [
+      "F247",
+      "IS.other_income"
+    ],
+    [
+      "F248",
+      "IS.depreciation"
+    ],
+    [
+      "F276",
+      "IS.interest_income"
+    ],
+    [
+      "F279",
+      "IS.distributions_cash"
+    ],
+    [
+      "F281",
+      "IS.interest_income"
+    ]
   ],
   "_Form1065_field_notes": {
-    "F228": "Schedule M-1 Line 1 — Net income (loss) per books. Source: IS.net_income (book basis). Only populated if Schedules L/M-1/M-2 are required (gross ≥ $250K AND assets ≥ $1M).",
-    "F230": "Schedule K Line 2 — Net rental real estate income/loss. Source: IS.net_rental (Books-First per IRC §446+703). FIXED 2026-06-09: was Cplx.K2_net_rental (wrong — no resolver); corrected to IS.net_rental. Cross-form audit (XF-R02) independently verifies this equals Form 8825 Line 23.",
-    "F247": "Schedule K Line 7 — Other income (loss). Source: IS.other_income. Verify this fid is Schedule K Line 7 (not Page 1) in namespace before filing.",
-    "F248": "Schedule K Line 16d — Gross income and gain (AMT). Source: IS.depreciation for the depreciation adjustment. Verify with CPA — AMT adjustment may require separate calculation.",
-    "F276": "Schedule L — Interest income (asset line). Source: IS.interest_income. Only populated if Schedule L is required.",
-    "F279": "Schedule K Line 19a — Cash distributions. Source: IS.distributions_cash from llcOwners. Flows to K-1 Box 19.",
-    "F281": "Schedule M-1 related — income reconciliation. Source: IS.interest_income. Verify exact line in namespace.",
+    "F228": "Schedule M-1 Line 1 \u2014 Net income (loss) per books. Source: IS.net_income (book basis). Only populated if Schedules L/M-1/M-2 are required (gross \u2265 $250K AND assets \u2265 $1M).",
+    "F230": "Schedule K Line 2 \u2014 Net rental real estate income/loss. Source: IS.net_rental (Books-First per IRC \u00a7446+703). FIXED 2026-06-09: was Cplx.K2_net_rental (wrong \u2014 no resolver); corrected to IS.net_rental. Cross-form audit (XF-R02) independently verifies this equals Form 8825 Line 23.",
+    "F247": "Schedule K Line 7 \u2014 Other income (loss). Source: IS.other_income. Verify this fid is Schedule K Line 7 (not Page 1) in namespace before filing.",
+    "F248": "Schedule K Line 16d \u2014 Gross income and gain (AMT). Source: IS.depreciation for the depreciation adjustment. Verify with CPA \u2014 AMT adjustment may require separate calculation.",
+    "F276": "Schedule L \u2014 Interest income (asset line). Source: IS.interest_income. Only populated if Schedule L is required.",
+    "F279": "Schedule K Line 19a \u2014 Cash distributions. Source: IS.distributions_cash from llcOwners. Flows to K-1 Box 19.",
+    "F281": "Schedule M-1 related \u2014 income reconciliation. Source: IS.interest_income. Verify exact line in namespace.",
     "F410": "Schedule L end-of-year balance. Source: IS.net_income (book net income for equity calculation). Only if Schedule L required.",
-    "F429": "Schedule M-2 — Partners' capital accounts. Source: IS.net_income (allocated income per IRC §705). Only if Schedule M-2 required."
+    "F429": "Schedule M-2 \u2014 Partners' capital accounts. Source: IS.net_income (allocated income per IRC \u00a7705). Only if Schedule M-2 required."
   },
   "Sch_K1": [
-    ["F049", "Val.0"],
-    ["F050", "IS.net_rental"],
-    ["F055", "IS.interest_income"],
-    ["F077", "Val.0"],
-    ["F098", "IS.distributions_cash"]
+    [
+      "F049",
+      "Val.0"
+    ],
+    [
+      "F050",
+      "IS.net_rental"
+    ],
+    [
+      "F055",
+      "IS.interest_income"
+    ],
+    [
+      "F077",
+      "Val.0"
+    ],
+    [
+      "F098",
+      "IS.distributions_cash"
+    ]
   ],
   "_Sch_K1_field_notes": {
-    "F049": "K-1 Box 1 — Ordinary business income/loss. MUST be $0 for rental LLC (IRC §469(c)(2)). Always Val.0.",
-    "F050": "K-1 Box 2 — Net rental real estate income/loss. Source: IS.net_rental × partner.pct at runtime. ONLY income box for a rental LLC.",
-    "F055": "K-1 Box 5 — Interest income. Source: IS.interest_income × partner.pct at runtime.",
-    "F077": "K-1 Box 14a — SE earnings. MUST be $0 for rental LLC (IRC §1402(a)(1)). Always Val.0.",
-    "F098": "K-1 Box 19a — Cash distributions. Source: IS.distributions_cash (actual per-partner amount, NOT multiplied by pct)."
+    "F049": "K-1 Box 1 \u2014 Ordinary business income/loss. MUST be $0 for rental LLC (IRC \u00a7469(c)(2)). Always Val.0.",
+    "F050": "K-1 Box 2 \u2014 Net rental real estate income/loss. Source: IS.net_rental \u00d7 partner.pct at runtime. ONLY income box for a rental LLC.",
+    "F055": "K-1 Box 5 \u2014 Interest income. Source: IS.interest_income \u00d7 partner.pct at runtime.",
+    "F077": "K-1 Box 14a \u2014 SE earnings. MUST be $0 for rental LLC (IRC \u00a71402(a)(1)). Always Val.0.",
+    "F098": "K-1 Box 19a \u2014 Cash distributions. Source: IS.distributions_cash (actual per-partner amount, NOT multiplied by pct)."
   },
   "_Sch_K1_note": "Runtime values are provided by _buildFillDict() in Sch_K1.py which multiplies by partner.pct and keys by namespace fid directly. Entries above are documentation-only; they are NOT resolved by stmtIS_Tax.loadFillDict() at runtime.",
   "Form4562": [
-    ["f4",   "Val.1,220,000"],
-    ["f20",  "Val.0"],
-    ["f21",  "Val.0"],
-    ["f80",  "Acct.Exp.Depreciation"],
-    ["f130", "Acct.Exp.Depreciation"]
+    [
+      "f4",
+      "Val.1,220,000"
+    ],
+    [
+      "f20",
+      "Val.0"
+    ],
+    [
+      "f21",
+      "Val.0"
+    ],
+    [
+      "f80",
+      "Acct.Exp.Depreciation"
+    ],
+    [
+      "f130",
+      "Acct.Exp.Depreciation"
+    ]
   ],
   "_Form8825_doc": {
     "runtime": "Form8825 is NOT resolved via this static bookNS. stmtIS_Tax.loadFillDict('Form8825') calls _build_f8825_filldict() which builds the fill dict dynamically from GL records grouped by propNm. This section is DOCUMENTATION ONLY.",
-    "cip_rule": "CIP properties (Acct.Fixed.Tangible.InConstruction, no placed-in-service date) are excluded from Form 8825 entirely. IRC §168(a): MACRS starts at placed-in-service. Pre-service expenses must be capitalized (IRC §263(a)), not reported on Form 8825.",
+    "cip_rule": "CIP properties (Acct.Fixed.Tangible.InConstruction, no placed-in-service date) are excluded from Form 8825 entirely. IRC \u00a7168(a): MACRS starts at placed-in-service. Pre-service expenses must be capitalized (IRC \u00a7263(a)), not reported on Form 8825.",
     "RV_RV1_2025": {
-      "status": "InConstruction — Bill of Sale 2025-12-29. Not placed in service.",
-      "form_8825_column": "NONE — excluded. No income, no expenses, no depreciation on Form 8825.",
-      "pre_service_expenses": "Acct.Exp.Repair + Acct.Exp.Other entries for RV_RV1 (~$1,075) MUST be reclassified to Acct.Fixed.Tangible.InConstruction. IRC §263(a): capitalize all pre-placed-in-service costs.",
-      "irc_authority": "IRC §168(a) (no depr until in service); IRC §263(a) (capitalize construction costs); Reg. §1.263(a)-2(a)"
+      "status": "InConstruction \u2014 Bill of Sale 2025-12-29. Not placed in service.",
+      "form_8825_column": "NONE \u2014 excluded. No income, no expenses, no depreciation on Form 8825.",
+      "pre_service_expenses": "Acct.Exp.Repair + Acct.Exp.Other entries for RV_RV1 (~$1,075) MUST be reclassified to Acct.Fixed.Tangible.InConstruction. IRC \u00a7263(a): capitalize all pre-placed-in-service costs.",
+      "irc_authority": "IRC \u00a7168(a) (no depr until in service); IRC \u00a7263(a) (capitalize construction costs); Reg. \u00a71.263(a)-2(a)"
     },
     "line_21_source": "F113 = IS.net_rental for ACTIVE (placed-in-service) properties only. REQUIRES books correction: CIP expenses removed from Acct.Exp.* before IS.net_rental is correct.",
     "correct_values_after_books_fix": {
@@ -84,7 +133,7 @@
       "F031": "income subtotal col A = 4400.00",
       "F067": "Acct.Exp.Repair (H_805HighMesa only) = 199.06",
       "F071": "Acct.Exp.Util (H_805HighMesa only) = 1188.75",
-      "F079": "IS.depreciation = 1903.13 (Books-First; IRC §446)",
+      "F079": "IS.depreciation = 1903.13 (Books-First; IRC \u00a7446)",
       "F091": "other expenses (H_805HighMesa only) = 427.45",
       "F095": "expense subtotal col A = 3718.39 (H_805HighMesa only)",
       "F099": "net income col A = 681.61 (after books fix)",
@@ -94,18 +143,57 @@
     }
   },
   "Form8825": [
-    ["F023", "IS.rent_income"],
-    ["F027", "Acct.Rev.Fees.Other"],
-    ["F031", "IS.income_subtotal"],
-    ["F067", "Acct.Exp.Repair"],
-    ["F071", "Acct.Exp.Util"],
-    ["F079", "IS.depreciation"],
-    ["F091", "IS.other_expenses"],
-    ["F095", "IS.exp_subtotal"],
-    ["F099", "IS.net_income"],
-    ["F103", "IS.subtotal_rental_income"],
-    ["F104", "IS.subtotal_rental_expense"],
-    ["F106", "IS.net_ordinary"],
-    ["F113", "IS.net_rental"]
+    [
+      "F023",
+      "IS.rent_income"
+    ],
+    [
+      "F027",
+      "Acct.Rev.Fees.Other"
+    ],
+    [
+      "F031",
+      "IS.income_subtotal"
+    ],
+    [
+      "F067",
+      "Acct.Exp.Repair"
+    ],
+    [
+      "F071",
+      "Acct.Exp.Util"
+    ],
+    [
+      "F079",
+      "IS.depreciation"
+    ],
+    [
+      "F091",
+      "IS.other_expenses"
+    ],
+    [
+      "F095",
+      "IS.exp_subtotal"
+    ],
+    [
+      "F099",
+      "IS.net_income"
+    ],
+    [
+      "F103",
+      "IS.subtotal_rental_income"
+    ],
+    [
+      "F104",
+      "IS.subtotal_rental_expense"
+    ],
+    [
+      "F106",
+      "IS.net_ordinary"
+    ],
+    [
+      "F113",
+      "IS.net_rental"
+    ]
   ]
 }
