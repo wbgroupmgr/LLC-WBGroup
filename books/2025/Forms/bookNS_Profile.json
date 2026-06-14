@@ -66,7 +66,7 @@
     ],
     [
       "F026",
-      "Profile.F1065.number_of_k1s"
+      "Profile.BookVal.F1065.numSchK1"
     ],
     [
       "F033",
@@ -350,11 +350,18 @@
     ]
   ],
   "Sch_K1": [
-    ["F008", "Profile.entity.ein"],
-    ["F009", "Profile.entity.entity_name"],
-    ["F010", "Profile.entity.address"],
-    ["F012", "Profile.F1065.C_city"],
-    ["F013", "Profile.F1065.irs_center"]
+    [
+      "F008",
+      "Profile.entity.ein"
+    ],
+    [
+      "F009",
+      "Profile.entity.entity_name"
+    ],
+    [
+      "F010",
+      "Profile.entity.address"
+    ]
   ],
   "Form4562": [
     [
@@ -401,6 +408,10 @@
     ]
   ],
   "BookVal": [
+    [
+      "F1065.numSchK1",
+      "3"
+    ],
     [
       "F8825.FairDays_H_805HighMesa",
       "122"
