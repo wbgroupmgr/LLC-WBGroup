@@ -46,10 +46,6 @@
       "IS.interest_income"
     ],
     [
-      "F279",
-      "IS.distributions_cash"
-    ],
-    [
       "F281",
       "IS.interest_income"
     ]
@@ -60,7 +56,7 @@
     "F247": "Schedule K Line 7 \u2014 Other income (loss). Source: IS.other_income. Verify this fid is Schedule K Line 7 (not Page 1) in namespace before filing.",
     "F248": "Schedule K Line 16d \u2014 Gross income and gain (AMT). Source: IS.depreciation for the depreciation adjustment. Verify with CPA \u2014 AMT adjustment may require separate calculation.",
     "F276": "Schedule L \u2014 Interest income (asset line). Source: IS.interest_income. Only populated if Schedule L is required.",
-    "F279": "Schedule K Line 19a \u2014 Cash distributions. Source: IS.distributions_cash from llcOwners. Flows to K-1 Box 19.",
+    "F279": "Schedule K Line 19a \u2014 Cash distributions. REMOVED from active mappings (2026-06-14): stmtIS.taxAggregates() always returns distributions_cash=0.0 because cash distributions do not appear on the Income Statement. Correct source is GL Capital.Dist entries (books-first per IRC \u00a7446+\u00a7703). Leave blank until actual distributions are booked to Acct.Equity.Owner.Capital.Dist. KD-R04 diagnostic will catch any stale value.",
     "F281": "Schedule M-1 related \u2014 income reconciliation. Source: IS.interest_income. Verify exact line in namespace.",
     "F410": "Schedule L end-of-year balance. Source: IS.net_income (book net income for equity calculation). Only if Schedule L required.",
     "F429": "Schedule M-2 \u2014 Partners' capital accounts. Source: IS.net_income (allocated income per IRC \u00a7705). Only if Schedule M-2 required."
