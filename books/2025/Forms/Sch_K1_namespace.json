@@ -205,11 +205,11 @@
       "fID": "f19",
       "pdfField": "topmostSubform[0].Page1[0].LeftCol[0].f1_11[0]",
       "shortName": "f1_11",
-      "logicalKey": "K1_PtAddr",
-      "label": "Partner's address/city/state/ZIP (Line F)",
+      "logicalKey": "",
+      "label": "",
       "fType": "text",
       "page": 1,
-      "location": "Sch_K1.Header.Partner",
+      "location": "Sch_K1.Pg1.Unknown",
       "checkedValue": "/1"
     },
     "f20": {
