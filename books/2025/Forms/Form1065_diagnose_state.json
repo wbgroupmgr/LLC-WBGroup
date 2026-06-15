@@ -1,0 +1,173 @@
+{
+  "form": "Form1065",
+  "llc": "WBGroupLLC",
+  "year": 2025,
+  "generated_at": "2026-06-15T08:27:55",
+  "llc_sha": "228301d",
+  "bus_sha": "228301d",
+  "sections": {
+    "GenInfo": {
+      "id": "GenInfo",
+      "name": "Page 1 — General Information (Items A–K)",
+      "agent_state": "UNKNOWN",
+      "verify_state": "UNCONFIRMED",
+      "verified_at": null,
+      "verified_sha": null,
+      "fields_hash": "4ddf1f31bb3d0ae3",
+      "fields": [
+        {
+          "fid": "F001",
+          "uas": "Profile.F1065.date_from",
+          "value": "Jan. 01"
+        },
+        {
+          "fid": "F002",
+          "uas": "Profile.F1065.date_to",
+          "value": "Dec. 31"
+        },
+        {
+          "fid": "F004",
+          "uas": "Profile.entity.entity_name",
+          "value": "W&B Group, LLC"
+        },
+        {
+          "fid": "F005",
+          "uas": "Profile.entity.address",
+          "value": "177 Kingsway Dr"
+        },
+        {
+          "fid": "F007",
+          "uas": "Profile.F1065.C_city",
+          "value": "Wimberley"
+        },
+        {
+          "fid": "F008",
+          "uas": "Profile.F1065.C_state",
+          "value": "Tx"
+        },
+        {
+          "fid": "F009",
+          "uas": "Profile.F1065.C_ctry",
+          "value": "USA"
+        },
+        {
+          "fid": "F010",
+          "uas": "Profile.F1065.C_zip",
+          "value": "78676"
+        },
+        {
+          "fid": "F011",
+          "uas": "Profile.F1065.A_bus_act",
+          "value": "531110"
+        },
+        {
+          "fid": "F012",
+          "uas": "Profile.F1065.B_product",
+          "value": "531110"
+        },
+        {
+          "fid": "F013",
+          "uas": "Profile.F1065.C_busCode",
+          "value": "531110"
+        },
+        {
+          "fid": "F014",
+          "uas": "Profile.entity.ein",
+          "value": "39-3842347"
+        },
+        {
+          "fid": "F015",
+          "uas": "Profile.entity.date_business_began",
+          "value": "08/29/2025"
+        },
+        {
+          "fid": "F016",
+          "uas": "BS.total_assets",
+          "value": 226396.83
+        },
+        {
+          "fid": "F026",
+          "uas": "Profile.BookVal.F1065.numSchK1",
+          "value": "3"
+        },
+        {
+          "fid": "F_business_code",
+          "uas": "Profile.F1065.business_code",
+          "value": "na"
+        }
+      ]
+    },
+    "IncStmt": {
+      "id": "IncStmt",
+      "name": "Page 1 — Income & Deductions (Lines 1–23)",
+      "agent_state": "UNKNOWN",
+      "verify_state": "UNCONFIRMED",
+      "verified_at": null,
+      "verified_sha": null,
+      "fields_hash": "4f53cda18c2baa0c",
+      "fields": []
+    },
+    "SchedB": {
+      "id": "SchedB",
+      "name": "Schedule B — Other Information (Pages 2–3)",
+      "agent_state": "UNKNOWN",
+      "verify_state": "UNCONFIRMED",
+      "verified_at": null,
+      "verified_sha": null,
+      "fields_hash": "4f53cda18c2baa0c",
+      "fields": []
+    },
+    "SchedK": {
+      "id": "SchedK",
+      "name": "Schedule K — Partners' Distributive Share (Pages 4–5)",
+      "agent_state": "UNKNOWN",
+      "verify_state": "UNCONFIRMED",
+      "verified_at": null,
+      "verified_sha": null,
+      "fields_hash": "dff5691245281d86",
+      "fields": [
+        {
+          "fid": "F228",
+          "uas": "IS.net_income",
+          "value": 654.02
+        },
+        {
+          "fid": "F230",
+          "uas": "IS.net_rental",
+          "value": 667.55
+        },
+        {
+          "fid": "F247",
+          "uas": "IS.other_income",
+          "value": 400.53
+        },
+        {
+          "fid": "F248",
+          "uas": "IS.depreciation",
+          "value": 1903.13
+        },
+        {
+          "fid": "F276",
+          "uas": "IS.interest_income",
+          "value": 0.0
+        },
+        {
+          "fid": "F281",
+          "uas": "IS.interest_income",
+          "value": 0.0
+        }
+      ]
+    },
+    "SchedLM": {
+      "id": "SchedLM",
+      "name": "Schedules L / M-1 / M-2 (Page 6)",
+      "agent_state": "UNKNOWN",
+      "verify_state": "UNCONFIRMED",
+      "verified_at": null,
+      "verified_sha": null,
+      "fields_hash": "4f53cda18c2baa0c",
+      "fields": []
+    }
+  },
+  "regressions": []
+}

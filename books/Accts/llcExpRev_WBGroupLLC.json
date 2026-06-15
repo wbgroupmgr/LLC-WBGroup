@@ -11,9 +11,11 @@
         "propAddr": "null",
         "propID": "null",
         "propNm": "H_805HighMesa",
-        "propOwners": "null",
+        "propOwners": {
+            "o20250801_1": 100
+        },
         "refDB": "llcBank",
-        "refDoc": "WT FED#02M03 NATIONAL FINANCIAL /ORG=FRANCIS X ROJAS SRF# 2780815232FS TRN#250820186189 RFB# 2780815232FS",
+        "refDoc": "WT FED#02M03 NATIONAL FINANCIAL /ORG=FRANCIS X ROJAS SRF# 278...",
         "tDB": "llcBank",
         "tID": "2025.08.20_D219000.00",
         "acctType": "Equity"
@@ -157,14 +159,17 @@
         "amt": 30.0,
         "desc": "Owner Investment",
         "dt": "2025.09.29",
-        "propAddr": null,
-        "propID": null,
+        "propAddr": "",
+        "propID": "",
         "propNm": "H_805HighMesa",
-        "propOwners": null,
+        "propOwners": {
+            "o20250801_1": 100
+        },
         "refDB": "llcBank",
         "refDoc": "MOBILE DEPOSIT : REF NUMBER :409290718471",
         "tDB": "llcBank",
         "tID": "2025.09.29_D30.00",
+        "_unknown": "",
         "acctType": "Equity"
     },
     {
@@ -331,7 +336,7 @@
         "acctType": "Asset"
     },
     {
-        "Ledger": "Acct.Exp.Other",
+        "Ledger": "Acct.Exp.Repair",
         "_unknown": "",
         "aType": "Debit",
         "acct": "Acct.Cash.Bank",
@@ -344,13 +349,13 @@
         "propNm": "H_805HighMesa",
         "propOwners": "",
         "refDB": "llcBank",
-        "refDoc": "PURCHASE AUTHORIZED ON 10/08 WIMBERLEY ACE WIMBERLEY TX S585281615575895 CARD 7209",
+        "refDoc": "PURCHASE AUTHORIZED ON 10/08 WIMBERLEY ACE WIMBERLEY TX S5852...",
         "tDB": "llcBank",
         "tID": "2025.10.09_D14.06",
         "acctType": "Expense"
     },
     {
-        "Ledger": "Acct.Exp.Other",
+        "Ledger": "Acct.Exp.Repair",
         "_unknown": "",
         "aType": "Credit",
         "acct": "Acct.Cash.Bank",
@@ -363,7 +368,7 @@
         "propNm": "H_805HighMesa",
         "propOwners": "",
         "refDB": "llcBank",
-        "refDoc": "PURCHASE AUTHORIZED ON 10/08 WIMBERLEY ACE WIMBERLEY TX S585281615575895 CARD 7209",
+        "refDoc": "PURCHASE AUTHORIZED ON 10/08 WIMBERLEY ACE WIMBERLEY TX S5852...",
         "tDB": "llcBank",
         "tID": "2025.10.09_D14.06_2",
         "acctType": "Asset"

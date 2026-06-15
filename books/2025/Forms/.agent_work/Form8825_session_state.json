@@ -1,16 +1,27 @@
 {
   "tax_year": 2025,
-  "last_run": "2026-06-05T04:39:34Z",
+  "last_run": "2026-06-15T13:11:56Z",
   "overall_state": "GO",
   "sections": {
     "AgentF8825_Properties": {
       "label": "Properties",
       "state": "GO",
-      "summary": "Properties: 0 active properties on Form 8825 ().",
+      "summary": "Properties: 1 active property on Form 8825 (H_805HighMesa). 1 CIP excluded (RV_RV1).",
       "halt_count": 0,
-      "resolve_count": 0,
+      "resolve_count": 1,
       "review_count": 0,
-      "issues": [],
+      "issues": [
+        {
+          "rule_id": "F8PR-R02",
+          "severity": "WARN",
+          "message": "Under-construction property detected: RV_RV1.\n  \u2022 This property has no placed-in-service date yet \u2014 it is excluded from Form 8825 entirely (no column, no income, no depreciation).\n  \u2022 IMPORTANT: any expenses for RV_RV1 currently booked as operating expenses must be capitalized (added to the property's cost basis instead) \u2014 see F8EX-R05 for the dollar impact.",
+          "irs_cite": "IRC \u00a7168(a); IRC \u00a7263(a); Reg. \u00a71.263(a)-2(a); Form 8825 Instructions",
+          "action": "No Form 8825 action. Fix books: reclassify Acct.Exp.Repair + Acct.Exp.Other for RV_RV1 \u2192 Acct.Fixed.Tangible.InConstruction.{propNm}. Once placed in service, create Acct.Fixed.Tangible.InService record with placed-in-service date.",
+          "auto_fix": false,
+          "fids": [],
+          "suggested_mapping": {}
+        }
+      ],
       "pass1": {
         "section": "AgentF8825_Properties",
         "tax_year": 2025,
@@ -23,52 +34,401 @@
     "AgentF8825_Income": {
       "label": "Income (Lines 2a-2c)",
       "state": "GO",
-      "summary": "Income: Gross rents (Line 2a) = $0.00. Other income (Line 2b) = $0.00. Total income (Line 2c) = $0.00.",
+      "summary": "Income: Gross rents (Line 2a) = $4,000.00. Other income (Line 2b) = $400.00. Total income (Line 2c) = $4,400.00.",
       "halt_count": 0,
       "resolve_count": 0,
-      "review_count": 0,
-      "issues": [],
+      "review_count": 1,
+      "issues": [
+        {
+          "rule_id": "F8IN-R03",
+          "severity": "INFO",
+          "message": "$400.00 of other income detected beyond gross rents.\n  \u2022 Form 8825 Line 2b is only for rental-related other income (e.g., security deposits applied to rent, lease cancellation fees).\n  \u2022 Non-rental income does NOT belong on Form 8825 \u2014 it flows to Schedule K instead.\n  \u2022 Confirm this $400.00 is genuinely rental-related before including it on Line 2b.",
+          "irs_cite": "Pub 527 \u00a71; Form 8825 Instructions Line 2b",
+          "action": "Confirm the $400.00 other income is rental-related before including it on Form 8825 Line 2b. If non-rental, route to Schedule K.",
+          "auto_fix": false,
+          "fids": [
+            "F8825_Line2b"
+          ],
+          "suggested_mapping": {}
+        }
+      ],
       "pass1": {
         "section": "AgentF8825_Income",
         "tax_year": 2025,
-        "filled": 0,
+        "filled": 3,
         "blank": 0,
         "complex": 0,
-        "total": 0
+        "total": 3
       }
     },
     "AgentF8825_Expenses": {
-      "label": "Expenses (Lines 11-17, incl. Line 14 Depreciation)",
+      "label": "Expenses (Lines 5-19a, incl. Line 14 Depreciation)",
       "state": "GO",
-      "summary": "Expenses: Line 14 depreciation = $0.00 (= IS.depreciation, Books-First). Total expenses (Line 18 preview) = $0.00.",
+      "summary": "Expenses: Line 14 depreciation = $1,903.13 (= IS.depreciation, Books-First). Total expenses (Line 18 preview) = $3,732.45.",
       "halt_count": 0,
       "resolve_count": 0,
-      "review_count": 0,
-      "issues": [],
+      "review_count": 2,
+      "issues": [
+        {
+          "rule_id": "F8EX-R05",
+          "severity": "INFO",
+          "message": "\u2713 Under-construction property RV_RV1: no pre-service expenses found as operating costs \u2014 correctly capitalized or zero.",
+          "irs_cite": "IRC \u00a7263(a); IRC \u00a7168(a)",
+          "action": "No action required.",
+          "auto_fix": false,
+          "fids": [],
+          "suggested_mapping": {}
+        },
+        {
+          "rule_id": "F8EX-R03",
+          "severity": "INFO",
+          "message": "\u2713 Line 14 (Depreciation) = $1,903.13 \u2014 matches the books.\n  \u2022 Cross-form audit (XF-R01) will confirm this also agrees with Form 4562 Line 22.",
+          "irs_cite": "IRC \u00a7446; LLCTaxAgent XF-R01",
+          "action": "No action required.",
+          "auto_fix": false,
+          "fids": [],
+          "suggested_mapping": {}
+        }
+      ],
       "pass1": {
         "section": "AgentF8825_Expenses",
         "tax_year": 2025,
-        "filled": 0,
+        "filled": 6,
         "blank": 0,
         "complex": 0,
-        "total": 0
+        "total": 6
       }
     },
     "AgentF8825_NetIncome": {
-      "label": "Net Income/Loss (Lines 18-21)",
+      "label": "Summary (Lines 20a-23)",
       "state": "GO",
-      "summary": "Form 8825: 1 property (H_805HighMesa). Gross rents $0.00 \u2192 Net rental income ($0.00). Line 21 = IS.net_rental. Line 14 depreciation = IS.depreciation ($0.00).",
+      "summary": "Form 8825: 1 property (H_805HighMesa). Gross rents $4,000.00 \u2192 Net rental income ($667.55). Line 21 = IS.net_rental. Line 14 depreciation = IS.depreciation ($1,903.13).",
       "halt_count": 0,
-      "resolve_count": 0,
-      "review_count": 0,
-      "issues": [],
+      "resolve_count": 4,
+      "review_count": 1,
+      "issues": [
+        {
+          "rule_id": "F8NI-R05a",
+          "severity": "WARN",
+          "message": "$100.00 on 2025.08.20 \u2014 possible double-post (4 transactions, H_805HighMesa).\n  \u2022 Two entries share the same date, amount, property, account, and direction.\n  \u2022 Verify against the bank statement \u2014 if one is a duplicate, delete it.",
+          "irs_cite": "IRC \u00a7263(a); IRC \u00a7446 (Books-First); bank statement = source of truth",
+          "action": "Verify against the bank statement (books/2025/BankStmts/), then correct the transaction's propNm/account in the ledger \u2014 use the Fix links on the transactions below.",
+          "auto_fix": false,
+          "fids": [
+            "F104",
+            "F113"
+          ],
+          "suggested_mapping": {
+            "txns": [
+              {
+                "tID": "2025.08.20_C100.00",
+                "tDB": "",
+                "dt": "2025.08.20",
+                "prop": "H_805HighMesa",
+                "aType": "Credit",
+                "acct": "Acct.Cash.Escrow",
+                "contra": "",
+                "desc": "Purchase Property: HOA Transfer Fees to Cedar Oak Mesa Prope",
+                "amt": 100.0,
+                "cash_dir": "",
+                "fix_obj": "llcExpRev",
+                "flag": "DUPLICATE"
+              },
+              {
+                "tID": "2025.08.20_C100.00_2",
+                "tDB": "",
+                "dt": "2025.08.20",
+                "prop": "H_805HighMesa",
+                "aType": "Credit",
+                "acct": "Acct.Cash.Escrow",
+                "contra": "",
+                "desc": "Closing, extra funds just in case. ",
+                "amt": 100.0,
+                "cash_dir": "",
+                "fix_obj": "llcExpRev",
+                "flag": "DUPLICATE"
+              },
+              {
+                "tID": "2025.08.20_D100.00",
+                "tDB": "",
+                "dt": "2025.08.20",
+                "prop": "H_805HighMesa",
+                "aType": "Debit",
+                "acct": "Acct.Exp.Operating",
+                "contra": "",
+                "desc": "Purchase Property: HOA Transfer Fees to Cedar Oak Mesa Prope",
+                "amt": 100.0,
+                "cash_dir": "",
+                "fix_obj": "llcExpRev",
+                "flag": "DUPLICATE"
+              },
+              {
+                "tID": "2025.08.20_D100.00_2",
+                "tDB": "",
+                "dt": "2025.08.20",
+                "prop": "H_805HighMesa",
+                "aType": "Debit",
+                "acct": "Acct.Equity.Owner.Capital.Funds",
+                "contra": "",
+                "desc": "Closing, extra funds just in case. ",
+                "amt": 100.0,
+                "cash_dir": "",
+                "fix_obj": "llcExpRev",
+                "flag": "DUPLICATE"
+              }
+            ],
+            "source_doc": "books/2025/BankStmts/",
+            "resolve_available": true,
+            "resolve_label": "Mark Resolved \u2014 verified against bank statement",
+            "resolve_note": "Confirm the transaction is correct or delete the duplicate."
+          }
+        },
+        {
+          "rule_id": "F8NI-R05b",
+          "severity": "WARN",
+          "message": "$90.90 on 2025.10.14 \u2014 possible double-post (4 transactions, H_805HighMesa).\n  \u2022 Two entries share the same date, amount, property, account, and direction.\n  \u2022 Verify against the bank statement \u2014 if one is a duplicate, delete it.",
+          "irs_cite": "IRC \u00a7263(a); IRC \u00a7446 (Books-First); bank statement = source of truth",
+          "action": "Verify against the bank statement (books/2025/BankStmts/), then correct the transaction's propNm/account in the ledger \u2014 use the Fix links on the transactions below.",
+          "auto_fix": false,
+          "fids": [
+            "F104",
+            "F113"
+          ],
+          "suggested_mapping": {
+            "txns": [
+              {
+                "tID": "2025.10.14_C90.90",
+                "tDB": "",
+                "dt": "2025.10.14",
+                "prop": "H_805HighMesa",
+                "aType": "Credit",
+                "acct": "Acct.Cash.Bank",
+                "contra": "",
+                "desc": "Auto: Approved Purchase: TEXAS DISPOSAL SYS 800-3758375",
+                "amt": 90.9,
+                "cash_dir": "out",
+                "fix_obj": "llcExpRev",
+                "flag": "DUPLICATE"
+              },
+              {
+                "tID": "2025.10.14_C90.90_2",
+                "tDB": "",
+                "dt": "2025.10.14",
+                "prop": "H_805HighMesa",
+                "aType": "Credit",
+                "acct": "Acct.Cash.Bank",
+                "contra": "",
+                "desc": "Auto: Approved Purchase: TEXAS DISPOSAL SYS 800-3758375",
+                "amt": 90.9,
+                "cash_dir": "out",
+                "fix_obj": "llcExpRev",
+                "flag": "DUPLICATE"
+              },
+              {
+                "tID": "2025.10.14_D90.90",
+                "tDB": "",
+                "dt": "2025.10.14",
+                "prop": "H_805HighMesa",
+                "aType": "Debit",
+                "acct": "Acct.Exp.Util",
+                "contra": "",
+                "desc": "Auto: Approved Purchase: TEXAS DISPOSAL SYS 800-3758375",
+                "amt": 90.9,
+                "cash_dir": "",
+                "fix_obj": "llcExpRev",
+                "flag": "DUPLICATE"
+              },
+              {
+                "tID": "2025.10.14_D90.90_2",
+                "tDB": "",
+                "dt": "2025.10.14",
+                "prop": "H_805HighMesa",
+                "aType": "Debit",
+                "acct": "Acct.Exp.Util",
+                "contra": "",
+                "desc": "Auto: Approved Purchase: TEXAS DISPOSAL SYS 800-3758375",
+                "amt": 90.9,
+                "cash_dir": "",
+                "fix_obj": "llcExpRev",
+                "flag": "DUPLICATE"
+              }
+            ],
+            "source_doc": "books/2025/BankStmts/",
+            "resolve_available": true,
+            "resolve_label": "Mark Resolved \u2014 verified against bank statement",
+            "resolve_note": "Confirm the transaction is correct or delete the duplicate."
+          }
+        },
+        {
+          "rule_id": "F8NI-R05c",
+          "severity": "WARN",
+          "message": "$27.04 on 2025.10.07 \u2014 possible double-post (4 transactions, RV_RV1).\n  \u2022 Two entries share the same date, amount, property, account, and direction.\n  \u2022 Verify against the bank statement \u2014 if one is a duplicate, delete it.",
+          "irs_cite": "IRC \u00a7263(a); IRC \u00a7446 (Books-First); bank statement = source of truth",
+          "action": "Verify against the bank statement (books/2025/BankStmts/), then correct the transaction's propNm/account in the ledger \u2014 use the Fix links on the transactions below.",
+          "auto_fix": false,
+          "fids": [
+            "F104",
+            "F113"
+          ],
+          "suggested_mapping": {
+            "txns": [
+              {
+                "tID": "2025.10.07_C27.04",
+                "tDB": "",
+                "dt": "2025.10.07",
+                "prop": "RV_RV1",
+                "aType": "Credit",
+                "acct": "Acct.Cash.Bank",
+                "contra": "",
+                "desc": "NoRcpt Approved Purchase: LOWE'S #159 SAN MARCOS",
+                "amt": 27.04,
+                "cash_dir": "out",
+                "fix_obj": "llcExpRev",
+                "flag": "DUPLICATE"
+              },
+              {
+                "tID": "2025.10.07_C27.04_2",
+                "tDB": "",
+                "dt": "2025.10.07",
+                "prop": "RV_RV1",
+                "aType": "Credit",
+                "acct": "Acct.Cash.Bank",
+                "contra": "",
+                "desc": "NoRcpt Approved Purchase: LOWE'S #159 SAN MARCOS",
+                "amt": 27.04,
+                "cash_dir": "out",
+                "fix_obj": "llcExpRev",
+                "flag": "DUPLICATE"
+              },
+              {
+                "tID": "2025.10.07_D27.04",
+                "tDB": "",
+                "dt": "2025.10.07",
+                "prop": "RV_RV1",
+                "aType": "Debit",
+                "acct": "Acct.Fixed.Tangible.InConstruction",
+                "contra": "",
+                "desc": "NoRcpt Approved Purchase: LOWE'S #159 SAN MARCOS",
+                "amt": 27.04,
+                "cash_dir": "",
+                "fix_obj": "llcAssets",
+                "flag": "DUPLICATE"
+              },
+              {
+                "tID": "2025.10.07_D27.04_2",
+                "tDB": "",
+                "dt": "2025.10.07",
+                "prop": "RV_RV1",
+                "aType": "Debit",
+                "acct": "Acct.Fixed.Tangible.InConstruction",
+                "contra": "",
+                "desc": "NoRcpt Approved Purchase: LOWE'S #159 SAN MARCOS",
+                "amt": 27.04,
+                "cash_dir": "",
+                "fix_obj": "llcAssets",
+                "flag": "DUPLICATE"
+              }
+            ],
+            "source_doc": "books/2025/BankStmts/",
+            "resolve_available": true,
+            "resolve_label": "Mark Resolved \u2014 verified against bank statement",
+            "resolve_note": "Confirm the transaction is correct or delete the duplicate."
+          }
+        },
+        {
+          "rule_id": "F8NI-R05d",
+          "severity": "WARN",
+          "message": "$7.87 on 2025.12.31 \u2014 possible double-post (4 transactions, H_805HighMesa).\n  \u2022 Two entries share the same date, amount, property, account, and direction.\n  \u2022 Verify against the bank statement \u2014 if one is a duplicate, delete it.",
+          "irs_cite": "IRC \u00a7263(a); IRC \u00a7446 (Books-First); bank statement = source of truth",
+          "action": "Verify against the bank statement (books/2025/BankStmts/), then correct the transaction's propNm/account in the ledger \u2014 use the Fix links on the transactions below.",
+          "auto_fix": false,
+          "fids": [
+            "F104",
+            "F113"
+          ],
+          "suggested_mapping": {
+            "txns": [
+              {
+                "tID": "2025.12.31_C7.87",
+                "tDB": "",
+                "dt": "2025.12.31",
+                "prop": "H_805HighMesa",
+                "aType": "Credit",
+                "acct": "Acct.Equity.Earnings.PnL",
+                "contra": "",
+                "desc": "YE Net Income - H_805HighMesa - Alexandra Rojas (2%)",
+                "amt": 7.87,
+                "cash_dir": "",
+                "fix_obj": "llcExpRev",
+                "flag": "DUPLICATE"
+              },
+              {
+                "tID": "2025.12.31_C7.87_2",
+                "tDB": "",
+                "dt": "2025.12.31",
+                "prop": "H_805HighMesa",
+                "aType": "Credit",
+                "acct": "Acct.Equity.Earnings.PnL",
+                "contra": "",
+                "desc": "YE Net Income - H_805HighMesa - Nicola Rojas (2%)",
+                "amt": 7.87,
+                "cash_dir": "",
+                "fix_obj": "llcExpRev",
+                "flag": "DUPLICATE"
+              },
+              {
+                "tID": "2025.12.31_D7.87",
+                "tDB": "",
+                "dt": "2025.12.31",
+                "prop": "H_805HighMesa",
+                "aType": "Debit",
+                "acct": "Acct.Equity.Owner.Capital.Funds",
+                "contra": "",
+                "desc": "YE Net Income - H_805HighMesa - Alexandra Rojas (2%)",
+                "amt": 7.87,
+                "cash_dir": "",
+                "fix_obj": "llcExpRev",
+                "flag": "DUPLICATE"
+              },
+              {
+                "tID": "2025.12.31_D7.87_2",
+                "tDB": "",
+                "dt": "2025.12.31",
+                "prop": "H_805HighMesa",
+                "aType": "Debit",
+                "acct": "Acct.Equity.Owner.Capital.Funds",
+                "contra": "",
+                "desc": "YE Net Income - H_805HighMesa - Nicola Rojas (2%)",
+                "amt": 7.87,
+                "cash_dir": "",
+                "fix_obj": "llcExpRev",
+                "flag": "DUPLICATE"
+              }
+            ],
+            "source_doc": "books/2025/BankStmts/",
+            "resolve_available": true,
+            "resolve_label": "Mark Resolved \u2014 verified against bank statement",
+            "resolve_note": "Confirm the transaction is correct or delete the duplicate."
+          }
+        },
+        {
+          "rule_id": "F8NI-R03",
+          "severity": "INFO",
+          "message": "\u2713 Line 21 (Net Rental Income/Loss) = $667.55 (net rental income).\n  \u2022 This flows to Schedule K Line 2, then to each partner's K-1 Box 2 as passive rental income/loss.",
+          "irs_cite": "Form 8825 Line 21; Schedule K Line 2; IRC \u00a7469(c)(2)",
+          "action": "No action required.",
+          "auto_fix": false,
+          "fids": [],
+          "suggested_mapping": {}
+        }
+      ],
       "pass1": {
         "section": "AgentF8825_NetIncome",
         "tax_year": 2025,
-        "filled": 0,
+        "filled": 3,
         "blank": 0,
         "complex": 0,
-        "total": 0
+        "total": 3
       }
     }
   }

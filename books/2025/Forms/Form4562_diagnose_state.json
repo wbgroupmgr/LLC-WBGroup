@@ -2,9 +2,9 @@
   "form": "Form4562",
   "llc": "WBGroupLLC",
   "year": 2025,
-  "generated_at": "2026-06-08T16:55:17",
-  "llc_sha": "5b2166e",
-  "bus_sha": "5b2166e",
+  "generated_at": "2026-06-15T13:11:56",
+  "llc_sha": "228301d",
+  "bus_sha": "228301d",
   "sections": {
     "Header": {
       "id": "Header",
