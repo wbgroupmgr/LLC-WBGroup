@@ -2,9 +2,9 @@
   "form": "Form1065",
   "llc": "WBGroupLLC",
   "year": 2025,
-  "generated_at": "2026-06-15T08:27:55",
-  "llc_sha": "228301d",
-  "bus_sha": "228301d",
+  "generated_at": "2026-06-15T15:16:51",
+  "llc_sha": "c4cea07",
+  "bus_sha": "c4cea07",
   "sections": {
     "GenInfo": {
       "id": "GenInfo",
