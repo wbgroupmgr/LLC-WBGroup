@@ -2,6 +2,7 @@
     {
         "SSN": "267-29-7375",
         "addr": "177 Kingsway Dr, Wimberley, TX 78676",
+        "email": null,
         "kw": [
             "WT FED#02M03 NATIONAL FINANCIAL"
         ],
@@ -17,6 +18,7 @@
     {
         "SSN": "638-44-0982",
         "addr": "408 Basket Brass Rd, San Marcos, TX 78666",
+        "email": null,
         "kw": [],
         "memType": "passive",
         "nm": [
@@ -30,6 +32,7 @@
     {
         "SSN": "638-44-0983",
         "addr": "805 High Mesa Dr, Wimberley, TX 78676",
+        "email": null,
         "kw": [],
         "memType": "passive",
         "nm": [
