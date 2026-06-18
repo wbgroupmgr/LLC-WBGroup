@@ -1,0 +1,1793 @@
+{
+  "tax_year": 2025,
+  "last_run": "2026-06-17T04:47:06Z",
+  "overall_state": "GO",
+  "form_results": {
+    "Form4562Agent": {
+      "state": "GO",
+      "overall_halt": 0,
+      "last_run": "2026-06-17T04:47:01Z",
+      "session": {
+        "tax_year": 2025,
+        "last_run": "2026-06-17T04:47:01Z",
+        "overall_state": "GO",
+        "sections": {
+          "AgentF4562_Sec179": {
+            "section_id": "AgentF4562_Sec179",
+            "diag_sec_id": "PartI",
+            "label": "Section 179 (Part I)",
+            "state": "GO",
+            "summary": "Part I (\u00a7179): $0 deduction \u2014 correct per IRC \u00a7179(d)(1). Statutory limit $1,220,000 shown on Line 1 (informational).",
+            "halt_count": 0,
+            "resolve_count": 0,
+            "review_count": 1,
+            "issues": [
+              {
+                "rule_id": "F45S-R01",
+                "severity": "INFO",
+                "message": "\u2713 $0 \u00a7179 deduction \u2014 correct for a residential rental building.\n  \u2022 Residential rental property cannot use the \u00a7179 immediate write-off (excluded by statute).\n  \u2022 Line 12 = $0. Line 1 shows the $1,220,000 annual cap (informational only).",
+                "irs_cite": "IRC \u00a7179(d)(1); IRC \u00a750(b)(2); Rev. Proc. 2023-34; Form 4562 Part I",
+                "action": "No action required. Confirm Line 12 = $0 and Line 1 = $1,220,000 in the fill dict.",
+                "auto_fix": false,
+                "fids": [
+                  "F4562_P1_L1",
+                  "F4562_P1_L12"
+                ],
+                "suggested_mapping": {}
+              }
+            ],
+            "pass1": {
+              "section": "AgentF4562_Sec179",
+              "tax_year": 2025,
+              "filled": 0,
+              "blank": 0,
+              "complex": 0,
+              "total": 0
+            }
+          },
+          "AgentF4562_SpecialDepr": {
+            "section_id": "AgentF4562_SpecialDepr",
+            "diag_sec_id": "",
+            "label": "Special Depreciation (Part II)",
+            "state": "GO",
+            "summary": "Part II Special Depreciation = $0. IRC \u00a7168(k): 27.5-yr residential rental is NOT qualified property (recovery period exceeds 20-year limit). No 5-yr/15-yr assets tracked.",
+            "halt_count": 0,
+            "resolve_count": 0,
+            "review_count": 1,
+            "issues": [
+              {
+                "rule_id": "F45D-R01",
+                "severity": "INFO",
+                "message": "\u2713 $0 bonus depreciation \u2014 correct for a residential rental building.\n  \u2022 Bonus/special depreciation (40% in 2025) only applies to assets with a 20-year life or shorter.\n  \u2022 Residential rental buildings use a 27.5-year life and are not eligible.",
+                "irs_cite": "IRC \u00a7168(k)(2)(A)(i); Form 4562 Instructions Part II; TCJA 2017",
+                "action": "No action required. If W&B Group purchases 5-yr appliances or 15-yr land improvements, consult CPA for Part II eligibility.",
+                "auto_fix": false,
+                "fids": [],
+                "suggested_mapping": {}
+              }
+            ],
+            "pass1": {
+              "section": "AgentF4562_SpecialDepr",
+              "tax_year": 2025,
+              "filled": 0,
+              "blank": 0,
+              "complex": 0,
+              "total": 0
+            }
+          },
+          "AgentF4562_MACRS": {
+            "section_id": "AgentF4562_MACRS",
+            "diag_sec_id": "PartIII-19i",
+            "label": "MACRS Depreciation (Part III Line 19i \u2014 Residential Rental)",
+            "state": "GO",
+            "summary": "MACRS Line 19i (2025 form): H_805HighMesa placed 2025.08.20, net basis $139,563.20, 27.5yr S/L MM (pre-printed), f80 col (g) = $1,903.13 (= IS.depreciation, Books-First).",
+            "halt_count": 0,
+            "resolve_count": 1,
+            "review_count": 0,
+            "issues": [
+              {
+                "rule_id": "F45M-R03",
+                "severity": "WARN",
+                "message": "Land ($79,438.41) is in the books \u2014 confirm it is NOT included in the depreciation basis on Form 4562.\n  \u2022 Land is never depreciable; only the building structure can be written off.\n  \u2022 Correct depreciable basis (Column c) = $139,563.20 (building only, land excluded).",
+                "irs_cite": "IRC \u00a7167; Treas. Reg. \u00a71.167(a)-2; Form 4562 Instructions Col (c)",
+                "action": "Confirm Form 4562 Part III Line 19h Col (c) = $139,563.20 (net tangible basis: Debit \u2212 Credit entries). Land $79,438.41 never depreciable.",
+                "auto_fix": false,
+                "fids": [
+                  "F4562_L19h_c"
+                ],
+                "suggested_mapping": {}
+              }
+            ],
+            "pass1": {
+              "section": "AgentF4562_MACRS",
+              "tax_year": 2025,
+              "filled": 0,
+              "blank": 0,
+              "complex": 0,
+              "total": 0
+            }
+          },
+          "AgentF4562_Summary": {
+            "section_id": "AgentF4562_Summary",
+            "diag_sec_id": "PartIV",
+            "label": "Summary Line 22 (Part IV)",
+            "state": "GO",
+            "summary": "Part IV Line 22 (f129) = $1,903.13 (= IS.depreciation, Books-First). Cross-form audit anchor: LLCTaxAgent XF-R01 will verify F4562 L22 == F8825 L14 == IS.depreciation.",
+            "halt_count": 0,
+            "resolve_count": 0,
+            "review_count": 1,
+            "issues": [
+              {
+                "rule_id": "F45L-R03",
+                "severity": "INFO",
+                "message": "\u2713 Form 4562 Line 22 (Total Depreciation) = $1,903.13 \u2014 matches the books.\n  \u2022 Depreciation will be cross-checked against Form 8825 Line 14 to confirm both forms agree.",
+                "irs_cite": "Form 4562 Part IV; LLCTaxAgent XF-R01; IRC \u00a7446",
+                "action": "No action required. XF-R01 runs in LLCTaxAgent.phase2_xf_audit().",
+                "auto_fix": false,
+                "fids": [],
+                "suggested_mapping": {}
+              }
+            ],
+            "pass1": {
+              "section": "AgentF4562_Summary",
+              "tax_year": 2025,
+              "filled": 0,
+              "blank": 0,
+              "complex": 0,
+              "total": 0
+            }
+          },
+          "AgentF4562_ListedProp": {
+            "section_id": "AgentF4562_ListedProp",
+            "diag_sec_id": "",
+            "label": "Listed Property (Part V)",
+            "state": "GO",
+            "summary": "Part V (Listed Property) = $0. No vehicles or \u00a7280F property used in the rental business. Computers not listed property post-TCJA 2017.",
+            "halt_count": 0,
+            "resolve_count": 0,
+            "review_count": 1,
+            "issues": [
+              {
+                "rule_id": "F45P-R01",
+                "severity": "INFO",
+                "message": "\u2713 $0 listed property \u2014 correct for W&B Group.\n  \u2022 No vehicles or other listed property (cars, trucks) are used in the rental business.\n  \u2022 Part V is correctly blank.",
+                "irs_cite": "IRC \u00a7280F; Form 4562 Part V; TCJA 2017 \u00a7280F(d)(4) amendment",
+                "action": "No action required. If a vehicle is ever used for rental business, complete Part V and maintain a contemporaneous mileage log (\u00a7274(d)).",
+                "auto_fix": false,
+                "fids": [],
+                "suggested_mapping": {}
+              }
+            ],
+            "pass1": {
+              "section": "AgentF4562_ListedProp",
+              "tax_year": 2025,
+              "filled": 0,
+              "blank": 0,
+              "complex": 0,
+              "total": 0
+            }
+          },
+          "AgentF4562_Amortization": {
+            "section_id": "AgentF4562_Amortization",
+            "diag_sec_id": "",
+            "label": "Amortization (Part VI)",
+            "state": "GO",
+            "summary": "Part VI (Amortization) = $0 per current books. First-year LLC: CPA should verify closing statement for \u00a7709/\u00a7195 costs and loan origination points (\u00a7461(g)(2)).",
+            "halt_count": 0,
+            "resolve_count": 1,
+            "review_count": 2,
+            "issues": [
+              {
+                "rule_id": "F45A-R01",
+                "severity": "INFO",
+                "message": "$0 amortization \u2014 no intangible costs recorded in the books.\n  \u2022 W&B Group is in its first year \u2014 a CPA should confirm whether formation or startup costs were paid.\n  \u2022 Attorney fees and state filing fees for forming the LLC may be partially deductible (up to $5,000), with the rest spread over 15 years.\n  \u2022 Costs incurred before the property opened for rental may also qualify as startup costs under the same rules.",
+                "irs_cite": "IRC \u00a7709(b); IRC \u00a7195(b); Form 4562 Part VI Lines 42-43",
+                "action": "Review formation documents. If organization/startup costs exist, capitalize in llcAssets and complete Part VI Lines 42-43.",
+                "auto_fix": false,
+                "fids": [],
+                "suggested_mapping": {}
+              },
+              {
+                "rule_id": "F45A-R02",
+                "severity": "WARN",
+                "message": "$227,858.23 in closing costs found in the books \u2014 a CPA review is needed to classify each item correctly.\n  \u2022 Loan origination points: must be spread over the life of the loan (not a one-time deduction)\n  \u2022 Prepaid interest: deductible in the year it accrues\n  \u2022 Title and transfer taxes: added to the property's cost basis (increases future depreciation deduction)",
+                "irs_cite": "IRC \u00a7461(g)(2); IRC \u00a7195; IRC \u00a7263; Form 4562 Part VI; Pub 527",
+                "action": "Review closing statement line by line. Identify loan origination points. Amortize points over loan term \u2014 annual amount to Form 8825 Line 12.",
+                "auto_fix": false,
+                "fids": [
+                  "F4562_PartVI"
+                ],
+                "suggested_mapping": {}
+              },
+              {
+                "rule_id": "F45A-R03",
+                "severity": "INFO",
+                "message": "Reminder: Points paid on a rental mortgage must be spread over the loan term \u2014 not deducted all at once.\n  \u2022 This is different from a primary residence, where points are often immediately deductible.\n  \u2022 The annual portion of points flows to Form 8825 Line 12 (mortgage interest).\n  \u2022 Check the H_805HighMesa closing statement to see if any origination points were paid.",
+                "irs_cite": "IRC \u00a7461(g)(2); Pub 527; Form 8825 Line 12",
+                "action": "Review H_805HighMesa closing statement for origination fees/points. If present: amortize over loan term; add annual amount to Form 8825 Line 12.",
+                "auto_fix": false,
+                "fids": [],
+                "suggested_mapping": {}
+              }
+            ],
+            "pass1": {
+              "section": "AgentF4562_Amortization",
+              "tax_year": 2025,
+              "filled": 0,
+              "blank": 0,
+              "complex": 0,
+              "total": 0
+            }
+          }
+        },
+        "pdf": {
+          "fill_path": "/Users/frankrojas/Library/CloudStorage/GoogleDrive-frankr6591@gmail.com/My Drive/Family/Assets/LLC-WBGroup/books/2025/Forms/Form4562_FILL.pdf",
+          "pdf_fields": 277,
+          "filled": 10,
+          "check": 0,
+          "complex": 0,
+          "blank": 267,
+          "ts": 1781671622
+        }
+      }
+    },
+    "Form8825Agent": {
+      "state": "GO",
+      "overall_halt": 0,
+      "last_run": "2026-06-17T04:47:02Z",
+      "session": {
+        "tax_year": 2025,
+        "last_run": "2026-06-17T04:47:02Z",
+        "overall_state": "GO",
+        "sections": {
+          "AgentF8825_Properties": {
+            "label": "Properties",
+            "state": "GO",
+            "summary": "Properties: 1 active property on Form 8825 (H_805HighMesa). 1 CIP excluded (RV_RV1).",
+            "halt_count": 0,
+            "resolve_count": 1,
+            "review_count": 0,
+            "issues": [
+              {
+                "rule_id": "F8PR-R02",
+                "severity": "WARN",
+                "message": "Under-construction property detected: RV_RV1.\n  \u2022 This property has no placed-in-service date yet \u2014 it is excluded from Form 8825 entirely (no column, no income, no depreciation).\n  \u2022 IMPORTANT: any expenses for RV_RV1 currently booked as operating expenses must be capitalized (added to the property's cost basis instead) \u2014 see F8EX-R05 for the dollar impact.",
+                "irs_cite": "IRC \u00a7168(a); IRC \u00a7263(a); Reg. \u00a71.263(a)-2(a); Form 8825 Instructions",
+                "action": "No Form 8825 action. Fix books: reclassify Acct.Exp.Repair + Acct.Exp.Other for RV_RV1 \u2192 Acct.Fixed.Tangible.InConstruction.{propNm}. Once placed in service, create Acct.Fixed.Tangible.InService record with placed-in-service date.",
+                "auto_fix": false,
+                "fids": [],
+                "suggested_mapping": {}
+              }
+            ],
+            "pass1": {
+              "section": "AgentF8825_Properties",
+              "tax_year": 2025,
+              "filled": 0,
+              "blank": 0,
+              "complex": 0,
+              "total": 0
+            }
+          },
+          "AgentF8825_Income": {
+            "label": "Income (Lines 2a-2c)",
+            "state": "GO",
+            "summary": "Income: Gross rents (Line 2a) = $4,000.00. Other income (Line 2b) = $400.00. Total income (Line 2c) = $4,400.00.",
+            "halt_count": 0,
+            "resolve_count": 0,
+            "review_count": 1,
+            "issues": [
+              {
+                "rule_id": "F8IN-R03",
+                "severity": "INFO",
+                "message": "$400.00 of other income detected beyond gross rents.\n  \u2022 Form 8825 Line 2b is only for rental-related other income (e.g., security deposits applied to rent, lease cancellation fees).\n  \u2022 Non-rental income does NOT belong on Form 8825 \u2014 it flows to Schedule K instead.\n  \u2022 Confirm this $400.00 is genuinely rental-related before including it on Line 2b.",
+                "irs_cite": "Pub 527 \u00a71; Form 8825 Instructions Line 2b",
+                "action": "Confirm the $400.00 other income is rental-related before including it on Form 8825 Line 2b. If non-rental, route to Schedule K.",
+                "auto_fix": false,
+                "fids": [
+                  "F8825_Line2b"
+                ],
+                "suggested_mapping": {}
+              }
+            ],
+            "pass1": {
+              "section": "AgentF8825_Income",
+              "tax_year": 2025,
+              "filled": 3,
+              "blank": 0,
+              "complex": 0,
+              "total": 3
+            }
+          },
+          "AgentF8825_Expenses": {
+            "label": "Expenses (Lines 5-19a, incl. Line 14 Depreciation)",
+            "state": "GO",
+            "summary": "Expenses: Line 14 depreciation = $1,903.13 (= IS.depreciation, Books-First). Total expenses (Line 18 preview) = $3,732.45.",
+            "halt_count": 0,
+            "resolve_count": 0,
+            "review_count": 2,
+            "issues": [
+              {
+                "rule_id": "F8EX-R05",
+                "severity": "INFO",
+                "message": "\u2713 Under-construction property RV_RV1: no pre-service expenses found as operating costs \u2014 correctly capitalized or zero.",
+                "irs_cite": "IRC \u00a7263(a); IRC \u00a7168(a)",
+                "action": "No action required.",
+                "auto_fix": false,
+                "fids": [],
+                "suggested_mapping": {}
+              },
+              {
+                "rule_id": "F8EX-R03",
+                "severity": "INFO",
+                "message": "\u2713 Line 14 (Depreciation) = $1,903.13 \u2014 matches the books.\n  \u2022 Cross-form audit (XF-R01) will confirm this also agrees with Form 4562 Line 22.",
+                "irs_cite": "IRC \u00a7446; LLCTaxAgent XF-R01",
+                "action": "No action required.",
+                "auto_fix": false,
+                "fids": [],
+                "suggested_mapping": {}
+              }
+            ],
+            "pass1": {
+              "section": "AgentF8825_Expenses",
+              "tax_year": 2025,
+              "filled": 6,
+              "blank": 0,
+              "complex": 0,
+              "total": 6
+            }
+          },
+          "AgentF8825_NetIncome": {
+            "label": "Summary (Lines 20a-23)",
+            "state": "GO",
+            "summary": "Form 8825: 1 property (H_805HighMesa). Gross rents $4,000.00 \u2192 Net rental income ($667.55). Line 21 = IS.net_rental. Line 14 depreciation = IS.depreciation ($1,903.13).",
+            "halt_count": 0,
+            "resolve_count": 4,
+            "review_count": 1,
+            "issues": [
+              {
+                "rule_id": "F8NI-R05a",
+                "severity": "WARN",
+                "message": "$100.00 on 2025.08.20 \u2014 possible double-post (4 transactions, H_805HighMesa).\n  \u2022 Two entries share the same date, amount, property, account, and direction.\n  \u2022 Verify against the bank statement \u2014 if one is a duplicate, delete it.",
+                "irs_cite": "IRC \u00a7263(a); IRC \u00a7446 (Books-First); bank statement = source of truth",
+                "action": "Verify against the bank statement (books/2025/BankStmts/), then correct the transaction's propNm/account in the ledger \u2014 use the Fix links on the transactions below.",
+                "auto_fix": false,
+                "fids": [
+                  "F104",
+                  "F113"
+                ],
+                "suggested_mapping": {
+                  "txns": [
+                    {
+                      "tID": "2025.08.20_C100.00",
+                      "tDB": "",
+                      "dt": "2025.08.20",
+                      "prop": "H_805HighMesa",
+                      "aType": "Credit",
+                      "acct": "Acct.Cash.Escrow",
+                      "contra": "",
+                      "desc": "Purchase Property: HOA Transfer Fees to Cedar Oak Mesa Prope",
+                      "amt": 100.0,
+                      "cash_dir": "",
+                      "fix_obj": "llcExpRev",
+                      "flag": "DUPLICATE"
+                    },
+                    {
+                      "tID": "2025.08.20_C100.00_2",
+                      "tDB": "",
+                      "dt": "2025.08.20",
+                      "prop": "H_805HighMesa",
+                      "aType": "Credit",
+                      "acct": "Acct.Cash.Escrow",
+                      "contra": "",
+                      "desc": "Closing, extra funds just in case. ",
+                      "amt": 100.0,
+                      "cash_dir": "",
+                      "fix_obj": "llcExpRev",
+                      "flag": "DUPLICATE"
+                    },
+                    {
+                      "tID": "2025.08.20_D100.00",
+                      "tDB": "",
+                      "dt": "2025.08.20",
+                      "prop": "H_805HighMesa",
+                      "aType": "Debit",
+                      "acct": "Acct.Exp.Operating",
+                      "contra": "",
+                      "desc": "Purchase Property: HOA Transfer Fees to Cedar Oak Mesa Prope",
+                      "amt": 100.0,
+                      "cash_dir": "",
+                      "fix_obj": "llcExpRev",
+                      "flag": "DUPLICATE"
+                    },
+                    {
+                      "tID": "2025.08.20_D100.00_2",
+                      "tDB": "",
+                      "dt": "2025.08.20",
+                      "prop": "H_805HighMesa",
+                      "aType": "Debit",
+                      "acct": "Acct.Equity.Owner.Capital.Funds",
+                      "contra": "",
+                      "desc": "Closing, extra funds just in case. ",
+                      "amt": 100.0,
+                      "cash_dir": "",
+                      "fix_obj": "llcExpRev",
+                      "flag": "DUPLICATE"
+                    }
+                  ],
+                  "source_doc": "books/2025/BankStmts/",
+                  "resolve_available": true,
+                  "resolve_label": "Mark Resolved \u2014 verified against bank statement",
+                  "resolve_note": "Confirm the transaction is correct or delete the duplicate."
+                }
+              },
+              {
+                "rule_id": "F8NI-R05b",
+                "severity": "WARN",
+                "message": "$90.90 on 2025.10.14 \u2014 possible double-post (4 transactions, H_805HighMesa).\n  \u2022 Two entries share the same date, amount, property, account, and direction.\n  \u2022 Verify against the bank statement \u2014 if one is a duplicate, delete it.",
+                "irs_cite": "IRC \u00a7263(a); IRC \u00a7446 (Books-First); bank statement = source of truth",
+                "action": "Verify against the bank statement (books/2025/BankStmts/), then correct the transaction's propNm/account in the ledger \u2014 use the Fix links on the transactions below.",
+                "auto_fix": false,
+                "fids": [
+                  "F104",
+                  "F113"
+                ],
+                "suggested_mapping": {
+                  "txns": [
+                    {
+                      "tID": "2025.10.14_C90.90",
+                      "tDB": "",
+                      "dt": "2025.10.14",
+                      "prop": "H_805HighMesa",
+                      "aType": "Credit",
+                      "acct": "Acct.Cash.Bank",
+                      "contra": "",
+                      "desc": "Auto: Approved Purchase: TEXAS DISPOSAL SYS 800-3758375",
+                      "amt": 90.9,
+                      "cash_dir": "out",
+                      "fix_obj": "llcExpRev",
+                      "flag": "DUPLICATE"
+                    },
+                    {
+                      "tID": "2025.10.14_C90.90_2",
+                      "tDB": "",
+                      "dt": "2025.10.14",
+                      "prop": "H_805HighMesa",
+                      "aType": "Credit",
+                      "acct": "Acct.Cash.Bank",
+                      "contra": "",
+                      "desc": "Auto: Approved Purchase: TEXAS DISPOSAL SYS 800-3758375",
+                      "amt": 90.9,
+                      "cash_dir": "out",
+                      "fix_obj": "llcExpRev",
+                      "flag": "DUPLICATE"
+                    },
+                    {
+                      "tID": "2025.10.14_D90.90",
+                      "tDB": "",
+                      "dt": "2025.10.14",
+                      "prop": "H_805HighMesa",
+                      "aType": "Debit",
+                      "acct": "Acct.Exp.Util",
+                      "contra": "",
+                      "desc": "Auto: Approved Purchase: TEXAS DISPOSAL SYS 800-3758375",
+                      "amt": 90.9,
+                      "cash_dir": "",
+                      "fix_obj": "llcExpRev",
+                      "flag": "DUPLICATE"
+                    },
+                    {
+                      "tID": "2025.10.14_D90.90_2",
+                      "tDB": "",
+                      "dt": "2025.10.14",
+                      "prop": "H_805HighMesa",
+                      "aType": "Debit",
+                      "acct": "Acct.Exp.Util",
+                      "contra": "",
+                      "desc": "Auto: Approved Purchase: TEXAS DISPOSAL SYS 800-3758375",
+                      "amt": 90.9,
+                      "cash_dir": "",
+                      "fix_obj": "llcExpRev",
+                      "flag": "DUPLICATE"
+                    }
+                  ],
+                  "source_doc": "books/2025/BankStmts/",
+                  "resolve_available": true,
+                  "resolve_label": "Mark Resolved \u2014 verified against bank statement",
+                  "resolve_note": "Confirm the transaction is correct or delete the duplicate."
+                }
+              },
+              {
+                "rule_id": "F8NI-R05c",
+                "severity": "WARN",
+                "message": "$27.04 on 2025.10.07 \u2014 possible double-post (4 transactions, RV_RV1).\n  \u2022 Two entries share the same date, amount, property, account, and direction.\n  \u2022 Verify against the bank statement \u2014 if one is a duplicate, delete it.",
+                "irs_cite": "IRC \u00a7263(a); IRC \u00a7446 (Books-First); bank statement = source of truth",
+                "action": "Verify against the bank statement (books/2025/BankStmts/), then correct the transaction's propNm/account in the ledger \u2014 use the Fix links on the transactions below.",
+                "auto_fix": false,
+                "fids": [
+                  "F104",
+                  "F113"
+                ],
+                "suggested_mapping": {
+                  "txns": [
+                    {
+                      "tID": "2025.10.07_C27.04",
+                      "tDB": "",
+                      "dt": "2025.10.07",
+                      "prop": "RV_RV1",
+                      "aType": "Credit",
+                      "acct": "Acct.Cash.Bank",
+                      "contra": "",
+                      "desc": "NoRcpt Approved Purchase: LOWE'S #159 SAN MARCOS",
+                      "amt": 27.04,
+                      "cash_dir": "out",
+                      "fix_obj": "llcExpRev",
+                      "flag": "DUPLICATE"
+                    },
+                    {
+                      "tID": "2025.10.07_C27.04_2",
+                      "tDB": "",
+                      "dt": "2025.10.07",
+                      "prop": "RV_RV1",
+                      "aType": "Credit",
+                      "acct": "Acct.Cash.Bank",
+                      "contra": "",
+                      "desc": "NoRcpt Approved Purchase: LOWE'S #159 SAN MARCOS",
+                      "amt": 27.04,
+                      "cash_dir": "out",
+                      "fix_obj": "llcExpRev",
+                      "flag": "DUPLICATE"
+                    },
+                    {
+                      "tID": "2025.10.07_D27.04",
+                      "tDB": "",
+                      "dt": "2025.10.07",
+                      "prop": "RV_RV1",
+                      "aType": "Debit",
+                      "acct": "Acct.Fixed.Tangible.InConstruction",
+                      "contra": "",
+                      "desc": "NoRcpt Approved Purchase: LOWE'S #159 SAN MARCOS",
+                      "amt": 27.04,
+                      "cash_dir": "",
+                      "fix_obj": "llcAssets",
+                      "flag": "DUPLICATE"
+                    },
+                    {
+                      "tID": "2025.10.07_D27.04_2",
+                      "tDB": "",
+                      "dt": "2025.10.07",
+                      "prop": "RV_RV1",
+                      "aType": "Debit",
+                      "acct": "Acct.Fixed.Tangible.InConstruction",
+                      "contra": "",
+                      "desc": "NoRcpt Approved Purchase: LOWE'S #159 SAN MARCOS",
+                      "amt": 27.04,
+                      "cash_dir": "",
+                      "fix_obj": "llcAssets",
+                      "flag": "DUPLICATE"
+                    }
+                  ],
+                  "source_doc": "books/2025/BankStmts/",
+                  "resolve_available": true,
+                  "resolve_label": "Mark Resolved \u2014 verified against bank statement",
+                  "resolve_note": "Confirm the transaction is correct or delete the duplicate."
+                }
+              },
+              {
+                "rule_id": "F8NI-R05d",
+                "severity": "WARN",
+                "message": "$7.87 on 2025.12.31 \u2014 possible double-post (4 transactions, H_805HighMesa).\n  \u2022 Two entries share the same date, amount, property, account, and direction.\n  \u2022 Verify against the bank statement \u2014 if one is a duplicate, delete it.",
+                "irs_cite": "IRC \u00a7263(a); IRC \u00a7446 (Books-First); bank statement = source of truth",
+                "action": "Verify against the bank statement (books/2025/BankStmts/), then correct the transaction's propNm/account in the ledger \u2014 use the Fix links on the transactions below.",
+                "auto_fix": false,
+                "fids": [
+                  "F104",
+                  "F113"
+                ],
+                "suggested_mapping": {
+                  "txns": [
+                    {
+                      "tID": "2025.12.31_C7.87",
+                      "tDB": "",
+                      "dt": "2025.12.31",
+                      "prop": "H_805HighMesa",
+                      "aType": "Credit",
+                      "acct": "Acct.Equity.Earnings.PnL",
+                      "contra": "",
+                      "desc": "YE Net Income - H_805HighMesa - Alexandra Rojas (2%)",
+                      "amt": 7.87,
+                      "cash_dir": "",
+                      "fix_obj": "llcExpRev",
+                      "flag": "DUPLICATE"
+                    },
+                    {
+                      "tID": "2025.12.31_C7.87_2",
+                      "tDB": "",
+                      "dt": "2025.12.31",
+                      "prop": "H_805HighMesa",
+                      "aType": "Credit",
+                      "acct": "Acct.Equity.Earnings.PnL",
+                      "contra": "",
+                      "desc": "YE Net Income - H_805HighMesa - Nicola Rojas (2%)",
+                      "amt": 7.87,
+                      "cash_dir": "",
+                      "fix_obj": "llcExpRev",
+                      "flag": "DUPLICATE"
+                    },
+                    {
+                      "tID": "2025.12.31_D7.87",
+                      "tDB": "",
+                      "dt": "2025.12.31",
+                      "prop": "H_805HighMesa",
+                      "aType": "Debit",
+                      "acct": "Acct.Equity.Owner.Capital.Funds",
+                      "contra": "",
+                      "desc": "YE Net Income - H_805HighMesa - Alexandra Rojas (2%)",
+                      "amt": 7.87,
+                      "cash_dir": "",
+                      "fix_obj": "llcExpRev",
+                      "flag": "DUPLICATE"
+                    },
+                    {
+                      "tID": "2025.12.31_D7.87_2",
+                      "tDB": "",
+                      "dt": "2025.12.31",
+                      "prop": "H_805HighMesa",
+                      "aType": "Debit",
+                      "acct": "Acct.Equity.Owner.Capital.Funds",
+                      "contra": "",
+                      "desc": "YE Net Income - H_805HighMesa - Nicola Rojas (2%)",
+                      "amt": 7.87,
+                      "cash_dir": "",
+                      "fix_obj": "llcExpRev",
+                      "flag": "DUPLICATE"
+                    }
+                  ],
+                  "source_doc": "books/2025/BankStmts/",
+                  "resolve_available": true,
+                  "resolve_label": "Mark Resolved \u2014 verified against bank statement",
+                  "resolve_note": "Confirm the transaction is correct or delete the duplicate."
+                }
+              },
+              {
+                "rule_id": "F8NI-R03",
+                "severity": "INFO",
+                "message": "\u2713 Line 21 (Net Rental Income/Loss) = $667.55 (net rental income).\n  \u2022 This flows to Schedule K Line 2, then to each partner's K-1 Box 2 as passive rental income/loss.",
+                "irs_cite": "Form 8825 Line 21; Schedule K Line 2; IRC \u00a7469(c)(2)",
+                "action": "No action required.",
+                "auto_fix": false,
+                "fids": [],
+                "suggested_mapping": {}
+              }
+            ],
+            "pass1": {
+              "section": "AgentF8825_NetIncome",
+              "tax_year": 2025,
+              "filled": 3,
+              "blank": 0,
+              "complex": 0,
+              "total": 3
+            }
+          }
+        },
+        "pdf": {
+          "fill_path": "/Users/frankrojas/Library/CloudStorage/GoogleDrive-frankr6591@gmail.com/My Drive/Family/Assets/LLC-WBGroup/books/2025/Forms/Form8825_FILL.pdf",
+          "pdf_fields": 221,
+          "filled": 19,
+          "check": 0,
+          "complex": 0,
+          "blank": 202,
+          "ts": 1781671622
+        }
+      }
+    },
+    "Form1065Agent": {
+      "state": "GO",
+      "overall_halt": 0,
+      "last_run": "2026-06-17T04:47:05Z",
+      "session": {
+        "tax_year": 2025,
+        "last_run": "2026-06-17T04:47:05Z",
+        "overall_state": "GO",
+        "sections": {
+          "AgentF1065_Info": {
+            "label": "General Information",
+            "state": "GO",
+            "summary": "W&B Group, LLC \u2014 EIN 39-3842347, TY 2025",
+            "halt_count": 0,
+            "resolve_count": 2,
+            "review_count": 1,
+            "issues": [
+              {
+                "rule_id": "IF-R03",
+                "severity": "WARN",
+                "message": "Form 1065 Line H (Accounting Method) is blank \u2014 either 'Cash' or 'Accrual' must be checked.\n  \u2022 For W&B Group: Accrual is appropriate (the LLC tracks depreciation and assets over time).",
+                "irs_cite": "Form 1065 Page 1 Item H requires one checkbox",
+                "action": "In llcProfile set F1065.acctg_method = 'Accrual'; then map Profile.F1065.acctg_method \u2192 P1_H via the Aid dialog",
+                "auto_fix": false,
+                "fids": [
+                  "P1_H"
+                ],
+                "suggested_mapping": {
+                  "fid": "P1_H",
+                  "src": "Profile",
+                  "path": "Profile.F1065.acctg_method"
+                }
+              },
+              {
+                "rule_id": "IF-R07",
+                "severity": "WARN",
+                "message": "Form 1065 Line I (Number of K-1s) shows blank, but the LLC has 3 partner(s).\n  \u2022 Line I must match the actual number of partners \u2014 one K-1 is required for each.",
+                "irs_cite": "Form 1065 Instructions, Page 1 Item I",
+                "action": "Re-run the BookToIRS pipeline so P1_I auto-fills from live owner count; or map Profile.owners.count \u2192 P1_I via Aid",
+                "auto_fix": false,
+                "fids": [
+                  "P1_I",
+                  "B_25Fm"
+                ],
+                "suggested_mapping": {
+                  "fid": "P1_I",
+                  "src": "Profile",
+                  "path": "owners.count"
+                }
+              },
+              {
+                "rule_id": "IF-R08",
+                "severity": "INFO",
+                "message": "Form 1065 Line K (At-Risk): For a rental LLC funded by partner cash contributions, all partners are generally 'at risk'.\n  \u2022 This checkbox needs to be confirmed and checked \u2014 the default is usually 'Yes' for a small LLC without unusual financing.",
+                "irs_cite": "IRC \u00a7465; Form 1065 Instructions, Page 1 Item K",
+                "action": "Confirm with CPA: are all partners at-risk under \u00a7465 for this LLC? If yes, set the P1_K checkbox via Aid. Typically 'Yes' for a small LLC with no non-recourse financing beyond mortgages.",
+                "auto_fix": false,
+                "fids": [
+                  "P1_K"
+                ],
+                "suggested_mapping": {}
+              }
+            ],
+            "pass1": {
+              "section": "AgentF1065_Info",
+              "tax_year": 2025,
+              "filled": 0,
+              "blank": 0,
+              "complex": 0,
+              "total": 0,
+              "fill_dict": {}
+            }
+          },
+          "AgentF1065_IncStmt": {
+            "label": "Income & Deductions",
+            "state": "GO",
+            "summary": "Page 1 Lines 1\u201323: $0 (IRS \u00a7469 \u2014 all rental activity passive). Books: gross rent $4,000.00, net rental income $667.55 \u2192 Schedule K Line 2 via Form 8825.",
+            "halt_count": 0,
+            "resolve_count": 0,
+            "review_count": 2,
+            "issues": [
+              {
+                "rule_id": "IS-R10",
+                "severity": "INFO",
+                "message": "\u2713 Form 1065 Page 1 (Lines 1\u201323) is correctly blank \u2014 no rental income or expenses appear here.\n  \u2022 Net rental income of $667.55 flows through Form 8825 \u2192 Schedule K Line 2 \u2192 each partner's K-1 Box 2.",
+                "irs_cite": "IRC \u00a7469(c)(2); Form 1065 Instructions Lines 1\u201323",
+                "action": "No action \u2014 Page 1 ordinary section is correctly empty. Confirm the same net rental amount appears on Form 8825 Line 23 and Schedule K Line 2.",
+                "auto_fix": false,
+                "fids": [],
+                "suggested_mapping": {}
+              },
+              {
+                "rule_id": "IS-R04",
+                "severity": "INFO",
+                "message": "\u2713 Form 1065 Page 1 Line 16a = $0 (correct \u2014 rental depreciation doesn't go here).\n  \u2022 The books show $1,903.13 of depreciation \u2014 verify it appears on Form 8825 Line 14.",
+                "irs_cite": "Form 1065 Instructions Line 16a; Form 8825 Line 14",
+                "action": "Confirm Form 8825 and Form 4562 are generated with the correct IS.depreciation value ($1,903.13) from books.",
+                "auto_fix": false,
+                "fids": [],
+                "suggested_mapping": {}
+              }
+            ],
+            "pass1": {
+              "section": "AgentF1065_IncStmt",
+              "tax_year": 2025,
+              "filled": 0,
+              "blank": 0,
+              "complex": 0,
+              "total": 0,
+              "fill_dict": {}
+            }
+          },
+          "AgentF1065_Other": {
+            "label": "Schedule B",
+            "state": "GO",
+            "summary": "Schedule B complete. Schedules L/M-1/M-2 not required (below threshold)",
+            "halt_count": 0,
+            "resolve_count": 0,
+            "review_count": 10,
+            "issues": [
+              {
+                "rule_id": "OT-R01",
+                "severity": "INFO",
+                "message": "\u2713 Schedules L, M-1, and M-2 are NOT required for W&B Group.\n  \u2022 The LLC is below both IRS thresholds: income $4,401 (under $250K) and/or assets $668 (under $1M).\n  \u2022 Schedule B Question 4c should be answered 'Yes' to skip these schedules.",
+                "irs_cite": "Form 1065 Instructions, Schedule B Q4c; Treas. Reg. \u00a71.6031(a)-1(b)(4)",
+                "action": "Q4c Yes (f145, c2_9 checkBox) must be in F1065.chk. f146 (No box) must not be.",
+                "auto_fix": true,
+                "fids": [],
+                "suggested_mapping": {}
+              },
+              {
+                "rule_id": "OT-R10",
+                "severity": "INFO",
+                "message": "\u2713 Form 1065 Question 1: entity type = domestic LLC \u2014 correct for W&B Group.",
+                "irs_cite": "IRC \u00a77701(a)(2); Form 1065 Instructions Q1",
+                "action": "",
+                "auto_fix": false,
+                "fids": [],
+                "suggested_mapping": {}
+              },
+              {
+                "rule_id": "OT-R11",
+                "severity": "INFO",
+                "message": "\u2713 Form 1065 Question 2a: all W&B Group owners are individuals \u2014 NO (f87 in chk sets No checkbox).",
+                "irs_cite": "Form 1065 Instructions, Schedule B Q2a",
+                "action": "",
+                "auto_fix": false,
+                "fids": [],
+                "suggested_mapping": {}
+              },
+              {
+                "rule_id": "OT-R12",
+                "severity": "INFO",
+                "message": "\u2713 Form 1065 Question 2b: ['Francis X Rojas'] owns 96.0% \u2014 YES (f88 in chk sets Yes checkbox).",
+                "irs_cite": "Form 1065 Instructions, Schedule B Q2b; IRC \u00a7267(b)",
+                "action": "",
+                "auto_fix": false,
+                "fids": [],
+                "suggested_mapping": {}
+              },
+              {
+                "rule_id": "OT-R13",
+                "severity": "INFO",
+                "message": "\u2713 Form 1065 Question 3a: W&B Group owns only real property, not shares in any company \u2014 NO (f91 in chk).",
+                "irs_cite": "Form 1065 Instructions, Schedule B Q3a; IRC \u00a7267(b)",
+                "action": "",
+                "auto_fix": false,
+                "fids": [],
+                "suggested_mapping": {}
+              },
+              {
+                "rule_id": "OT-R14",
+                "severity": "INFO",
+                "message": "\u2713 Form 1065 Question 3b: W&B Group owns only real property, not another partnership \u2014 NO (f113 in chk).",
+                "irs_cite": "Form 1065 Instructions, Schedule B Q3b; IRC \u00a7267(c)",
+                "action": "",
+                "auto_fix": false,
+                "fids": [],
+                "suggested_mapping": {}
+              },
+              {
+                "rule_id": "OT-R15",
+                "severity": "INFO",
+                "message": "\u2713 Form 1065 Question 4c: below thresholds (income $4,401, assets $668) \u2014 YES (f145 in chk). Schedules L/M-1/M-2 NOT required.",
+                "irs_cite": "Form 1065 Instructions, Schedule B Q4c; Treas. Reg. \u00a71.6031(a)-1(b)(4)",
+                "action": "",
+                "auto_fix": false,
+                "fids": [],
+                "suggested_mapping": {}
+              },
+              {
+                "rule_id": "OT-R16",
+                "severity": "INFO",
+                "message": "\u2713 Form 1065 Question 4d: no distributions in books \u2014 NO (f149 in chk sets No checkbox).",
+                "irs_cite": "Form 1065 Instructions, Schedule B Q4d",
+                "action": "",
+                "auto_fix": false,
+                "fids": [],
+                "suggested_mapping": {}
+              },
+              {
+                "rule_id": "OT-R17",
+                "severity": "INFO",
+                "message": "\u2713 Form 1065 Q5\u2013Q28 (foreign activity, complex transactions): all NO for W&B Group.\n  \u2022 Domestic LLC, U.S. partners, U.S. real property \u2014 none of these foreign/complex questions apply.\n  \u2022 No-box fids are in F1065.chk (f151, f154, f158, f162, f165, f167, f170, f174, f177, f179, f183, f185, f187, f189, f192, f194, f196, f200, f204, f206, f208, f210, f213).\n  \u2022 Confirm no unusual transactions occurred in 2025.",
+                "irs_cite": "Form 1065 Instructions, Schedule B Q5\u2013Q28",
+                "action": "If any of these conditions applied in 2025, contact CPA before filing.",
+                "auto_fix": false,
+                "fids": [],
+                "suggested_mapping": {}
+              },
+              {
+                "rule_id": "OT-R18",
+                "severity": "INFO",
+                "message": "\u2713 Form 1065 Question 8 (PTP): W&B Group is a private LLC \u2014 NO (f162 in chk).",
+                "irs_cite": "IRC \u00a77704; Form 1065 Instructions, Schedule B Q8",
+                "action": "",
+                "auto_fix": false,
+                "fids": [],
+                "suggested_mapping": {}
+              }
+            ],
+            "pass1": {
+              "section": "AgentF1065_Other",
+              "tax_year": 2025,
+              "filled": 0,
+              "blank": 0,
+              "complex": 0,
+              "total": 0,
+              "fill_dict": {}
+            }
+          },
+          "AgentF1065_Distr": {
+            "label": "Schedule K",
+            "state": "GO",
+            "summary": "Schedule K Line 2 = $667.55 (net rental income per books: $667.55). Line 1 = $0. Allocates to 3 partners per \u00a7704(b).",
+            "halt_count": 0,
+            "resolve_count": 1,
+            "review_count": 0,
+            "issues": [
+              {
+                "rule_id": "KD-R04",
+                "severity": "WARN",
+                "message": "Schedule K Line 19a (Cash Distributions) = $0.00 but GL shows $100.00.\n  \u2022 Line 19a = actual cash sent to partners (bank transfers), not paper income allocation.\n  \u2022 Difference: $100.00 \u2014 verify Capital.Dist GL entries match the filed amount.",
+                "irs_cite": "IRC \u00a7731; Form 1065 Instructions Schedule K Line 19a",
+                "action": "Re-run after verifying Capital.Dist GL entries match the total cash distributed. If no cash was distributed, leave Line 19a blank.",
+                "auto_fix": false,
+                "fids": [
+                  "K_19a"
+                ],
+                "suggested_mapping": {}
+              }
+            ],
+            "pass1": {
+              "section": "AgentF1065_Distr",
+              "tax_year": 2025,
+              "filled": 1,
+              "blank": 0,
+              "complex": 0,
+              "total": 1,
+              "fill_dict": {
+                "K_2": "667.55"
+              }
+            }
+          },
+          "AgentF1065_Reconcile": {
+            "label": "Schedules L / M-1 / M-2",
+            "state": "GO",
+            "summary": "Schedules L/M-1/M-2 NOT required (Schedule B Q4 = Yes). LLC is below both thresholds: gross income $4,401 < $250K and/or total assets $668 < $1M.",
+            "halt_count": 0,
+            "resolve_count": 0,
+            "review_count": 1,
+            "issues": [
+              {
+                "rule_id": "RC-R01",
+                "severity": "INFO",
+                "message": "\u2713 Schedules L, M-1, and M-2 are NOT required (income $4,401 and/or assets $668 are below IRS thresholds).\n  \u2022 Schedule B Question 4(c) should be answered 'Yes' \u2014 leave these schedule pages blank.",
+                "irs_cite": "Form 1065 Instructions, Schedule B Q4(c); Treas. Reg. \u00a71.6031(a)-1(b)(4)",
+                "action": "Confirm Schedule B Q4(c) = Yes in the form. Leave Schedules L/M-1/M-2 entirely blank.",
+                "auto_fix": false,
+                "fids": [],
+                "suggested_mapping": {}
+              }
+            ],
+            "pass1": {
+              "section": "AgentF1065_Reconcile",
+              "tax_year": 2025,
+              "filled": 0,
+              "blank": 0,
+              "complex": 0,
+              "total": 0,
+              "fill_dict": {}
+            }
+          },
+          "AgentForm_Ext": {
+            "label": "Next Steps (Extensions)",
+            "state": "GO",
+            "summary": "Next Steps: Prepare Form 4562; 3 K-1s",
+            "halt_count": 0,
+            "resolve_count": 0,
+            "review_count": 2,
+            "issues": [
+              {
+                "rule_id": "EX-R07",
+                "severity": "INFO",
+                "message": "Form 4562 is required: depreciation entries are recorded in the books.",
+                "irs_cite": "Form 4562 Instructions; IRC \u00a7168",
+                "action": "Prepare Form 4562 via Form4562Agent (future) or manually",
+                "auto_fix": false,
+                "fids": [],
+                "suggested_mapping": {}
+              },
+              {
+                "rule_id": "EX-R01",
+                "severity": "INFO",
+                "message": "3 Schedule K-1s are required \u2014 one for each partner.",
+                "irs_cite": "Form 1065 Instructions, \u00a7563",
+                "action": "Prepare 3 K-1s via SchK1Agent (future) or manually",
+                "auto_fix": false,
+                "fids": [],
+                "suggested_mapping": {}
+              }
+            ],
+            "pass1": {
+              "section": "AgentForm_Ext",
+              "tax_year": 2025,
+              "inventory": {
+                "required_forms": [
+                  "Form1065",
+                  "Form4562"
+                ],
+                "required_k1_count": 3,
+                "active_properties": [],
+                "under_construction": [],
+                "schedules_required": {
+                  "L": false,
+                  "M1": false,
+                  "M2": false
+                },
+                "notes": [
+                  "No active properties found \u2014 Form 8825 may not be required"
+                ]
+              },
+              "filled": 0,
+              "blank": 0,
+              "complex": 0,
+              "total": 0
+            }
+          }
+        },
+        "ext_advice": "Prepare: Form 4562, 3 Schedule K-1s"
+      }
+    },
+    "FormSchK1Agent": {
+      "state": "GO",
+      "overall_halt": 0,
+      "last_run": "2026-06-17T04:47:06Z",
+      "session": {
+        "tax_year": 2025,
+        "last_run": "2026-06-17T04:47:06Z",
+        "overall_state": "GO",
+        "partner_count": 3,
+        "partners": {
+          "o20250801_1": {
+            "name": "Francis X Rojas",
+            "pct": 0.96,
+            "state": "GO",
+            "halt_count": 0,
+            "box2": 640.85,
+            "capital_ending": 226370.13,
+            "sections": {
+              "AgentSchK1_PartnershipInfo": {
+                "label": "Part I: Partnership Identification",
+                "state": "GO",
+                "summary": "Partnership Info: W&B Group, LLC EIN=39-3842347 Tax year Jan. 01 \u2013 Dec. 31. IRS center='E-File'.",
+                "halt_count": 0,
+                "resolve_count": 0,
+                "review_count": 4,
+                "issues": [
+                  {
+                    "rule_id": "SK1A-R00",
+                    "severity": "INFO",
+                    "message": "\u2713 K-1 for o20250801_1: layout orientation \u2014 Part I (LLC info) and Part II (partner info) are separate.\n  \u2022 Part I (f1\u2013f13): same on every K-1 \u2014 shows the LLC's EIN, name, address, and IRS center.\n    f12 = LLC city/state/ZIP = 'Wimberley, Tx 78676' \u2014 this is CORRECT (LLC address, NOT the partner's SSN).\n    f13 = IRS Service Center (Line C) \u2014 where Form 1065 was filed.\n  \u2022 Part II (f14\u2013f48): partner-specific \u2014 SSN is f19, name is f20, address is f21.\n    f18 (Disregarded Entity) is NOT related to f19/f20 \u2014 SSN and name are ALWAYS required.",
+                    "irs_cite": "Form 1065 Instructions (Schedule K-1, Parts I and II overview)",
+                    "action": "No action needed for this rule \u2014 it is informational only. Subsequent rules check each Part I/II field individually.",
+                    "auto_fix": false,
+                    "fids": [],
+                    "suggested_mapping": {}
+                  },
+                  {
+                    "rule_id": "SK1A-R01",
+                    "severity": "INFO",
+                    "message": "\u2713 K-1 for o20250801_1: tax year header is correct \u2014 calendar year Jan 1 \u2013 Dec 31, 25.",
+                    "irs_cite": "IRC \u00a7441; IRC \u00a7706(b)(1)(B)",
+                    "action": "No action needed \u2014 tax year header fields f1\u2013f5 are correctly populated.",
+                    "auto_fix": false,
+                    "fids": [],
+                    "suggested_mapping": {}
+                  },
+                  {
+                    "rule_id": "SK1A-R04a",
+                    "severity": "INFO",
+                    "message": "\u2713 K-1 for o20250801_1: header flags \u2014 Final K-1 = Not set (correct \u2014 LLC is ongoing); Amended K-1 = Not set (correct \u2014 this is the first K-1 for 2025).\n  \u2022 Neither box needs to be checked for an active, first-year LLC with no partner exits.",
+                    "irs_cite": "Form 1065 Instructions (K-1 header \u2014 Final K-1, Amended K-1)",
+                    "action": "No action needed. If a partner exits in a future year, set is_final_k1=True for that partner. If issuing a corrected K-1, set is_amended_k1=True.",
+                    "auto_fix": false,
+                    "fids": [],
+                    "suggested_mapping": {}
+                  },
+                  {
+                    "rule_id": "SK1A-R04b",
+                    "severity": "INFO",
+                    "message": "\u2713 K-1 for o20250801_1: IRS Service Center (Line C) = 'E-File'.\n  \u2022 Verify this matches how Form 1065 was filed: E-filed \u2192 'E-File'; paper Texas LLC \u2192 'Ogden, UT 84201'.",
+                    "irs_cite": "Form 1065 Instructions (K-1 Line C)",
+                    "action": "No action if filing method matches. Update F1065.irs_center in llcProfile if wrong.",
+                    "auto_fix": false,
+                    "fids": [],
+                    "suggested_mapping": {}
+                  }
+                ]
+              },
+              "AgentSchK1_PartnerCapital": {
+                "label": "Part II: Partner Capital & Liabilities",
+                "state": "GO",
+                "summary": "Capital (Box L): Francis X Rojas \u2014 Beg=$0 + Contrib(GL)=$225,829.28 + Box2=$640.85 \u2212 Distrib(GL)=$100.00 = Ending=$226,370.13 (tax basis).",
+                "halt_count": 0,
+                "resolve_count": 1,
+                "review_count": 6,
+                "issues": [
+                  {
+                    "rule_id": "SK1B-R00",
+                    "severity": "INFO",
+                    "message": "\u2713 K-1 for Francis X Rojas (o20250801_1): Part II identification fields look good.\n  \u2022 f19 (Line E \u2014 Partner SSN): ***-**-7375 \u2713  (not the LLC's EIN \u2014 this is Francis X Rojas's personal SSN)\n  \u2022 f20 (Line F \u2014 Partner name): 'Francis X Rojas' \u2713\n  \u2022 f21 (Line F \u2014 Partner address): '177 Kingsway Dr, Wimberley, TX 78676'\n  \u2022 f18 (Line H2 \u2014 Disregarded Entity): NOT checked \u2713 \u2014 correct for an individual person.\n    Note: f18 unchecked does NOT suppress f19/f20 \u2014 SSN and name are required on every K-1.",
+                    "irs_cite": "IRC \u00a76109; Form 1065 Instructions (K-1 Lines E, F, H2)",
+                    "action": "Verify SSN matches 'Francis X Rojas' Form 1040. Confirm address is complete (street, city, 2-letter state abbrev., ZIP).",
+                    "auto_fix": false,
+                    "fids": [],
+                    "suggested_mapping": {}
+                  },
+                  {
+                    "rule_id": "SK1B-R01",
+                    "severity": "INFO",
+                    "message": "\u2713 K-1 for Francis X Rojas (o20250801_1): partner type = GP/member-manager (f14) (status='Manager').\n  \u2022 Entity type: Individual \u2014 reports K-1 Box 2 on Schedule E (page 2) of their personal Form 1040.\n  \u2022 Domestic partner \u2713 (SSN on file). Not a disregarded entity \u2713 (individual person).",
+                    "irs_cite": "IRC \u00a7761(b); IRC \u00a71402(a)(13); Form 1065 Instructions (K-1 Lines G, H1, H2)",
+                    "action": "Verify checkboxes match partner role. Passive members who become managers (or vice versa) must update K-1 in the year the role changes.",
+                    "auto_fix": false,
+                    "fids": [],
+                    "suggested_mapping": {}
+                  },
+                  {
+                    "rule_id": "SK1B-R03",
+                    "severity": "INFO",
+                    "message": "\u2713 K-1 for Francis X Rojas (o20250801_1): Disregarded Entity (Line H2, f18) = NOT checked \u2014 correct.\n  \u2022 Francis X Rojas is an individual person, not an LLC or trust \u2014 'Disregarded Entity' does not apply.\n  \u2022 f18 unchecked does NOT mean f19 (SSN) or f20 (name) should be blank.\n    Those are required on EVERY K-1 regardless of f18's value \u2014 and they are filled.",
+                    "irs_cite": "Treas. Reg. \u00a7301.7701-3; Form 1065 Instructions (K-1 Line H2)",
+                    "action": "No action needed. f18 is correctly left unchecked for all W&B individual partners.",
+                    "auto_fix": false,
+                    "fids": [],
+                    "suggested_mapping": {}
+                  },
+                  {
+                    "rule_id": "SK1B-R04",
+                    "severity": "INFO",
+                    "message": "\u2713 K-1 for Francis X Rojas (o20250801_1): ownership percentage = 96.0% (Profit / Loss / Capital \u2014 all the same).\n  \u2022 No ownership change during 2025, so beginning and ending percentages are equal.\n  \u2022 Allocation matches the LLC Operating Agreement.",
+                    "irs_cite": "IRC \u00a7704(b); Form 1065 Instructions (K-1 Box J)",
+                    "action": "No action needed. If ownership % changes mid-year in a future year, update beginning and ending percentages separately in llcOwners.",
+                    "auto_fix": false,
+                    "fids": [],
+                    "suggested_mapping": {}
+                  },
+                  {
+                    "rule_id": "SK1B-R05",
+                    "severity": "WARN",
+                    "message": "K-1 for Francis X Rojas (o20250801_1): no mortgage found in the books \u2014 Box K1 (liabilities) = $0.\n  \u2022 If the LLC has a mortgage on the property, it must be recorded in llcAssets as a liability.\n  \u2022 Without the mortgage recorded, each partner's 'at-risk' basis is understated, which can limit their ability to deduct rental losses.",
+                    "irs_cite": "IRC \u00a7752; \u00a7465(b)(6); Treas. Reg. \u00a71.752-3",
+                    "action": "Check llcAssets for mortgage liability entries. Ensure BS.taxAggregates()['mortgage'] returns the correct year-end balance.",
+                    "auto_fix": false,
+                    "fids": [],
+                    "suggested_mapping": {}
+                  },
+                  {
+                    "rule_id": "SK1B-R07",
+                    "severity": "INFO",
+                    "message": "\u2713 K-1 for Francis X Rojas (o20250801_1) capital account (Box L, tax basis):\n  \u2022 Capital contributed: $225,829.28\n  \u2022 Share of 2025 income: $640.85\n  \u2022 Distributions paid out: $100.00\n  \u2022 End of year balance: $226,370.13",
+                    "irs_cite": "IRC \u00a7705; Rev. Proc. 2020-13; Form 1065 Instructions (K-1 Box L)",
+                    "action": "Verify Box L in PDF for 'Francis X Rojas': L2=$225,829.28, L3=$640.85, L5=$100.00, L6=$226,370.13.",
+                    "auto_fix": false,
+                    "fids": [],
+                    "suggested_mapping": {}
+                  },
+                  {
+                    "rule_id": "SK1B-R08",
+                    "severity": "INFO",
+                    "message": "\u2713 K-1 for Francis X Rojas (o20250801_1): capital contributions = $225,829.28.\n  \u2022 If all contributions were cash (the typical case), Line N (\u00a7704(c) built-in gain) = $0.\n  \u2022 If a partner contributed property instead of cash, a CPA must calculate any built-in gain and disclose it on Line N.",
+                    "irs_cite": "IRC \u00a7704(c); Treas. Reg. \u00a71.704-3; Form 1065 Instructions (K-1 Line N)",
+                    "action": "Confirm: were all contributions cash (Ledger = Acct.Cash.*)? If yes, Line N is blank (\u00a7704(c) = $0). If property was contributed, engage CPA to compute \u00a7704(c) amounts.",
+                    "auto_fix": false,
+                    "fids": [],
+                    "suggested_mapping": {}
+                  }
+                ]
+              },
+              "AgentSchK1_PassiveItems": {
+                "label": "Part III: Partner's Share of Income, Deductions, Credits & Other Items",
+                "state": "GO",
+                "summary": "Partner's Share: Francis X Rojas \u2014 Box 1=$0 (passive rental), Box 2=$640.85 (IS.net_rental $667.55 \u00d7 96.00% \u2014 PASSIVE per \u00a7469(c)(2)), Box 5=$0.00, Box 14a=$0, Box 20Z=NII advisory.",
+                "halt_count": 0,
+                "resolve_count": 1,
+                "review_count": 7,
+                "issues": [
+                  {
+                    "rule_id": "SK1C-R00",
+                    "severity": "INFO",
+                    "message": "W&B Group is a rental LLC \u2014 by tax law, ALL rental income is PASSIVE income.\n  \u2022 Francis X Rojas (o20250801_1): Box 2 income is classified PASSIVE.\n  \u2022 Francis X Rojas is listed as managing member \u2014 but managing an investment LLC does NOT\n    make Francis X Rojas a Real Estate Professional. That requires real estate as a primary\n    full-time career (>750 hrs/year in real estate trades). Most likely: Francis X Rojas's\n    rental income stays PASSIVE, same as all other partners.\n  \u2022 Each partner reports their K-1 Box 2 amount on Schedule E (page 2) of their personal Form 1040.\n  \u2022 Passive losses can only offset other passive income (not wages or business income).\n  \u2022 Rental income is subject to 3.8% Net Investment Income Tax (NIIT) \u2192 K-1 Box 20 Code Z.",
+                    "irs_cite": "IRC \u00a7469(c)(2); \u00a7469(c)(7); \u00a71411",
+                    "action": "Ask Francis X Rojas to confirm with their CPA whether they qualify as a full-time Real Estate Professional. All partners: report Box 2 on Schedule E Part II of their personal Form 1040.",
+                    "auto_fix": false,
+                    "fids": [],
+                    "suggested_mapping": {}
+                  },
+                  {
+                    "rule_id": "SK1C-R02",
+                    "severity": "INFO",
+                    "message": "\u2713 K-1 for Francis X Rojas (o20250801_1): Box 2 (net rental income) = $640.85.\n  \u2022 Source: IS.net_rental $667.55 \u00d7 96.00% ownership = $640.85.\n  \u2022 Box 2 is the only income box for a rental LLC. If the PDF shows blank, regenerate the K-1.",
+                    "irs_cite": "IRC \u00a7446; IRC \u00a7702(a); IRC \u00a7703; Books-First rule",
+                    "action": "Regenerate the K-1 PDF if Box 2 is blank in the FILL.pdf.",
+                    "auto_fix": false,
+                    "fids": [],
+                    "suggested_mapping": {}
+                  },
+                  {
+                    "rule_id": "SK1C-R11",
+                    "severity": "WARN",
+                    "message": "K-1 for o20250801_1: the books show miscellaneous income of $400.53 \u2192 Box 11 would be $384.51.\n  \u2022 For a rental LLC, this is unexpected. Confirm whether this income belongs in Box 2 (rental), Box 5 (interest), or Box 11 (other).",
+                    "irs_cite": "IRC \u00a7702(a); Form 1065 Instructions (K-1 Box 11)",
+                    "action": "Review IS.other_income. Reclassify to correct box if needed.",
+                    "auto_fix": false,
+                    "fids": [],
+                    "suggested_mapping": {}
+                  },
+                  {
+                    "rule_id": "SK1C-R13",
+                    "severity": "INFO",
+                    "message": "\u2713 K-1 for o20250801_1: Box 13 (Other Deductions) = $0 \u2014 correct for W&B Group in 2025.\n  \u2022 No charitable contributions, investment interest, or unusual deductions expected for a first-year rental LLC.\n  \u2022 Interest expense deduction rules (\u00a7163(j)) generally don't apply to small LLCs \u2014 W&B should be exempt given first-year revenue.",
+                    "irs_cite": "IRC \u00a7702(a); IRC \u00a7163(j); Form 1065 Instructions (K-1 Box 13)",
+                    "action": "No action needed unless the LLC has unusual deduction items. Verify \u00a7163(j) small business exception with CPA if mortgage interest is large.",
+                    "auto_fix": false,
+                    "fids": [],
+                    "suggested_mapping": {}
+                  },
+                  {
+                    "rule_id": "SK1C-R09",
+                    "severity": "INFO",
+                    "message": "\u2713 K-1 for Francis X Rojas (o20250801_1): Box 14a (Self-Employment Income) = $0 \u2014 correct.\n  \u2022 Rental real estate income is NOT subject to self-employment tax for any partner, including the managing member.\n  \u2022 Note: managing the LLC is investment management \u2014 not the same as providing personal services that would trigger SE tax.\n  \u2022 The 'Real Estate Professional' question (50%+ time in real estate) only affects whether losses are passive \u2014 it does not create SE tax.",
+                    "irs_cite": "IRC \u00a71402(a)(1); \u00a7469(c)(7); Pub 541",
+                    "action": "No action. Box 14a is correctly $0. Advisory: if Francis believes he qualifies as a Real Estate Professional (\u00a7469(c)(7)) for passive-loss purposes, that analysis is separate and does not change Box 14a.",
+                    "auto_fix": false,
+                    "fids": [],
+                    "suggested_mapping": {}
+                  },
+                  {
+                    "rule_id": "SK1C-R18",
+                    "severity": "INFO",
+                    "message": "\u2713 K-1 for o20250801_1: Box 18 (Tax-Exempt Income / Nondeductible Expenses) = $0 \u2014 correct.\n  \u2022 No municipal bonds, tax-exempt income, or nondeductible expenses for W&B in 2025.\n  \u2022 Worth noting: if the LLC ever earns tax-exempt income in future years, it still counts toward each partner's ownership basis.",
+                    "irs_cite": "IRC \u00a7705(a)(1)(B); Form 1065 Instructions (K-1 Box 18)",
+                    "action": "No action needed. If LLC invests in municipal bonds in future years, map tax-exempt interest to Box 18A.",
+                    "auto_fix": false,
+                    "fids": [],
+                    "suggested_mapping": {}
+                  },
+                  {
+                    "rule_id": "SK1C-R19",
+                    "severity": "INFO",
+                    "message": "\u2713 K-1 for Francis X Rojas (o20250801_1): Box 19a (Cash Distributions) = $100.00.\n  \u2022 This is actual cash paid to Francis X Rojas from the LLC (sourced from the books).\n  \u2022 Note: distributions ($100.00) may differ from allocated income ($640.85) \u2014 one is cash out, the other is income on paper.\n  \u2022 Distributions up to Francis X Rojas's ownership basis are not taxable. Amounts above basis trigger a capital gain.",
+                    "irs_cite": "IRC \u00a7731; Form 1065 Instructions (K-1 Box 19)",
+                    "action": "Verify: actual cash transferred to 'Francis X Rojas' = $100.00. If $0 (no cash distributions made), leave Box 19a blank.",
+                    "auto_fix": false,
+                    "fids": [],
+                    "suggested_mapping": {}
+                  },
+                  {
+                    "rule_id": "SK1C-R20",
+                    "severity": "INFO",
+                    "message": "\u2713 K-1 for Francis X Rojas (o20250801_1): Box 20 Code Z (Net Investment Income) = $640.85.\n  \u2022 This equals Box 2 \u2014 passive rental income is subject to the 3.8% Net Investment Income Tax (NIIT).\n  \u2022 NIIT applies if your total income (AGI) exceeds: $200,000 (single/HOH) or $250,000 (married filing jointly).\n  \u2022 If Francis X Rojas's AGI is above that threshold, report Box 20Z on Form 8960 Line 4a of your personal return.\n  \u2022 Exception: qualifies as full-time Real Estate Professional (\u00a7469(c)(7)) \u2192 rental income is not NII.",
+                    "irs_cite": "IRC \u00a71411(c)(1)(A)(i); IRC \u00a71411(b); Form 8960 Line 4a; K-1 Box 20 Code Z",
+                    "action": "Have Francis X Rojas confirm their AGI with their CPA. If AGI exceeds the NIIT threshold, report Box 20 Code Z = $640.85 on Form 8960 Line 4a.",
+                    "auto_fix": false,
+                    "fids": [],
+                    "suggested_mapping": {}
+                  }
+                ]
+              }
+            }
+          },
+          "o20250801_2": {
+            "name": "Alexandra Rojas",
+            "pct": 0.02,
+            "state": "GO",
+            "halt_count": 0,
+            "box2": 13.35,
+            "capital_ending": 13.35,
+            "sections": {
+              "AgentSchK1_PartnershipInfo": {
+                "label": "Part I: Partnership Identification",
+                "state": "GO",
+                "summary": "Partnership Info: W&B Group, LLC EIN=39-3842347 Tax year Jan. 01 \u2013 Dec. 31. IRS center='E-File'.",
+                "halt_count": 0,
+                "resolve_count": 0,
+                "review_count": 4,
+                "issues": [
+                  {
+                    "rule_id": "SK1A-R00",
+                    "severity": "INFO",
+                    "message": "\u2713 K-1 for o20250801_2: layout orientation \u2014 Part I (LLC info) and Part II (partner info) are separate.\n  \u2022 Part I (f1\u2013f13): same on every K-1 \u2014 shows the LLC's EIN, name, address, and IRS center.\n    f12 = LLC city/state/ZIP = 'Wimberley, Tx 78676' \u2014 this is CORRECT (LLC address, NOT the partner's SSN).\n    f13 = IRS Service Center (Line C) \u2014 where Form 1065 was filed.\n  \u2022 Part II (f14\u2013f48): partner-specific \u2014 SSN is f19, name is f20, address is f21.\n    f18 (Disregarded Entity) is NOT related to f19/f20 \u2014 SSN and name are ALWAYS required.",
+                    "irs_cite": "Form 1065 Instructions (Schedule K-1, Parts I and II overview)",
+                    "action": "No action needed for this rule \u2014 it is informational only. Subsequent rules check each Part I/II field individually.",
+                    "auto_fix": false,
+                    "fids": [],
+                    "suggested_mapping": {}
+                  },
+                  {
+                    "rule_id": "SK1A-R01",
+                    "severity": "INFO",
+                    "message": "\u2713 K-1 for o20250801_2: tax year header is correct \u2014 calendar year Jan 1 \u2013 Dec 31, 25.",
+                    "irs_cite": "IRC \u00a7441; IRC \u00a7706(b)(1)(B)",
+                    "action": "No action needed \u2014 tax year header fields f1\u2013f5 are correctly populated.",
+                    "auto_fix": false,
+                    "fids": [],
+                    "suggested_mapping": {}
+                  },
+                  {
+                    "rule_id": "SK1A-R04a",
+                    "severity": "INFO",
+                    "message": "\u2713 K-1 for o20250801_2: header flags \u2014 Final K-1 = Not set (correct \u2014 LLC is ongoing); Amended K-1 = Not set (correct \u2014 this is the first K-1 for 2025).\n  \u2022 Neither box needs to be checked for an active, first-year LLC with no partner exits.",
+                    "irs_cite": "Form 1065 Instructions (K-1 header \u2014 Final K-1, Amended K-1)",
+                    "action": "No action needed. If a partner exits in a future year, set is_final_k1=True for that partner. If issuing a corrected K-1, set is_amended_k1=True.",
+                    "auto_fix": false,
+                    "fids": [],
+                    "suggested_mapping": {}
+                  },
+                  {
+                    "rule_id": "SK1A-R04b",
+                    "severity": "INFO",
+                    "message": "\u2713 K-1 for o20250801_2: IRS Service Center (Line C) = 'E-File'.\n  \u2022 Verify this matches how Form 1065 was filed: E-filed \u2192 'E-File'; paper Texas LLC \u2192 'Ogden, UT 84201'.",
+                    "irs_cite": "Form 1065 Instructions (K-1 Line C)",
+                    "action": "No action if filing method matches. Update F1065.irs_center in llcProfile if wrong.",
+                    "auto_fix": false,
+                    "fids": [],
+                    "suggested_mapping": {}
+                  }
+                ]
+              },
+              "AgentSchK1_PartnerCapital": {
+                "label": "Part II: Partner Capital & Liabilities",
+                "state": "GO",
+                "summary": "Capital (Box L): Alexandra Rojas \u2014 Beg=$0 + Contrib(GL)=$0.00 + Box2=$13.35 \u2212 Distrib(GL)=$0.00 = Ending=$13.35 (tax basis).",
+                "halt_count": 0,
+                "resolve_count": 1,
+                "review_count": 5,
+                "issues": [
+                  {
+                    "rule_id": "SK1B-R00",
+                    "severity": "INFO",
+                    "message": "\u2713 K-1 for Alexandra Rojas (o20250801_2): Part II identification fields look good.\n  \u2022 f19 (Line E \u2014 Partner SSN): ***-**-0982 \u2713  (not the LLC's EIN \u2014 this is Alexandra Rojas's personal SSN)\n  \u2022 f20 (Line F \u2014 Partner name): 'Alexandra Rojas' \u2713\n  \u2022 f21 (Line F \u2014 Partner address): '408 Basket Brass Rd, San Marcos, TX 78666'\n  \u2022 f18 (Line H2 \u2014 Disregarded Entity): NOT checked \u2713 \u2014 correct for an individual person.\n    Note: f18 unchecked does NOT suppress f19/f20 \u2014 SSN and name are required on every K-1.",
+                    "irs_cite": "IRC \u00a76109; Form 1065 Instructions (K-1 Lines E, F, H2)",
+                    "action": "Verify SSN matches 'Alexandra Rojas' Form 1040. Confirm address is complete (street, city, 2-letter state abbrev., ZIP).",
+                    "auto_fix": false,
+                    "fids": [],
+                    "suggested_mapping": {}
+                  },
+                  {
+                    "rule_id": "SK1B-R01",
+                    "severity": "INFO",
+                    "message": "\u2713 K-1 for Alexandra Rojas (o20250801_2): partner type = LP/other LLC member (f15) (status='non_active member').\n  \u2022 Entity type: Individual \u2014 reports K-1 Box 2 on Schedule E (page 2) of their personal Form 1040.\n  \u2022 Domestic partner \u2713 (SSN on file). Not a disregarded entity \u2713 (individual person).",
+                    "irs_cite": "IRC \u00a7761(b); IRC \u00a71402(a)(13); Form 1065 Instructions (K-1 Lines G, H1, H2)",
+                    "action": "Verify checkboxes match partner role. Passive members who become managers (or vice versa) must update K-1 in the year the role changes.",
+                    "auto_fix": false,
+                    "fids": [],
+                    "suggested_mapping": {}
+                  },
+                  {
+                    "rule_id": "SK1B-R03",
+                    "severity": "INFO",
+                    "message": "\u2713 K-1 for Alexandra Rojas (o20250801_2): Disregarded Entity (Line H2, f18) = NOT checked \u2014 correct.\n  \u2022 Alexandra Rojas is an individual person, not an LLC or trust \u2014 'Disregarded Entity' does not apply.\n  \u2022 f18 unchecked does NOT mean f19 (SSN) or f20 (name) should be blank.\n    Those are required on EVERY K-1 regardless of f18's value \u2014 and they are filled.",
+                    "irs_cite": "Treas. Reg. \u00a7301.7701-3; Form 1065 Instructions (K-1 Line H2)",
+                    "action": "No action needed. f18 is correctly left unchecked for all W&B individual partners.",
+                    "auto_fix": false,
+                    "fids": [],
+                    "suggested_mapping": {}
+                  },
+                  {
+                    "rule_id": "SK1B-R04",
+                    "severity": "INFO",
+                    "message": "\u2713 K-1 for Alexandra Rojas (o20250801_2): ownership percentage = 2.0% (Profit / Loss / Capital \u2014 all the same).\n  \u2022 No ownership change during 2025, so beginning and ending percentages are equal.\n  \u2022 Allocation matches the LLC Operating Agreement.",
+                    "irs_cite": "IRC \u00a7704(b); Form 1065 Instructions (K-1 Box J)",
+                    "action": "No action needed. If ownership % changes mid-year in a future year, update beginning and ending percentages separately in llcOwners.",
+                    "auto_fix": false,
+                    "fids": [],
+                    "suggested_mapping": {}
+                  },
+                  {
+                    "rule_id": "SK1B-R05",
+                    "severity": "WARN",
+                    "message": "K-1 for Alexandra Rojas (o20250801_2): no mortgage found in the books \u2014 Box K1 (liabilities) = $0.\n  \u2022 If the LLC has a mortgage on the property, it must be recorded in llcAssets as a liability.\n  \u2022 Without the mortgage recorded, each partner's 'at-risk' basis is understated, which can limit their ability to deduct rental losses.",
+                    "irs_cite": "IRC \u00a7752; \u00a7465(b)(6); Treas. Reg. \u00a71.752-3",
+                    "action": "Check llcAssets for mortgage liability entries. Ensure BS.taxAggregates()['mortgage'] returns the correct year-end balance.",
+                    "auto_fix": false,
+                    "fids": [],
+                    "suggested_mapping": {}
+                  },
+                  {
+                    "rule_id": "SK1B-R07",
+                    "severity": "INFO",
+                    "message": "\u2713 K-1 for Alexandra Rojas (o20250801_2) capital account (Box L, tax basis):\n  \u2022 Capital contributed: $0 (no cash contribution recorded \u2014 expected for this member)\n  \u2022 Share of 2025 income: $13.35\n  \u2022 End of year balance: $13.35",
+                    "irs_cite": "IRC \u00a7705; Rev. Proc. 2020-13",
+                    "action": "Box L: L2=$0, L3=$13.35, L5=$0, L6=$13.35.",
+                    "auto_fix": false,
+                    "fids": [],
+                    "suggested_mapping": {}
+                  }
+                ]
+              },
+              "AgentSchK1_PassiveItems": {
+                "label": "Part III: Partner's Share of Income, Deductions, Credits & Other Items",
+                "state": "GO",
+                "summary": "Partner's Share: Alexandra Rojas \u2014 Box 1=$0 (passive rental), Box 2=$13.35 (IS.net_rental $667.55 \u00d7 2.00% \u2014 PASSIVE per \u00a7469(c)(2)), Box 5=$0.00, Box 14a=$0, Box 20Z=NII advisory.",
+                "halt_count": 0,
+                "resolve_count": 1,
+                "review_count": 7,
+                "issues": [
+                  {
+                    "rule_id": "SK1C-R00",
+                    "severity": "INFO",
+                    "message": "W&B Group is a rental LLC \u2014 by tax law, ALL rental income is PASSIVE income.\n  \u2022 Alexandra Rojas (o20250801_2): Box 2 income is classified PASSIVE.\n  \u2022 Each partner reports their K-1 Box 2 amount on Schedule E (page 2) of their personal Form 1040.\n  \u2022 Passive losses can only offset other passive income (not wages or business income).\n  \u2022 Rental income is subject to 3.8% Net Investment Income Tax (NIIT) \u2192 K-1 Box 20 Code Z.",
+                    "irs_cite": "IRC \u00a7469(c)(2); \u00a7469(c)(7); \u00a71411",
+                    "action": "All partners: report Box 2 on Schedule E Part II of their personal Form 1040.",
+                    "auto_fix": false,
+                    "fids": [],
+                    "suggested_mapping": {}
+                  },
+                  {
+                    "rule_id": "SK1C-R02",
+                    "severity": "INFO",
+                    "message": "\u2713 K-1 for Alexandra Rojas (o20250801_2): Box 2 (net rental income) = $13.35.\n  \u2022 Source: IS.net_rental $667.55 \u00d7 2.00% ownership = $13.35.\n  \u2022 Box 2 is the only income box for a rental LLC. If the PDF shows blank, regenerate the K-1.",
+                    "irs_cite": "IRC \u00a7446; IRC \u00a7702(a); IRC \u00a7703; Books-First rule",
+                    "action": "Regenerate the K-1 PDF if Box 2 is blank in the FILL.pdf.",
+                    "auto_fix": false,
+                    "fids": [],
+                    "suggested_mapping": {}
+                  },
+                  {
+                    "rule_id": "SK1C-R11",
+                    "severity": "WARN",
+                    "message": "K-1 for o20250801_2: the books show miscellaneous income of $400.53 \u2192 Box 11 would be $8.01.\n  \u2022 For a rental LLC, this is unexpected. Confirm whether this income belongs in Box 2 (rental), Box 5 (interest), or Box 11 (other).",
+                    "irs_cite": "IRC \u00a7702(a); Form 1065 Instructions (K-1 Box 11)",
+                    "action": "Review IS.other_income. Reclassify to correct box if needed.",
+                    "auto_fix": false,
+                    "fids": [],
+                    "suggested_mapping": {}
+                  },
+                  {
+                    "rule_id": "SK1C-R13",
+                    "severity": "INFO",
+                    "message": "\u2713 K-1 for o20250801_2: Box 13 (Other Deductions) = $0 \u2014 correct for W&B Group in 2025.\n  \u2022 No charitable contributions, investment interest, or unusual deductions expected for a first-year rental LLC.\n  \u2022 Interest expense deduction rules (\u00a7163(j)) generally don't apply to small LLCs \u2014 W&B should be exempt given first-year revenue.",
+                    "irs_cite": "IRC \u00a7702(a); IRC \u00a7163(j); Form 1065 Instructions (K-1 Box 13)",
+                    "action": "No action needed unless the LLC has unusual deduction items. Verify \u00a7163(j) small business exception with CPA if mortgage interest is large.",
+                    "auto_fix": false,
+                    "fids": [],
+                    "suggested_mapping": {}
+                  },
+                  {
+                    "rule_id": "SK1C-R09",
+                    "severity": "INFO",
+                    "message": "\u2713 K-1 for Alexandra Rojas (o20250801_2): Box 14a (Self-Employment Income) = $0 \u2014 correct.\n  \u2022 Rental real estate income is NOT subject to self-employment tax for any partner, including the managing member.\n  \u2022 The 'Real Estate Professional' question (50%+ time in real estate) only affects whether losses are passive \u2014 it does not create SE tax.",
+                    "irs_cite": "IRC \u00a71402(a)(1); \u00a7469(c)(7); Pub 541",
+                    "action": "No action. Box 14a is correctly $0. Advisory: if Francis believes he qualifies as a Real Estate Professional (\u00a7469(c)(7)) for passive-loss purposes, that analysis is separate and does not change Box 14a.",
+                    "auto_fix": false,
+                    "fids": [],
+                    "suggested_mapping": {}
+                  },
+                  {
+                    "rule_id": "SK1C-R18",
+                    "severity": "INFO",
+                    "message": "\u2713 K-1 for o20250801_2: Box 18 (Tax-Exempt Income / Nondeductible Expenses) = $0 \u2014 correct.\n  \u2022 No municipal bonds, tax-exempt income, or nondeductible expenses for W&B in 2025.\n  \u2022 Worth noting: if the LLC ever earns tax-exempt income in future years, it still counts toward each partner's ownership basis.",
+                    "irs_cite": "IRC \u00a7705(a)(1)(B); Form 1065 Instructions (K-1 Box 18)",
+                    "action": "No action needed. If LLC invests in municipal bonds in future years, map tax-exempt interest to Box 18A.",
+                    "auto_fix": false,
+                    "fids": [],
+                    "suggested_mapping": {}
+                  },
+                  {
+                    "rule_id": "SK1C-R19",
+                    "severity": "INFO",
+                    "message": "\u2713 K-1 for Alexandra Rojas (o20250801_2): Box 19a (Cash Distributions) = $0.00.\n  \u2022 This is actual cash paid to Alexandra Rojas from the LLC (sourced from the books).\n  \u2022 Note: distributions ($0.00) may differ from allocated income ($13.35) \u2014 one is cash out, the other is income on paper.\n  \u2022 Distributions up to Alexandra Rojas's ownership basis are not taxable. Amounts above basis trigger a capital gain.",
+                    "irs_cite": "IRC \u00a7731; Form 1065 Instructions (K-1 Box 19)",
+                    "action": "Verify: actual cash transferred to 'Alexandra Rojas' = $0.00. If $0 (no cash distributions made), leave Box 19a blank.",
+                    "auto_fix": false,
+                    "fids": [],
+                    "suggested_mapping": {}
+                  },
+                  {
+                    "rule_id": "SK1C-R20",
+                    "severity": "INFO",
+                    "message": "\u2713 K-1 for Alexandra Rojas (o20250801_2): Box 20 Code Z (Net Investment Income) = $13.35.\n  \u2022 This equals Box 2 \u2014 passive rental income is subject to the 3.8% Net Investment Income Tax (NIIT).\n  \u2022 NIIT applies if your total income (AGI) exceeds: $200,000 (single/HOH) or $250,000 (married filing jointly).\n  \u2022 If Alexandra Rojas's AGI is above that threshold, report Box 20Z on Form 8960 Line 4a of your personal return.\n  \u2022 Exception: qualifies as full-time Real Estate Professional (\u00a7469(c)(7)) \u2192 rental income is not NII.",
+                    "irs_cite": "IRC \u00a71411(c)(1)(A)(i); IRC \u00a71411(b); Form 8960 Line 4a; K-1 Box 20 Code Z",
+                    "action": "Have Alexandra Rojas confirm their AGI with their CPA. If AGI exceeds the NIIT threshold, report Box 20 Code Z = $13.35 on Form 8960 Line 4a.",
+                    "auto_fix": false,
+                    "fids": [],
+                    "suggested_mapping": {}
+                  }
+                ]
+              }
+            }
+          },
+          "o20250801_3": {
+            "name": "Nicola Rojas",
+            "pct": 0.02,
+            "state": "GO",
+            "halt_count": 0,
+            "box2": 13.35,
+            "capital_ending": 13.35,
+            "sections": {
+              "AgentSchK1_PartnershipInfo": {
+                "label": "Part I: Partnership Identification",
+                "state": "GO",
+                "summary": "Partnership Info: W&B Group, LLC EIN=39-3842347 Tax year Jan. 01 \u2013 Dec. 31. IRS center='E-File'.",
+                "halt_count": 0,
+                "resolve_count": 0,
+                "review_count": 4,
+                "issues": [
+                  {
+                    "rule_id": "SK1A-R00",
+                    "severity": "INFO",
+                    "message": "\u2713 K-1 for o20250801_3: layout orientation \u2014 Part I (LLC info) and Part II (partner info) are separate.\n  \u2022 Part I (f1\u2013f13): same on every K-1 \u2014 shows the LLC's EIN, name, address, and IRS center.\n    f12 = LLC city/state/ZIP = 'Wimberley, Tx 78676' \u2014 this is CORRECT (LLC address, NOT the partner's SSN).\n    f13 = IRS Service Center (Line C) \u2014 where Form 1065 was filed.\n  \u2022 Part II (f14\u2013f48): partner-specific \u2014 SSN is f19, name is f20, address is f21.\n    f18 (Disregarded Entity) is NOT related to f19/f20 \u2014 SSN and name are ALWAYS required.",
+                    "irs_cite": "Form 1065 Instructions (Schedule K-1, Parts I and II overview)",
+                    "action": "No action needed for this rule \u2014 it is informational only. Subsequent rules check each Part I/II field individually.",
+                    "auto_fix": false,
+                    "fids": [],
+                    "suggested_mapping": {}
+                  },
+                  {
+                    "rule_id": "SK1A-R01",
+                    "severity": "INFO",
+                    "message": "\u2713 K-1 for o20250801_3: tax year header is correct \u2014 calendar year Jan 1 \u2013 Dec 31, 25.",
+                    "irs_cite": "IRC \u00a7441; IRC \u00a7706(b)(1)(B)",
+                    "action": "No action needed \u2014 tax year header fields f1\u2013f5 are correctly populated.",
+                    "auto_fix": false,
+                    "fids": [],
+                    "suggested_mapping": {}
+                  },
+                  {
+                    "rule_id": "SK1A-R04a",
+                    "severity": "INFO",
+                    "message": "\u2713 K-1 for o20250801_3: header flags \u2014 Final K-1 = Not set (correct \u2014 LLC is ongoing); Amended K-1 = Not set (correct \u2014 this is the first K-1 for 2025).\n  \u2022 Neither box needs to be checked for an active, first-year LLC with no partner exits.",
+                    "irs_cite": "Form 1065 Instructions (K-1 header \u2014 Final K-1, Amended K-1)",
+                    "action": "No action needed. If a partner exits in a future year, set is_final_k1=True for that partner. If issuing a corrected K-1, set is_amended_k1=True.",
+                    "auto_fix": false,
+                    "fids": [],
+                    "suggested_mapping": {}
+                  },
+                  {
+                    "rule_id": "SK1A-R04b",
+                    "severity": "INFO",
+                    "message": "\u2713 K-1 for o20250801_3: IRS Service Center (Line C) = 'E-File'.\n  \u2022 Verify this matches how Form 1065 was filed: E-filed \u2192 'E-File'; paper Texas LLC \u2192 'Ogden, UT 84201'.",
+                    "irs_cite": "Form 1065 Instructions (K-1 Line C)",
+                    "action": "No action if filing method matches. Update F1065.irs_center in llcProfile if wrong.",
+                    "auto_fix": false,
+                    "fids": [],
+                    "suggested_mapping": {}
+                  }
+                ]
+              },
+              "AgentSchK1_PartnerCapital": {
+                "label": "Part II: Partner Capital & Liabilities",
+                "state": "GO",
+                "summary": "Capital (Box L): Nicola Rojas \u2014 Beg=$0 + Contrib(GL)=$0.00 + Box2=$13.35 \u2212 Distrib(GL)=$0.00 = Ending=$13.35 (tax basis).",
+                "halt_count": 0,
+                "resolve_count": 1,
+                "review_count": 5,
+                "issues": [
+                  {
+                    "rule_id": "SK1B-R00",
+                    "severity": "INFO",
+                    "message": "\u2713 K-1 for Nicola Rojas (o20250801_3): Part II identification fields look good.\n  \u2022 f19 (Line E \u2014 Partner SSN): ***-**-0983 \u2713  (not the LLC's EIN \u2014 this is Nicola Rojas's personal SSN)\n  \u2022 f20 (Line F \u2014 Partner name): 'Nicola Rojas' \u2713\n  \u2022 f21 (Line F \u2014 Partner address): '805 High Mesa Dr, Wimberley, TX 78676'\n  \u2022 f18 (Line H2 \u2014 Disregarded Entity): NOT checked \u2713 \u2014 correct for an individual person.\n    Note: f18 unchecked does NOT suppress f19/f20 \u2014 SSN and name are required on every K-1.",
+                    "irs_cite": "IRC \u00a76109; Form 1065 Instructions (K-1 Lines E, F, H2)",
+                    "action": "Verify SSN matches 'Nicola Rojas' Form 1040. Confirm address is complete (street, city, 2-letter state abbrev., ZIP).",
+                    "auto_fix": false,
+                    "fids": [],
+                    "suggested_mapping": {}
+                  },
+                  {
+                    "rule_id": "SK1B-R01",
+                    "severity": "INFO",
+                    "message": "\u2713 K-1 for Nicola Rojas (o20250801_3): partner type = LP/other LLC member (f15) (status='non-active member').\n  \u2022 Entity type: Individual \u2014 reports K-1 Box 2 on Schedule E (page 2) of their personal Form 1040.\n  \u2022 Domestic partner \u2713 (SSN on file). Not a disregarded entity \u2713 (individual person).",
+                    "irs_cite": "IRC \u00a7761(b); IRC \u00a71402(a)(13); Form 1065 Instructions (K-1 Lines G, H1, H2)",
+                    "action": "Verify checkboxes match partner role. Passive members who become managers (or vice versa) must update K-1 in the year the role changes.",
+                    "auto_fix": false,
+                    "fids": [],
+                    "suggested_mapping": {}
+                  },
+                  {
+                    "rule_id": "SK1B-R03",
+                    "severity": "INFO",
+                    "message": "\u2713 K-1 for Nicola Rojas (o20250801_3): Disregarded Entity (Line H2, f18) = NOT checked \u2014 correct.\n  \u2022 Nicola Rojas is an individual person, not an LLC or trust \u2014 'Disregarded Entity' does not apply.\n  \u2022 f18 unchecked does NOT mean f19 (SSN) or f20 (name) should be blank.\n    Those are required on EVERY K-1 regardless of f18's value \u2014 and they are filled.",
+                    "irs_cite": "Treas. Reg. \u00a7301.7701-3; Form 1065 Instructions (K-1 Line H2)",
+                    "action": "No action needed. f18 is correctly left unchecked for all W&B individual partners.",
+                    "auto_fix": false,
+                    "fids": [],
+                    "suggested_mapping": {}
+                  },
+                  {
+                    "rule_id": "SK1B-R04",
+                    "severity": "INFO",
+                    "message": "\u2713 K-1 for Nicola Rojas (o20250801_3): ownership percentage = 2.0% (Profit / Loss / Capital \u2014 all the same).\n  \u2022 No ownership change during 2025, so beginning and ending percentages are equal.\n  \u2022 Allocation matches the LLC Operating Agreement.",
+                    "irs_cite": "IRC \u00a7704(b); Form 1065 Instructions (K-1 Box J)",
+                    "action": "No action needed. If ownership % changes mid-year in a future year, update beginning and ending percentages separately in llcOwners.",
+                    "auto_fix": false,
+                    "fids": [],
+                    "suggested_mapping": {}
+                  },
+                  {
+                    "rule_id": "SK1B-R05",
+                    "severity": "WARN",
+                    "message": "K-1 for Nicola Rojas (o20250801_3): no mortgage found in the books \u2014 Box K1 (liabilities) = $0.\n  \u2022 If the LLC has a mortgage on the property, it must be recorded in llcAssets as a liability.\n  \u2022 Without the mortgage recorded, each partner's 'at-risk' basis is understated, which can limit their ability to deduct rental losses.",
+                    "irs_cite": "IRC \u00a7752; \u00a7465(b)(6); Treas. Reg. \u00a71.752-3",
+                    "action": "Check llcAssets for mortgage liability entries. Ensure BS.taxAggregates()['mortgage'] returns the correct year-end balance.",
+                    "auto_fix": false,
+                    "fids": [],
+                    "suggested_mapping": {}
+                  },
+                  {
+                    "rule_id": "SK1B-R07",
+                    "severity": "INFO",
+                    "message": "\u2713 K-1 for Nicola Rojas (o20250801_3) capital account (Box L, tax basis):\n  \u2022 Capital contributed: $0 (no cash contribution recorded \u2014 expected for this member)\n  \u2022 Share of 2025 income: $13.35\n  \u2022 End of year balance: $13.35",
+                    "irs_cite": "IRC \u00a7705; Rev. Proc. 2020-13",
+                    "action": "Box L: L2=$0, L3=$13.35, L5=$0, L6=$13.35.",
+                    "auto_fix": false,
+                    "fids": [],
+                    "suggested_mapping": {}
+                  }
+                ]
+              },
+              "AgentSchK1_PassiveItems": {
+                "label": "Part III: Partner's Share of Income, Deductions, Credits & Other Items",
+                "state": "GO",
+                "summary": "Partner's Share: Nicola Rojas \u2014 Box 1=$0 (passive rental), Box 2=$13.35 (IS.net_rental $667.55 \u00d7 2.00% \u2014 PASSIVE per \u00a7469(c)(2)), Box 5=$0.00, Box 14a=$0, Box 20Z=NII advisory.",
+                "halt_count": 0,
+                "resolve_count": 1,
+                "review_count": 7,
+                "issues": [
+                  {
+                    "rule_id": "SK1C-R00",
+                    "severity": "INFO",
+                    "message": "W&B Group is a rental LLC \u2014 by tax law, ALL rental income is PASSIVE income.\n  \u2022 Nicola Rojas (o20250801_3): Box 2 income is classified PASSIVE.\n  \u2022 Each partner reports their K-1 Box 2 amount on Schedule E (page 2) of their personal Form 1040.\n  \u2022 Passive losses can only offset other passive income (not wages or business income).\n  \u2022 Rental income is subject to 3.8% Net Investment Income Tax (NIIT) \u2192 K-1 Box 20 Code Z.",
+                    "irs_cite": "IRC \u00a7469(c)(2); \u00a7469(c)(7); \u00a71411",
+                    "action": "All partners: report Box 2 on Schedule E Part II of their personal Form 1040.",
+                    "auto_fix": false,
+                    "fids": [],
+                    "suggested_mapping": {}
+                  },
+                  {
+                    "rule_id": "SK1C-R02",
+                    "severity": "INFO",
+                    "message": "\u2713 K-1 for Nicola Rojas (o20250801_3): Box 2 (net rental income) = $13.35.\n  \u2022 Source: IS.net_rental $667.55 \u00d7 2.00% ownership = $13.35.\n  \u2022 Box 2 is the only income box for a rental LLC. If the PDF shows blank, regenerate the K-1.",
+                    "irs_cite": "IRC \u00a7446; IRC \u00a7702(a); IRC \u00a7703; Books-First rule",
+                    "action": "Regenerate the K-1 PDF if Box 2 is blank in the FILL.pdf.",
+                    "auto_fix": false,
+                    "fids": [],
+                    "suggested_mapping": {}
+                  },
+                  {
+                    "rule_id": "SK1C-R11",
+                    "severity": "WARN",
+                    "message": "K-1 for o20250801_3: the books show miscellaneous income of $400.53 \u2192 Box 11 would be $8.01.\n  \u2022 For a rental LLC, this is unexpected. Confirm whether this income belongs in Box 2 (rental), Box 5 (interest), or Box 11 (other).",
+                    "irs_cite": "IRC \u00a7702(a); Form 1065 Instructions (K-1 Box 11)",
+                    "action": "Review IS.other_income. Reclassify to correct box if needed.",
+                    "auto_fix": false,
+                    "fids": [],
+                    "suggested_mapping": {}
+                  },
+                  {
+                    "rule_id": "SK1C-R13",
+                    "severity": "INFO",
+                    "message": "\u2713 K-1 for o20250801_3: Box 13 (Other Deductions) = $0 \u2014 correct for W&B Group in 2025.\n  \u2022 No charitable contributions, investment interest, or unusual deductions expected for a first-year rental LLC.\n  \u2022 Interest expense deduction rules (\u00a7163(j)) generally don't apply to small LLCs \u2014 W&B should be exempt given first-year revenue.",
+                    "irs_cite": "IRC \u00a7702(a); IRC \u00a7163(j); Form 1065 Instructions (K-1 Box 13)",
+                    "action": "No action needed unless the LLC has unusual deduction items. Verify \u00a7163(j) small business exception with CPA if mortgage interest is large.",
+                    "auto_fix": false,
+                    "fids": [],
+                    "suggested_mapping": {}
+                  },
+                  {
+                    "rule_id": "SK1C-R09",
+                    "severity": "INFO",
+                    "message": "\u2713 K-1 for Nicola Rojas (o20250801_3): Box 14a (Self-Employment Income) = $0 \u2014 correct.\n  \u2022 Rental real estate income is NOT subject to self-employment tax for any partner, including the managing member.\n  \u2022 The 'Real Estate Professional' question (50%+ time in real estate) only affects whether losses are passive \u2014 it does not create SE tax.",
+                    "irs_cite": "IRC \u00a71402(a)(1); \u00a7469(c)(7); Pub 541",
+                    "action": "No action. Box 14a is correctly $0. Advisory: if Francis believes he qualifies as a Real Estate Professional (\u00a7469(c)(7)) for passive-loss purposes, that analysis is separate and does not change Box 14a.",
+                    "auto_fix": false,
+                    "fids": [],
+                    "suggested_mapping": {}
+                  },
+                  {
+                    "rule_id": "SK1C-R18",
+                    "severity": "INFO",
+                    "message": "\u2713 K-1 for o20250801_3: Box 18 (Tax-Exempt Income / Nondeductible Expenses) = $0 \u2014 correct.\n  \u2022 No municipal bonds, tax-exempt income, or nondeductible expenses for W&B in 2025.\n  \u2022 Worth noting: if the LLC ever earns tax-exempt income in future years, it still counts toward each partner's ownership basis.",
+                    "irs_cite": "IRC \u00a7705(a)(1)(B); Form 1065 Instructions (K-1 Box 18)",
+                    "action": "No action needed. If LLC invests in municipal bonds in future years, map tax-exempt interest to Box 18A.",
+                    "auto_fix": false,
+                    "fids": [],
+                    "suggested_mapping": {}
+                  },
+                  {
+                    "rule_id": "SK1C-R19",
+                    "severity": "INFO",
+                    "message": "\u2713 K-1 for Nicola Rojas (o20250801_3): Box 19a (Cash Distributions) = $0.00.\n  \u2022 This is actual cash paid to Nicola Rojas from the LLC (sourced from the books).\n  \u2022 Note: distributions ($0.00) may differ from allocated income ($13.35) \u2014 one is cash out, the other is income on paper.\n  \u2022 Distributions up to Nicola Rojas's ownership basis are not taxable. Amounts above basis trigger a capital gain.",
+                    "irs_cite": "IRC \u00a7731; Form 1065 Instructions (K-1 Box 19)",
+                    "action": "Verify: actual cash transferred to 'Nicola Rojas' = $0.00. If $0 (no cash distributions made), leave Box 19a blank.",
+                    "auto_fix": false,
+                    "fids": [],
+                    "suggested_mapping": {}
+                  },
+                  {
+                    "rule_id": "SK1C-R20",
+                    "severity": "INFO",
+                    "message": "\u2713 K-1 for Nicola Rojas (o20250801_3): Box 20 Code Z (Net Investment Income) = $13.35.\n  \u2022 This equals Box 2 \u2014 passive rental income is subject to the 3.8% Net Investment Income Tax (NIIT).\n  \u2022 NIIT applies if your total income (AGI) exceeds: $200,000 (single/HOH) or $250,000 (married filing jointly).\n  \u2022 If Nicola Rojas's AGI is above that threshold, report Box 20Z on Form 8960 Line 4a of your personal return.\n  \u2022 Exception: qualifies as full-time Real Estate Professional (\u00a7469(c)(7)) \u2192 rental income is not NII.",
+                    "irs_cite": "IRC \u00a71411(c)(1)(A)(i); IRC \u00a71411(b); Form 8960 Line 4a; K-1 Box 20 Code Z",
+                    "action": "Have Nicola Rojas confirm their AGI with their CPA. If AGI exceeds the NIIT threshold, report Box 20 Code Z = $13.35 on Form 8960 Line 4a.",
+                    "auto_fix": false,
+                    "fids": [],
+                    "suggested_mapping": {}
+                  }
+                ]
+              }
+            }
+          }
+        },
+        "summary": "3 Schedule K-1s: Francis X Rojas, Alexandra Rojas, Nicola Rojas. Box 2 allocations (96.00%, 2.00%, 2.00%): IS.net_rental $667.55. Box 1=$0 (\u00a7469), Box 14a=$0 (\u00a71402). Tax basis capital (Rev. Proc. 2020-13)."
+      }
+    }
+  },
+  "xf_audit": [
+    {
+      "rule_id": "XF-R01",
+      "severity": "INFO",
+      "message": "XF-R01 PASS: F4562 L22 = $0.00, F8825 L14 = $1,903.13, IS.depreciation = $1,903.13. All agree within $1.",
+      "irs_cite": "LLCTaxAgent XF-R01; IRC \u00a7446",
+      "action": "No action required.",
+      "auto_fix": false,
+      "fids": [],
+      "suggested_mapping": {}
+    },
+    {
+      "rule_id": "XF-R02",
+      "severity": "INFO",
+      "message": "XF-R02 PASS: F8825 L21 = $667.55, Schedule K L2 = $667.55, IS.net_rental = $667.55. All agree.",
+      "irs_cite": "LLCTaxAgent XF-R02; IRC \u00a7446",
+      "action": "No action required.",
+      "auto_fix": false,
+      "fids": [],
+      "suggested_mapping": {}
+    },
+    {
+      "rule_id": "XF-R03",
+      "severity": "INFO",
+      "message": "XF-R03 PASS: 'Francis X Rojas' (o20250801_1) Box 2 = $640.85 (IS.net_rental $667.55 \u00d7 96.00%) confirmed.",
+      "irs_cite": "LLCTaxAgent XF-R03; IRC \u00a7702(a)",
+      "action": "No action required.",
+      "auto_fix": false,
+      "fids": [],
+      "suggested_mapping": {}
+    },
+    {
+      "rule_id": "XF-R03",
+      "severity": "INFO",
+      "message": "XF-R03 PASS: 'Alexandra Rojas' (o20250801_2) Box 2 = $13.35 (IS.net_rental $667.55 \u00d7 2.00%) confirmed.",
+      "irs_cite": "LLCTaxAgent XF-R03; IRC \u00a7702(a)",
+      "action": "No action required.",
+      "auto_fix": false,
+      "fids": [],
+      "suggested_mapping": {}
+    },
+    {
+      "rule_id": "XF-R03",
+      "severity": "INFO",
+      "message": "XF-R03 PASS: 'Nicola Rojas' (o20250801_3) Box 2 = $13.35 (IS.net_rental $667.55 \u00d7 2.00%) confirmed.",
+      "irs_cite": "LLCTaxAgent XF-R03; IRC \u00a7702(a)",
+      "action": "No action required.",
+      "auto_fix": false,
+      "fids": [],
+      "suggested_mapping": {}
+    },
+    {
+      "rule_id": "XF-R04",
+      "severity": "INFO",
+      "message": "XF-R04 PASS: Sum of K-1 Box 2 = $667.55 = Schedule K Line 2 = $667.55 (within $0.02).",
+      "irs_cite": "LLCTaxAgent XF-R04; IRC \u00a7704(b)",
+      "action": "No action required.",
+      "auto_fix": false,
+      "fids": [],
+      "suggested_mapping": {}
+    },
+    {
+      "rule_id": "XF-R05",
+      "severity": "INFO",
+      "message": "XF-R05 PASS: Form 1065 Page 1 Lines 1-23 all $0. Rental income correctly excluded from ordinary income section. IRC \u00a7469(c)(2) compliance confirmed.",
+      "irs_cite": "LLCTaxAgent XF-R05; IRC \u00a7469(c)(2)",
+      "action": "No action required.",
+      "auto_fix": false,
+      "fids": [],
+      "suggested_mapping": {}
+    }
+  ],
+  "summary": "LLCTaxAgent: GO. All 4 form agents passed. XF audit: 7 rules passed. W&B Group LLC 2025 \u2014 ready for CPA review."
+}

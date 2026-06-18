@@ -73,6 +73,10 @@
             "acctID": "3100",
             "acctDesc": "Retained Earnings (Cumulative profit or loss from previous years)"
         },
+        "Acct.Equity.Income.Summary": {
+            "acctID": "3999",
+            "acctDesc": "temp clearing acct for year-end closing; aggregate the balances IS (net income) -> BS"
+        },
         "Acct.Rev.Ord.Services": {
             "acctID": "4000",
             "acctDesc": "ACTIVE (40xx), Non-Rental Ops, Service Revenue: General fees for services provided."

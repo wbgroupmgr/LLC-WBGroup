@@ -1,0 +1,283 @@
+{
+  "tax_year": 2025,
+  "last_run": "2026-06-04T11:58:26Z",
+  "overall_state": "GO",
+  "sections": {
+    "AgentF1065_Info": {
+      "label": "General Information",
+      "state": "GO",
+      "summary": "W&B Group, LLC \u2014 EIN 39-3842347, TY 2025",
+      "halt_count": 0,
+      "resolve_count": 2,
+      "review_count": 1,
+      "issues": [
+        {
+          "rule_id": "IF-R03",
+          "severity": "WARN",
+          "message": "Line H (Accounting Method) checkbox is blank \u2014 Cash or Accrual must be checked. For W&B Group (tracks depreciation/assets on accrual basis): Accrual is appropriate.",
+          "irs_cite": "Form 1065 Page 1 Item H requires one checkbox",
+          "action": "In llcProfile set F1065.acctg_method = 'Accrual'; then map Profile.F1065.acctg_method \u2192 P1_H via the Aid dialog",
+          "auto_fix": false,
+          "fids": [
+            "P1_H"
+          ],
+          "suggested_mapping": {
+            "fid": "P1_H",
+            "src": "Profile",
+            "path": "Profile.F1065.acctg_method"
+          }
+        },
+        {
+          "rule_id": "IF-R07",
+          "severity": "WARN",
+          "message": "Line I (Number of Schedules K-1): fill dict shows blank but llcOwners has 3 partner(s). These must match (one K-1 per partner).",
+          "irs_cite": "Form 1065 Instructions, Page 1 Item I",
+          "action": "Re-run the BookToIRS pipeline so P1_I auto-fills from live owner count; or map Profile.owners.count \u2192 P1_I via Aid",
+          "auto_fix": false,
+          "fids": [
+            "P1_I",
+            "B_25Fm"
+          ],
+          "suggested_mapping": {
+            "fid": "P1_I",
+            "src": "Profile",
+            "path": "owners.count"
+          }
+        },
+        {
+          "rule_id": "IF-R08",
+          "severity": "INFO",
+          "message": "Line K (\u00a7465 At-Risk): For rental LLCs, partners are generally considered 'at risk' for their capital contributions. Bookkeeper must explicitly confirm whether to check this box. Default for a cash-invested rental LLC: Yes (at risk).",
+          "irs_cite": "IRC \u00a7465; Form 1065 Instructions, Page 1 Item K",
+          "action": "Confirm with CPA: are all partners at-risk under \u00a7465 for this LLC? If yes, set the P1_K checkbox via Aid. Typically 'Yes' for a small LLC with no non-recourse financing beyond mortgages.",
+          "auto_fix": false,
+          "fids": [
+            "P1_K"
+          ],
+          "suggested_mapping": {}
+        }
+      ],
+      "pass1": {
+        "section": "AgentF1065_Info",
+        "tax_year": 2025,
+        "filled": 0,
+        "blank": 0,
+        "complex": 0,
+        "total": 0,
+        "fill_dict": {}
+      }
+    },
+    "AgentF1065_IncStmt": {
+      "label": "Income & Deductions",
+      "state": "GO",
+      "summary": "Page 1 Lines 1\u201323: $0 (IRS \u00a7469 \u2014 all rental activity passive). Books: gross rent $4,000.00, net rental income $0.00 \u2192 Schedule K Line 2 via Form 8825.",
+      "halt_count": 0,
+      "resolve_count": 0,
+      "review_count": 1,
+      "issues": [
+        {
+          "rule_id": "IS-R04",
+          "severity": "INFO",
+          "message": "Page 1 Line 16a = $0 (correct for rental LLC). Books show $1,903.13 depreciation \u2192 verify it appears on Form 8825 Line 14 and Form 4562 Part III Line 19h.",
+          "irs_cite": "Form 1065 Instructions Line 16a; Form 8825 Line 14",
+          "action": "Confirm Form 8825 and Form 4562 are generated with the correct IS.depreciation value ($1,903.13) from books.",
+          "auto_fix": false,
+          "fids": [],
+          "suggested_mapping": {}
+        }
+      ],
+      "pass1": {
+        "section": "AgentF1065_IncStmt",
+        "tax_year": 2025,
+        "filled": 0,
+        "blank": 0,
+        "complex": 0,
+        "total": 0,
+        "fill_dict": {}
+      }
+    },
+    "AgentF1065_Other": {
+      "label": "Schedule B",
+      "state": "GO",
+      "summary": "Schedule B complete. Schedules L/M-1/M-2 not required (below threshold)",
+      "halt_count": 0,
+      "resolve_count": 2,
+      "review_count": 3,
+      "issues": [
+        {
+          "rule_id": "OT-R01",
+          "severity": "INFO",
+          "message": "Schedules L/M-1/M-2 NOT required (IS total income: $4,401 < $250K and/or BS assets: $-394 < $1M). Schedule B Q4 should answer 'Yes' (skip schedules).",
+          "irs_cite": "Form 1065 Instructions, Schedule B Q4",
+          "action": "Auto-apply: confirm Schedule B Q4 = Yes in BookToIRS Aid",
+          "auto_fix": true,
+          "fids": [],
+          "suggested_mapping": {}
+        },
+        {
+          "rule_id": "OT-R05",
+          "severity": "INFO",
+          "message": "Schedule B Q2/Q3: 1 partner(s) own >50% \u2014 ownership disclosure questions must be answered",
+          "irs_cite": "Form 1065 Instructions, Schedule B Q2-3",
+          "action": "Confirm Schedule B Q2/Q3 answers in BookToIRS Aid",
+          "auto_fix": false,
+          "fids": [],
+          "suggested_mapping": {}
+        },
+        {
+          "rule_id": "OT-R06",
+          "severity": "WARN",
+          "message": "Schedule B Q3a (individual >50% owner) must be explicitly answered. Based on llcOwners: NO \u2014 no individual holds >50%. Verify this matches what is filed.",
+          "irs_cite": "Form 1065 Instructions, Schedule B Q3a-3b",
+          "action": "Confirm Q3a Yes/No in the form. If Yes: answer Q3a; if any corp/partnership/trust holds >50%, also answer Q3b.",
+          "auto_fix": false,
+          "fids": [
+            "B_3a",
+            "B_3b"
+          ],
+          "suggested_mapping": {}
+        },
+        {
+          "rule_id": "OT-R07",
+          "severity": "INFO",
+          "message": "Schedule B Q4d: No distributions found in llcOwners \u2014 confirm Q4d = No is correct before filing.",
+          "irs_cite": "Form 1065 Instructions, Schedule B Q4d",
+          "action": "Verify Q4d answer against actual cash distributions during the year.",
+          "auto_fix": false,
+          "fids": [
+            "B_4d"
+          ],
+          "suggested_mapping": {}
+        },
+        {
+          "rule_id": "OT-R08",
+          "severity": "WARN",
+          "message": "Schedule B Yes/No questions default to 'No' in the fill dict. Key questions requiring explicit bookkeeper review: Q3a (individual >50% owner), Q3b (entity >50% owner), Q4a (did partnership dispose of property?), Q4d (distributions made?), Q21 (BBA opt-out election).",
+          "irs_cite": "Form 1065 Instructions, Schedule B",
+          "action": "Review each Schedule B question in the FILL.pdf and use Aid to override any 'No' that should be 'Yes' for this LLC's specific situation.",
+          "auto_fix": false,
+          "fids": [
+            "B_3a",
+            "B_3b",
+            "B_4a",
+            "B_4d",
+            "B_21"
+          ],
+          "suggested_mapping": {}
+        }
+      ],
+      "pass1": {
+        "section": "AgentF1065_Other",
+        "tax_year": 2025,
+        "filled": 0,
+        "blank": 0,
+        "complex": 0,
+        "total": 0,
+        "fill_dict": {}
+      }
+    },
+    "AgentF1065_Distr": {
+      "label": "Schedule K",
+      "state": "GO",
+      "summary": "Schedule K Line 2 = $0.00 (net rental income per books: $0.00). Line 1 = $0. Allocates to 3 partners per \u00a7704(b).",
+      "halt_count": 0,
+      "resolve_count": 0,
+      "review_count": 0,
+      "issues": [],
+      "pass1": {
+        "section": "AgentF1065_Distr",
+        "tax_year": 2025,
+        "filled": 0,
+        "blank": 0,
+        "complex": 0,
+        "total": 0,
+        "fill_dict": {}
+      }
+    },
+    "AgentF1065_Reconcile": {
+      "label": "Schedules L / M-1 / M-2",
+      "state": "GO",
+      "summary": "Schedules L/M-1/M-2 NOT required (Schedule B Q4 = Yes). LLC is below both thresholds: gross income $4,401 < $250K and/or total assets $-394 < $1M.",
+      "halt_count": 0,
+      "resolve_count": 0,
+      "review_count": 1,
+      "issues": [
+        {
+          "rule_id": "RC-R01",
+          "severity": "INFO",
+          "message": "Schedules L/M-1/M-2 NOT required. Gross receipts $4,401 < $250K threshold; total assets $-394 < $1M threshold. Schedule B Q4(c) should answer 'Yes' to skip these schedules.",
+          "irs_cite": "Form 1065 Instructions, Schedule B Q4(c); Treas. Reg. \u00a71.6031(a)-1(b)(4)",
+          "action": "Confirm Schedule B Q4(c) = Yes in the form. Leave Schedules L/M-1/M-2 entirely blank.",
+          "auto_fix": false,
+          "fids": [],
+          "suggested_mapping": {}
+        }
+      ],
+      "pass1": {
+        "section": "AgentF1065_Reconcile",
+        "tax_year": 2025,
+        "filled": 0,
+        "blank": 0,
+        "complex": 0,
+        "total": 0,
+        "fill_dict": {}
+      }
+    },
+    "AgentForm_Ext": {
+      "label": "Next Steps (Extensions)",
+      "state": "GO",
+      "summary": "Next Steps: Prepare Form 4562; 3 K-1s",
+      "halt_count": 0,
+      "resolve_count": 0,
+      "review_count": 2,
+      "issues": [
+        {
+          "rule_id": "EX-R07",
+          "severity": "INFO",
+          "message": "Form 4562 required: depreciation entries found in GL",
+          "irs_cite": "Form 4562 Instructions; IRC \u00a7168",
+          "action": "Prepare Form 4562 via Form4562Agent (future) or manually",
+          "auto_fix": false,
+          "fids": [],
+          "suggested_mapping": {}
+        },
+        {
+          "rule_id": "EX-R01",
+          "severity": "INFO",
+          "message": "3 Schedule K-1s required (one per partner)",
+          "irs_cite": "Form 1065 Instructions, \u00a7563",
+          "action": "Prepare 3 K-1s via SchK1Agent (future) or manually",
+          "auto_fix": false,
+          "fids": [],
+          "suggested_mapping": {}
+        }
+      ],
+      "pass1": {
+        "section": "AgentForm_Ext",
+        "tax_year": 2025,
+        "inventory": {
+          "required_forms": [
+            "Form1065",
+            "Form4562"
+          ],
+          "required_k1_count": 3,
+          "active_properties": [],
+          "under_construction": [],
+          "schedules_required": {
+            "L": false,
+            "M1": false,
+            "M2": false
+          },
+          "notes": [
+            "No active properties found \u2014 Form 8825 may not be required"
+          ]
+        },
+        "filled": 0,
+        "blank": 0,
+        "complex": 0,
+        "total": 0
+      }
+    }
+  },
+  "ext_advice": "Prepare: Form 4562, 3 Schedule K-1s"
+}

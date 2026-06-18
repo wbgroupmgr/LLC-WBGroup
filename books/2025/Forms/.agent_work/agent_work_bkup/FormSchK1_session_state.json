@@ -1,0 +1,309 @@
+{
+  "tax_year": 2025,
+  "last_run": "2026-06-04T04:41:54Z",
+  "overall_state": "NEEDS_FIXING",
+  "partner_count": 3,
+  "partners": {
+    "o20250801_1": {
+      "name": "Francis X Rojas",
+      "pct": 0.96,
+      "state": "NEEDS_FIXING",
+      "halt_count": 2,
+      "box2": -377.76,
+      "capital_ending": -377.76,
+      "sections": {
+        "AgentSchK1_Identity": {
+          "label": "Partner Identity",
+          "state": "NEEDS_FIXING",
+          "summary": "Partner 'Francis X Rojas' (o20250801_1): TIN missing or malformed (found: 'blank'). IRC \u00a76109: each K-1 must include the partner's SSN (9 digits). IRC \u00a76722: $290 penalty per K-1 with incorrect payee statement. IRS cannot match the K-1 to the partner's personal return without a valid SSN.",
+          "halt_count": 1,
+          "resolve_count": 0,
+          "review_count": 0,
+          "issues": [
+            {
+              "rule_id": "SK1I-R01",
+              "severity": "ERROR",
+              "message": "Partner 'Francis X Rojas' (o20250801_1): TIN missing or malformed (found: 'blank'). IRC \u00a76109: each K-1 must include the partner's SSN (9 digits). IRC \u00a76722: $290 penalty per K-1 with incorrect payee statement. IRS cannot match the K-1 to the partner's personal return without a valid SSN.",
+              "irs_cite": "IRC \u00a76109; IRC \u00a76722; Treas. Reg. \u00a7301.6109-1",
+              "action": "Set ssn (or tin) for partner 'o20250801_1' in llcOwners. Format: 9 digits (NNNNNNNNN or NNN-NN-NNNN).",
+              "auto_fix": false,
+              "fids": [],
+              "suggested_mapping": {}
+            }
+          ]
+        },
+        "AgentSchK1_PassiveItems": {
+          "label": "Passive Items (Box 1, 2, 5, 14)",
+          "state": "NEEDS_FIXING",
+          "summary": "Partner 'Francis X Rojas' (o20250801_1): Box 2 should be $-377.76 (IS.net_rental $-393.50 \u00d7 96.00%). If Box 2 is blank on the K-1, the partner will not report their rental income/loss. IRC \u00a7702(a): all partnership items must flow to partners' individual returns.",
+          "halt_count": 1,
+          "resolve_count": 0,
+          "review_count": 2,
+          "issues": [
+            {
+              "rule_id": "SK1P-R01",
+              "severity": "ERROR",
+              "message": "Partner 'Francis X Rojas' (o20250801_1): Box 2 should be $-377.76 (IS.net_rental $-393.50 \u00d7 96.00%). If Box 2 is blank on the K-1, the partner will not report their rental income/loss. IRC \u00a7702(a): all partnership items must flow to partners' individual returns.",
+              "irs_cite": "IRC \u00a7702(a); Form 1065 Instructions K-1 Box 2; IRC \u00a7469",
+              "action": "Verify K-1 fill pipeline: Box 2 = IS.net_rental \u00d7 0.9600 = $-377.76. Books-First (IRC \u00a7446): source from IS.net_rental, not from Schedule K form field.",
+              "auto_fix": false,
+              "fids": [],
+              "suggested_mapping": {}
+            },
+            {
+              "rule_id": "SK1P-R02",
+              "severity": "INFO",
+              "message": "Partner 'Francis X Rojas' (o20250801_1): Box 2 expected value = $-377.76 (IS.net_rental $-393.50 \u00d7 96.00%). Books-First (IRC \u00a7446): verify K-1 Box 2 = $-377.76. LLCTaxAgent XF-R03 will confirm this per-partner allocation.",
+              "irs_cite": "IRC \u00a7446; IRC \u00a7702(a); LLCTaxAgent XF-R03",
+              "action": "Confirm K-1 Box 2 for 'Francis X Rojas' = $-377.76 in the fill dict/PDF.",
+              "auto_fix": false,
+              "fids": [],
+              "suggested_mapping": {}
+            },
+            {
+              "rule_id": "SK1P-R05",
+              "severity": "INFO",
+              "message": "Partner 'Francis X Rojas' (o20250801_1): Box 2 = $-377.76 (passive loss). IRC \u00a7704(d): partner can deduct this loss only to the extent of their adjusted basis in the partnership. Basis check is performed on the partner's individual return, not here. The K-1 reports the full allocated amount regardless of basis.",
+              "irs_cite": "IRC \u00a7704(d); IRC \u00a7469(b); Form 6198; Schedule E Instructions",
+              "action": "Advisory only \u2014 no K-1 change needed. Inform partner 'Francis X Rojas' to verify their basis before claiming the loss.",
+              "auto_fix": false,
+              "fids": [],
+              "suggested_mapping": {}
+            }
+          ]
+        },
+        "AgentSchK1_Capital": {
+          "label": "Capital Account (Box L)",
+          "state": "GO",
+          "summary": "Capital (Box L): Francis X Rojas \u2014 Beg $0 + Contrib $0.00 + Box2 $-377.76 \u2212 Distrib $0.00 = Ending $-377.76 (tax basis).",
+          "halt_count": 0,
+          "resolve_count": 1,
+          "review_count": 1,
+          "issues": [
+            {
+              "rule_id": "SK1C-R02",
+              "severity": "INFO",
+              "message": "Partner 'Francis X Rojas' (o20250801_1) Box L (tax basis, first year): Beginning $0 + Contributions $0.00 + Box2 $-377.76 \u2212 Distributions $0.00 = Ending capital $-377.76. IRC \u00a7705: tax basis begins at contribution + allocated income \u2212 losses \u2212 distributions.",
+              "irs_cite": "IRC \u00a7705; Rev. Proc. 2020-13; Form 1065 Instructions K-1 Box L",
+              "action": "Verify Box L for 'Francis X Rojas': Beginning=$0, Contrib=$0.00, Box2=$-377.76, Distrib=$0.00, Ending=$-377.76.",
+              "auto_fix": false,
+              "fids": [],
+              "suggested_mapping": {}
+            },
+            {
+              "rule_id": "SK1C-R03",
+              "severity": "WARN",
+              "message": "Partner 'Francis X Rojas' (o20250801_1): recorded capital_end = $0.00 but computed tax basis ending = $-377.76 (contrib $0.00 + Box2 $-377.76 \u2212 distrib $0.00). Discrepancy: $377.76. IRC \u00a7705: verify the ending capital account balance.",
+              "irs_cite": "IRC \u00a7705; Rev. Proc. 2020-13",
+              "action": "Check for: (a) prior-year balance (first year should start at $0), (b) mid-year contributions not in owner record, (c) data entry error in capital_end. Correct llcOwners data for 'o20250801_1'.",
+              "auto_fix": false,
+              "fids": [],
+              "suggested_mapping": {}
+            }
+          ]
+        }
+      }
+    },
+    "o20250801_2": {
+      "name": "Alexandra Rojas",
+      "pct": 0.02,
+      "state": "NEEDS_FIXING",
+      "halt_count": 2,
+      "box2": -7.87,
+      "capital_ending": -7.87,
+      "sections": {
+        "AgentSchK1_Identity": {
+          "label": "Partner Identity",
+          "state": "NEEDS_FIXING",
+          "summary": "Partner 'Alexandra Rojas' (o20250801_2): TIN missing or malformed (found: 'blank'). IRC \u00a76109: each K-1 must include the partner's SSN (9 digits). IRC \u00a76722: $290 penalty per K-1 with incorrect payee statement. IRS cannot match the K-1 to the partner's personal return without a valid SSN.",
+          "halt_count": 1,
+          "resolve_count": 0,
+          "review_count": 0,
+          "issues": [
+            {
+              "rule_id": "SK1I-R01",
+              "severity": "ERROR",
+              "message": "Partner 'Alexandra Rojas' (o20250801_2): TIN missing or malformed (found: 'blank'). IRC \u00a76109: each K-1 must include the partner's SSN (9 digits). IRC \u00a76722: $290 penalty per K-1 with incorrect payee statement. IRS cannot match the K-1 to the partner's personal return without a valid SSN.",
+              "irs_cite": "IRC \u00a76109; IRC \u00a76722; Treas. Reg. \u00a7301.6109-1",
+              "action": "Set ssn (or tin) for partner 'o20250801_2' in llcOwners. Format: 9 digits (NNNNNNNNN or NNN-NN-NNNN).",
+              "auto_fix": false,
+              "fids": [],
+              "suggested_mapping": {}
+            }
+          ]
+        },
+        "AgentSchK1_PassiveItems": {
+          "label": "Passive Items (Box 1, 2, 5, 14)",
+          "state": "NEEDS_FIXING",
+          "summary": "Partner 'Alexandra Rojas' (o20250801_2): Box 2 should be $-7.87 (IS.net_rental $-393.50 \u00d7 2.00%). If Box 2 is blank on the K-1, the partner will not report their rental income/loss. IRC \u00a7702(a): all partnership items must flow to partners' individual returns.",
+          "halt_count": 1,
+          "resolve_count": 0,
+          "review_count": 2,
+          "issues": [
+            {
+              "rule_id": "SK1P-R01",
+              "severity": "ERROR",
+              "message": "Partner 'Alexandra Rojas' (o20250801_2): Box 2 should be $-7.87 (IS.net_rental $-393.50 \u00d7 2.00%). If Box 2 is blank on the K-1, the partner will not report their rental income/loss. IRC \u00a7702(a): all partnership items must flow to partners' individual returns.",
+              "irs_cite": "IRC \u00a7702(a); Form 1065 Instructions K-1 Box 2; IRC \u00a7469",
+              "action": "Verify K-1 fill pipeline: Box 2 = IS.net_rental \u00d7 0.0200 = $-7.87. Books-First (IRC \u00a7446): source from IS.net_rental, not from Schedule K form field.",
+              "auto_fix": false,
+              "fids": [],
+              "suggested_mapping": {}
+            },
+            {
+              "rule_id": "SK1P-R02",
+              "severity": "INFO",
+              "message": "Partner 'Alexandra Rojas' (o20250801_2): Box 2 expected value = $-7.87 (IS.net_rental $-393.50 \u00d7 2.00%). Books-First (IRC \u00a7446): verify K-1 Box 2 = $-7.87. LLCTaxAgent XF-R03 will confirm this per-partner allocation.",
+              "irs_cite": "IRC \u00a7446; IRC \u00a7702(a); LLCTaxAgent XF-R03",
+              "action": "Confirm K-1 Box 2 for 'Alexandra Rojas' = $-7.87 in the fill dict/PDF.",
+              "auto_fix": false,
+              "fids": [],
+              "suggested_mapping": {}
+            },
+            {
+              "rule_id": "SK1P-R05",
+              "severity": "INFO",
+              "message": "Partner 'Alexandra Rojas' (o20250801_2): Box 2 = $-7.87 (passive loss). IRC \u00a7704(d): partner can deduct this loss only to the extent of their adjusted basis in the partnership. Basis check is performed on the partner's individual return, not here. The K-1 reports the full allocated amount regardless of basis.",
+              "irs_cite": "IRC \u00a7704(d); IRC \u00a7469(b); Form 6198; Schedule E Instructions",
+              "action": "Advisory only \u2014 no K-1 change needed. Inform partner 'Alexandra Rojas' to verify their basis before claiming the loss.",
+              "auto_fix": false,
+              "fids": [],
+              "suggested_mapping": {}
+            }
+          ]
+        },
+        "AgentSchK1_Capital": {
+          "label": "Capital Account (Box L)",
+          "state": "GO",
+          "summary": "Capital (Box L): Alexandra Rojas \u2014 Beg $0 + Contrib $0.00 + Box2 $-7.87 \u2212 Distrib $0.00 = Ending $-7.87 (tax basis).",
+          "halt_count": 0,
+          "resolve_count": 1,
+          "review_count": 1,
+          "issues": [
+            {
+              "rule_id": "SK1C-R02",
+              "severity": "INFO",
+              "message": "Partner 'Alexandra Rojas' (o20250801_2) Box L (tax basis, first year): Beginning $0 + Contributions $0.00 + Box2 $-7.87 \u2212 Distributions $0.00 = Ending capital $-7.87. IRC \u00a7705: tax basis begins at contribution + allocated income \u2212 losses \u2212 distributions.",
+              "irs_cite": "IRC \u00a7705; Rev. Proc. 2020-13; Form 1065 Instructions K-1 Box L",
+              "action": "Verify Box L for 'Alexandra Rojas': Beginning=$0, Contrib=$0.00, Box2=$-7.87, Distrib=$0.00, Ending=$-7.87.",
+              "auto_fix": false,
+              "fids": [],
+              "suggested_mapping": {}
+            },
+            {
+              "rule_id": "SK1C-R03",
+              "severity": "WARN",
+              "message": "Partner 'Alexandra Rojas' (o20250801_2): recorded capital_end = $0.00 but computed tax basis ending = $-7.87 (contrib $0.00 + Box2 $-7.87 \u2212 distrib $0.00). Discrepancy: $7.87. IRC \u00a7705: verify the ending capital account balance.",
+              "irs_cite": "IRC \u00a7705; Rev. Proc. 2020-13",
+              "action": "Check for: (a) prior-year balance (first year should start at $0), (b) mid-year contributions not in owner record, (c) data entry error in capital_end. Correct llcOwners data for 'o20250801_2'.",
+              "auto_fix": false,
+              "fids": [],
+              "suggested_mapping": {}
+            }
+          ]
+        }
+      }
+    },
+    "o20250801_3": {
+      "name": "Nicola Rojas",
+      "pct": 0.02,
+      "state": "NEEDS_FIXING",
+      "halt_count": 2,
+      "box2": -7.87,
+      "capital_ending": -7.87,
+      "sections": {
+        "AgentSchK1_Identity": {
+          "label": "Partner Identity",
+          "state": "NEEDS_FIXING",
+          "summary": "Partner 'Nicola Rojas' (o20250801_3): TIN missing or malformed (found: 'blank'). IRC \u00a76109: each K-1 must include the partner's SSN (9 digits). IRC \u00a76722: $290 penalty per K-1 with incorrect payee statement. IRS cannot match the K-1 to the partner's personal return without a valid SSN.",
+          "halt_count": 1,
+          "resolve_count": 0,
+          "review_count": 0,
+          "issues": [
+            {
+              "rule_id": "SK1I-R01",
+              "severity": "ERROR",
+              "message": "Partner 'Nicola Rojas' (o20250801_3): TIN missing or malformed (found: 'blank'). IRC \u00a76109: each K-1 must include the partner's SSN (9 digits). IRC \u00a76722: $290 penalty per K-1 with incorrect payee statement. IRS cannot match the K-1 to the partner's personal return without a valid SSN.",
+              "irs_cite": "IRC \u00a76109; IRC \u00a76722; Treas. Reg. \u00a7301.6109-1",
+              "action": "Set ssn (or tin) for partner 'o20250801_3' in llcOwners. Format: 9 digits (NNNNNNNNN or NNN-NN-NNNN).",
+              "auto_fix": false,
+              "fids": [],
+              "suggested_mapping": {}
+            }
+          ]
+        },
+        "AgentSchK1_PassiveItems": {
+          "label": "Passive Items (Box 1, 2, 5, 14)",
+          "state": "NEEDS_FIXING",
+          "summary": "Partner 'Nicola Rojas' (o20250801_3): Box 2 should be $-7.87 (IS.net_rental $-393.50 \u00d7 2.00%). If Box 2 is blank on the K-1, the partner will not report their rental income/loss. IRC \u00a7702(a): all partnership items must flow to partners' individual returns.",
+          "halt_count": 1,
+          "resolve_count": 0,
+          "review_count": 2,
+          "issues": [
+            {
+              "rule_id": "SK1P-R01",
+              "severity": "ERROR",
+              "message": "Partner 'Nicola Rojas' (o20250801_3): Box 2 should be $-7.87 (IS.net_rental $-393.50 \u00d7 2.00%). If Box 2 is blank on the K-1, the partner will not report their rental income/loss. IRC \u00a7702(a): all partnership items must flow to partners' individual returns.",
+              "irs_cite": "IRC \u00a7702(a); Form 1065 Instructions K-1 Box 2; IRC \u00a7469",
+              "action": "Verify K-1 fill pipeline: Box 2 = IS.net_rental \u00d7 0.0200 = $-7.87. Books-First (IRC \u00a7446): source from IS.net_rental, not from Schedule K form field.",
+              "auto_fix": false,
+              "fids": [],
+              "suggested_mapping": {}
+            },
+            {
+              "rule_id": "SK1P-R02",
+              "severity": "INFO",
+              "message": "Partner 'Nicola Rojas' (o20250801_3): Box 2 expected value = $-7.87 (IS.net_rental $-393.50 \u00d7 2.00%). Books-First (IRC \u00a7446): verify K-1 Box 2 = $-7.87. LLCTaxAgent XF-R03 will confirm this per-partner allocation.",
+              "irs_cite": "IRC \u00a7446; IRC \u00a7702(a); LLCTaxAgent XF-R03",
+              "action": "Confirm K-1 Box 2 for 'Nicola Rojas' = $-7.87 in the fill dict/PDF.",
+              "auto_fix": false,
+              "fids": [],
+              "suggested_mapping": {}
+            },
+            {
+              "rule_id": "SK1P-R05",
+              "severity": "INFO",
+              "message": "Partner 'Nicola Rojas' (o20250801_3): Box 2 = $-7.87 (passive loss). IRC \u00a7704(d): partner can deduct this loss only to the extent of their adjusted basis in the partnership. Basis check is performed on the partner's individual return, not here. The K-1 reports the full allocated amount regardless of basis.",
+              "irs_cite": "IRC \u00a7704(d); IRC \u00a7469(b); Form 6198; Schedule E Instructions",
+              "action": "Advisory only \u2014 no K-1 change needed. Inform partner 'Nicola Rojas' to verify their basis before claiming the loss.",
+              "auto_fix": false,
+              "fids": [],
+              "suggested_mapping": {}
+            }
+          ]
+        },
+        "AgentSchK1_Capital": {
+          "label": "Capital Account (Box L)",
+          "state": "GO",
+          "summary": "Capital (Box L): Nicola Rojas \u2014 Beg $0 + Contrib $0.00 + Box2 $-7.87 \u2212 Distrib $0.00 = Ending $-7.87 (tax basis).",
+          "halt_count": 0,
+          "resolve_count": 1,
+          "review_count": 1,
+          "issues": [
+            {
+              "rule_id": "SK1C-R02",
+              "severity": "INFO",
+              "message": "Partner 'Nicola Rojas' (o20250801_3) Box L (tax basis, first year): Beginning $0 + Contributions $0.00 + Box2 $-7.87 \u2212 Distributions $0.00 = Ending capital $-7.87. IRC \u00a7705: tax basis begins at contribution + allocated income \u2212 losses \u2212 distributions.",
+              "irs_cite": "IRC \u00a7705; Rev. Proc. 2020-13; Form 1065 Instructions K-1 Box L",
+              "action": "Verify Box L for 'Nicola Rojas': Beginning=$0, Contrib=$0.00, Box2=$-7.87, Distrib=$0.00, Ending=$-7.87.",
+              "auto_fix": false,
+              "fids": [],
+              "suggested_mapping": {}
+            },
+            {
+              "rule_id": "SK1C-R03",
+              "severity": "WARN",
+              "message": "Partner 'Nicola Rojas' (o20250801_3): recorded capital_end = $0.00 but computed tax basis ending = $-7.87 (contrib $0.00 + Box2 $-7.87 \u2212 distrib $0.00). Discrepancy: $7.87. IRC \u00a7705: verify the ending capital account balance.",
+              "irs_cite": "IRC \u00a7705; Rev. Proc. 2020-13",
+              "action": "Check for: (a) prior-year balance (first year should start at $0), (b) mid-year contributions not in owner record, (c) data entry error in capital_end. Correct llcOwners data for 'o20250801_3'.",
+              "auto_fix": false,
+              "fids": [],
+              "suggested_mapping": {}
+            }
+          ]
+        }
+      }
+    }
+  },
+  "summary": "3 Schedule K-1s: Francis X Rojas, Alexandra Rojas, Nicola Rojas. Box 2 allocations: 96.00%, 2.00%, 2.00% each = $-131.17 per partner (net rental loss). Box 14 = $0. Tax basis capital tracked."
+}

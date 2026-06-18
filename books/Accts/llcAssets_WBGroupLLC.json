@@ -276,5 +276,28 @@
         "tDB": "llcAsset",
         "tID": "2025.12.31_re_o20250801_3_H_805HighMesa",
         "acctType": "Equity"
+    },
+    {
+        "Ledger": "Acct.Equity.Earnings.PnL",
+        "_is_depr": true,
+        "aType": "Debit",
+        "acct": "Acct.Equity.Income.Summary",
+        "acctSub": "YE Equity",
+        "amt": 667.55,
+        "assetType": "Residential",
+        "desc": "Temp acct, YE Net Income -> Equity per member",
+        "dt": "2025.12.31",
+        "propAddr": "805 High Mesa Dr, Wimberley, Tx 78676",
+        "propNm": "LLC",
+        "propOwners": {
+            "020250801_1": 100
+        },
+        "tDB": "llcAssets",
+        "tID": "2025.12.31_D667.55",
+        "propID": "",
+        "refDB": "General Ledger - 2025.12.31",
+        "refDoc": "IncomeStmt",
+        "_unknown": "",
+        "acctType": "Equity"
     }
 ]

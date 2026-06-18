@@ -1,0 +1,27 @@
+{
+  "AgentSchK1_PartnerCapital::SK1B-R07": {
+    "action": "acknowledge",
+    "note": "",
+    "ts": "2026-06-14T04:38:08Z"
+  },
+  "AgentSchK1_PartnerCapital::SK1B-R05": {
+    "action": "acknowledge",
+    "note": "",
+    "ts": "2026-06-14T04:38:17Z"
+  },
+  "AgentSchK1_PartnerCapital::SK1B-R04": {
+    "action": "acknowledge",
+    "note": "",
+    "ts": "2026-06-14T04:38:24Z"
+  },
+  "AgentSchK1_PartnerCapital::SK1B-R01": {
+    "action": "acknowledge",
+    "note": "",
+    "ts": "2026-06-14T04:38:30Z"
+  },
+  "AgentSchK1_PartnerCapital::SK1B-R00": {
+    "action": "acknowledge",
+    "note": "",
+    "ts": "2026-06-14T04:38:38Z"
+  }
+}
