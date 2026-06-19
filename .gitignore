@@ -31,6 +31,8 @@ books/*/.bookNS_backups/
 books/*/Forms/*_FILL.pdf
 books/*/Forms/*_namespace.pdf
 books/*/Forms/.agent_work/
+*_diagnose_state.json
+*_session_state.json
 
 # ── Large / sensitive working files ──────────────────────────────────────────
 books/*/Working/
