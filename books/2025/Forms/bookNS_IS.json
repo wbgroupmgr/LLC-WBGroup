@@ -21,7 +21,9 @@
       "F049 (Page 1 Line 16c depreciation) \u2014 REMOVED: same rule as Line 16a.",
       "F054 (Page 1 Line 20 other deduct.) \u2014 REMOVED: rental other expenses belong on Form 8825.",
       "F055 (Page 1 Line 21 total expense) \u2014 REMOVED: must be $0 for rental LLC.",
-      "F056 (Page 1 Line 23 ordinary inc.) \u2014 REMOVED: must be $0. Rental income/loss flows to Schedule K Line 2 only."
+      "F056 (Page 1 Line 23 ordinary inc.) \u2014 REMOVED: must be $0. Rental income/loss flows to Schedule K Line 2 only.",
+      "F247 (Sch K Line 7 other income)    \u2014 REMOVED 2026-06-30: no other income/portfolio income/capital gains exist. Lines 3\u201311 must be blank for rental-only LLC.",
+      "F248 (Sch K Line 16d AMT adj.)      \u2014 REMOVED 2026-06-30: partnerships do not file corporate AMT. Individual partner AMT adjustments are computed on each partner's Form 6251, not here."
     ]
   },
   "Form1065": [
@@ -34,14 +36,6 @@
       "IS.net_rental"
     ],
     [
-      "F247",
-      "IS.other_income"
-    ],
-    [
-      "F248",
-      "IS.depreciation"
-    ],
-    [
       "F276",
       "IS.interest_income"
     ],
@@ -52,9 +46,9 @@
   ],
   "_Form1065_field_notes": {
     "F228": "Schedule M-1 Line 1 \u2014 Net income (loss) per books. Source: IS.net_income (book basis). Only populated if Schedules L/M-1/M-2 are required (gross \u2265 $250K AND assets \u2265 $1M).",
-    "F230": "Schedule K Line 2 \u2014 Net rental real estate income/loss. Source: IS.net_rental (Books-First per IRC \u00a7446+703). FIXED 2026-06-09: was Cplx.K2_net_rental (wrong \u2014 no resolver); corrected to IS.net_rental. Cross-form audit (XF-R02) independently verifies this equals Form 8825 Line 23.",
-    "F247": "Schedule K Line 7 \u2014 Other income (loss). Source: IS.other_income. Verify this fid is Schedule K Line 7 (not Page 1) in namespace before filing.",
-    "F248": "Schedule K Line 16d \u2014 Gross income and gain (AMT). Source: IS.depreciation for the depreciation adjustment. Verify with CPA \u2014 AMT adjustment may require separate calculation.",
+    "F230": "Schedule K Line 2 \u2014 Net rental real estate income/loss. Source: IS.net_rental (Books-First per IRC \u00a7446+703). Cross-form audit (XF-R02) independently verifies this equals Form 8825 Line 23.",
+    "F247": "Schedule K Line 7 \u2014 Other income (loss). REMOVED 2026-06-30: W&B Group has no other income, capital gains, royalties, or portfolio income. Lines 3\u201311 must be blank for a rental-only LLC (IRS instructions: leave blank when no such income exists).",
+    "F248": "Schedule K Line 16d \u2014 Gross income/gain for AMT (AMTI adjustment). REMOVED 2026-06-30: Partnerships are not subject to corporate AMT. Depreciation adjustments for individual AMT (IRC \u00a756) are computed on each partner\u2019s personal return, not on Form 1065 Schedule K. Filing depreciation here would be incorrect for a partnership.",
     "F276": "Schedule L \u2014 Interest income (asset line). Source: IS.interest_income. Only populated if Schedule L is required.",
     "F279": "Schedule K Line 19a \u2014 Cash distributions. REMOVED from active mappings (2026-06-14): stmtIS.taxAggregates() always returns distributions_cash=0.0 because cash distributions do not appear on the Income Statement. Correct source is GL Capital.Dist entries (books-first per IRC \u00a7446+\u00a7703). Leave blank until actual distributions are booked to Acct.Equity.Owner.Capital.Dist. KD-R04 diagnostic will catch any stale value.",
     "F281": "Schedule M-1 related \u2014 income reconciliation. Source: IS.interest_income. Verify exact line in namespace.",
