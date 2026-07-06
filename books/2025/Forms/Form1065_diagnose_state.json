@@ -2,9 +2,9 @@
   "form": "Form1065",
   "llc": "WBGroupLLC",
   "year": 2025,
-  "generated_at": "2026-06-15T15:16:51",
-  "llc_sha": "c4cea07",
-  "bus_sha": "c4cea07",
+  "generated_at": "2026-07-06T04:38:47",
+  "llc_sha": "a32b2c9",
+  "bus_sha": "a32b2c9",
   "sections": {
     "GenInfo": {
       "id": "GenInfo",
@@ -124,27 +124,17 @@
       "verify_state": "UNCONFIRMED",
       "verified_at": null,
       "verified_sha": null,
-      "fields_hash": "dff5691245281d86",
+      "fields_hash": "9890993fec4189d0",
       "fields": [
         {
           "fid": "F228",
           "uas": "IS.net_income",
-          "value": 654.02
+          "value": 4459.44
         },
         {
           "fid": "F230",
           "uas": "IS.net_rental",
           "value": 667.55
-        },
-        {
-          "fid": "F247",
-          "uas": "IS.other_income",
-          "value": 400.53
-        },
-        {
-          "fid": "F248",
-          "uas": "IS.depreciation",
-          "value": 1903.13
         },
         {
           "fid": "F276",

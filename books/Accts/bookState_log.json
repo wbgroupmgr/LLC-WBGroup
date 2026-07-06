@@ -1,0 +1,63 @@
+[
+  {
+    "objects": {
+      "llcAssets": {
+        "sha256": "df51f847d83dbfacce74169c2b38e0e53a5ffc014d04d96611f67615f194173a",
+        "mtime": "2026-07-05T23:15:25.188034",
+        "recordCount": 14,
+        "exists": true
+      },
+      "llcExpRev": {
+        "sha256": "1daccba497b9d5cbdc538bb6d8997e98ad2544fe140c78e2242d4ad1ba7817cd",
+        "mtime": "2026-07-02T14:15:06.004854",
+        "recordCount": 106,
+        "exists": true
+      },
+      "llcPayables": {
+        "sha256": "bf886ec6dd8fa70a93747bf5227529c202655227f03884f2fc91b52a009b6b20",
+        "mtime": "2026-07-04T18:23:23.605659",
+        "recordCount": 4,
+        "exists": true
+      },
+      "llcReceivables": {
+        "sha256": "710c0a7f4d030f166821e6a952cc78929e542c72ea2e44a6b7f330a5495c12e5",
+        "mtime": "2026-06-07T15:04:15.651066",
+        "recordCount": 1,
+        "exists": true
+      }
+    },
+    "computedAt": "2026-07-05T23:16:03.066784",
+    "note": ""
+  },
+  {
+    "objects": {
+      "llcAssets": {
+        "sha256": "df51f847d83dbfacce74169c2b38e0e53a5ffc014d04d96611f67615f194173a",
+        "mtime": "2026-07-05T23:15:25.188034",
+        "recordCount": 14,
+        "exists": true
+      },
+      "llcExpRev": {
+        "sha256": "1daccba497b9d5cbdc538bb6d8997e98ad2544fe140c78e2242d4ad1ba7817cd",
+        "mtime": "2026-07-02T14:15:06.004854",
+        "recordCount": 106,
+        "exists": true
+      },
+      "llcPayables": {
+        "sha256": "bf886ec6dd8fa70a93747bf5227529c202655227f03884f2fc91b52a009b6b20",
+        "mtime": "2026-07-04T18:23:23.605659",
+        "recordCount": 4,
+        "exists": true
+      },
+      "llcReceivables": {
+        "sha256": "710c0a7f4d030f166821e6a952cc78929e542c72ea2e44a6b7f330a5495c12e5",
+        "mtime": "2026-06-07T15:04:15.651066",
+        "recordCount": 1,
+        "exists": true
+      }
+    },
+    "computedAt": "2026-07-05T23:28:57.694230",
+    "year": 2025,
+    "note": "Phase 1 restore verified \u2014 matches PA truth"
+  }
+]
