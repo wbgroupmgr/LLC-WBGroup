@@ -131,7 +131,7 @@
         },
         "Acct.Exp.Fees.Legal": {
             "acctID": "5040",
-            "acctDesc": "Legal & Professional Fees (Accountants, lawyers)"
+            "acctDesc": "Legal & Professional Fees (Accountants, lawyers), Claude llcRental App dev"
         },
         "Acct.Exp.Fees.Mgmt": {
             "acctID": "5050",
