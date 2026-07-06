@@ -1,0 +1,13 @@
+[
+  {
+    "action": "unlock",
+    "year": 2025,
+    "unlocked_at": "2026-07-05T16:06:50.130036",
+    "prior_lock": {
+      "locked_at": "2026-06-30T16:12:48.668654",
+      "year": 2025,
+      "records_added": 3,
+      "records_removed": 4
+    }
+  }
+]
