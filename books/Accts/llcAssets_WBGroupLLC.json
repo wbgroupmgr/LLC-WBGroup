@@ -358,5 +358,25 @@
     "refDoc": "Receipts available upon request. ",
     "tDB": "llcAssets",
     "tID": "l2025.10.30_96.31-AP1"
+  },
+  {
+    "Ledger": "Acct.Equity.Owner.Capital.Funds",
+    "_unknown": "",
+    "aType": "Debit",
+    "acct": "Acct.Fixed.Tangible.InConstruction",
+    "acctSub": "Misc",
+    "amt": 462.15,
+    "desc": "Payback Member from Owner's Capital Fund - Oct",
+    "dt": "2025.10.30",
+    "propAddr": "177 Kingsway Dr, Wimberley, 786767",
+    "propID": "e20250826-805HMD",
+    "propNm": "H_805HighMesa",
+    "propOwners": {
+      "o20250801_1": 100
+    },
+    "refDB": "Reclassified from llcPayables (2026-07-06) \u2014 capital contribution funding H_805HighMesa construction, not a payable (no loan/credit agreement, credit side is Owner.Capital.Funds). See issue #67 forensics.",
+    "refDoc": "Receipts available upon request. ",
+    "tDB": "llcAssets",
+    "tID": "l2025.10.30_462.15-AP2"
   }
 ]
