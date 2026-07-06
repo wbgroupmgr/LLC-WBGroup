@@ -298,5 +298,65 @@
     "tDB": "llcAssets",
     "tID": "2025.12.31_depr_H_805HighMesa",
     "acctType": "Asset"
+  },
+  {
+    "Ledger": "Acct.Equity.Owner.Capital.Funds",
+    "_unknown": "",
+    "aType": "Debit",
+    "acct": "Acct.Fixed.Tangible.InConstruction",
+    "acctSub": "Const",
+    "amt": 422.97,
+    "desc": "Payback Member from Owner's Capital Fund",
+    "dt": "2025.08.30",
+    "propAddr": "177 Kingsway Dr, Wimberley, 786767",
+    "propID": "e20251229-RV1",
+    "propNm": "RV_RV1",
+    "propOwners": {
+      "o20250801_1": 100
+    },
+    "refDB": "Reclassified from llcPayables (2026-07-06) \u2014 capital contribution funding RV_RV1 construction, not a payable (no loan/credit agreement, credit side is Owner.Capital.Funds). See issue #67 forensics.",
+    "refDoc": "Receipts available upon request. ",
+    "tDB": "llcAssets",
+    "tID": "2025.08.30_422.97"
+  },
+  {
+    "Ledger": "Acct.Equity.Owner.Capital.Funds",
+    "_unknown": "",
+    "aType": "Debit",
+    "acct": "Acct.Fixed.Tangible.InConstruction",
+    "acctSub": "Const",
+    "amt": 290.95,
+    "desc": "Payback Member from Owner's Capital Fund - Sept",
+    "dt": "2025.09.30",
+    "propAddr": "177 Kingsway Dr, Wimberley, 786767",
+    "propID": "e20251229-RV1",
+    "propNm": "RV_RV1",
+    "propOwners": {
+      "o20250801_1": 100
+    },
+    "refDB": "Reclassified from llcPayables (2026-07-06) \u2014 capital contribution funding RV_RV1 construction, not a payable (no loan/credit agreement, credit side is Owner.Capital.Funds). See issue #67 forensics.",
+    "refDoc": "Receipts available upon request. ",
+    "tDB": "llcAssets",
+    "tID": "l2025.09.30_290.95-AP1"
+  },
+  {
+    "Ledger": "Acct.Equity.Owner.Capital.Funds",
+    "_unknown": "",
+    "aType": "Debit",
+    "acct": "Acct.Fixed.Tangible.InConstruction",
+    "acctSub": "Const",
+    "amt": 96.21,
+    "desc": "Payback Member from Owner's Capital Fund - Oct",
+    "dt": "2025.10.30",
+    "propAddr": "177 Kingsway Dr, Wimberley Tx 78676",
+    "propID": "e20251229-RV1",
+    "propNm": "RV_RV1",
+    "propOwners": {
+      "o20250801_1": 100
+    },
+    "refDB": "Reclassified from llcPayables (2026-07-06) \u2014 capital contribution funding RV_RV1 construction, not a payable (no loan/credit agreement, credit side is Owner.Capital.Funds). See issue #67 forensics.",
+    "refDoc": "Receipts available upon request. ",
+    "tDB": "llcAssets",
+    "tID": "l2025.10.30_96.31-AP1"
   }
 ]
