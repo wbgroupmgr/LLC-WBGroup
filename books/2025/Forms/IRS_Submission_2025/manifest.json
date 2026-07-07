@@ -1,6 +1,6 @@
 {
   "tax_year": 2025,
-  "assembled_at": "2026-06-15T13:12:25Z",
+  "assembled_at": "2026-07-06T04:47:23Z",
   "filing_entity": "W&B Group, LLC",
   "ein": "39-3842347",
   "form_type": "Form 1065",
@@ -13,7 +13,7 @@
   "artifacts": [
     {
       "file": "Form1065_FILL.pdf",
-      "sha256": "5f96b29b597a74b9c94546cb96e21cd7fc01ba48cffca090d730fe34434bfa9d",
+      "sha256": "885a5b250d11362c6172ca41b8e53b5f4653500b2bd6d55493074f0450ed0dda",
       "source": "auto",
       "required": true,
       "present": true
@@ -55,14 +55,14 @@
     },
     {
       "file": "WBGroupLLC_2025_YEFinancialReport.pdf",
-      "sha256": "bf0052995e4803b336d7e7c54a1e745af84ebff0537c68a00e4154d96d9bef27",
+      "sha256": "abdb9c7ebd145b854de5253bbcfad22cd3fa926db13658411eacc8c1b56acf25",
       "source": "auto",
       "required": false,
       "present": true
     },
     {
       "file": "AccountantLetter_2025.pdf",
-      "sha256": "3f9e407d339e5431c170a23a02a8d38cde487644ad902d46022e4de71c5fb59f",
+      "sha256": "dc92ecce63a1d22511c5e10d0891d8a4bc548a58d50581a0399cde94f05f1d08",
       "source": "auto",
       "required": false,
       "present": true
